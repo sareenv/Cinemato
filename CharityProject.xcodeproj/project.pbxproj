@@ -13,6 +13,7 @@
 		42EC962B2347530700E85554 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EC962A2347530700E85554 /* Assets.xcassets */; };
 		42EC962E2347530700E85554 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EC962C2347530700E85554 /* LaunchScreen.storyboard */; };
 		42EC96362347588600E85554 /* SliderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC96352347588600E85554 /* SliderController.swift */; };
+		42EC963D2347630300E85554 /* Custom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EC963C2347630300E85554 /* Custom.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		42EC962D2347530700E85554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42EC962F2347530700E85554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42EC96352347588600E85554 /* SliderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderController.swift; sourceTree = "<group>"; };
+		42EC963C2347630300E85554 /* Custom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Custom.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,56 @@
 		42EC96202347530500E85554 /* CharityProject */ = {
 			isa = PBXGroup;
 			children = (
+				42EC963B2347629E00E85554 /* Extensions */,
+				42EC963A2347628700E85554 /* StoryBoards */,
+				42EC96392347623F00E85554 /* Controller */,
+				42EC96382347623A00E85554 /* View */,
+				42EC96372347623400E85554 /* Model */,
 				42EC96212347530500E85554 /* AppDelegate.swift */,
 				42EC96232347530500E85554 /* SceneDelegate.swift */,
-				42EC96252347530500E85554 /* HomeController.swift */,
-				42EC96352347588600E85554 /* SliderController.swift */,
 				42EC962A2347530700E85554 /* Assets.xcassets */,
 				42EC962C2347530700E85554 /* LaunchScreen.storyboard */,
 				42EC962F2347530700E85554 /* Info.plist */,
 			);
 			path = CharityProject;
+			sourceTree = "<group>";
+		};
+		42EC96372347623400E85554 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42EC96382347623A00E85554 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42EC96392347623F00E85554 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42EC96252347530500E85554 /* HomeController.swift */,
+				42EC96352347588600E85554 /* SliderController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		42EC963A2347628700E85554 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				42EC963C2347630300E85554 /* Custom.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		42EC963B2347629E00E85554 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +168,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42EC963D2347630300E85554 /* Custom.storyboard in Resources */,
 				42EC962E2347530700E85554 /* LaunchScreen.storyboard in Resources */,
 				42EC962B2347530700E85554 /* Assets.xcassets in Resources */,
 			);

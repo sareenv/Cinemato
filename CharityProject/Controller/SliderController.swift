@@ -41,9 +41,9 @@ class SliderController: UIViewController{
         button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
-
-    
     @objc func handleBtn(){
-        self.navigationController?.pushViewController(HomeController(), animated: true)
+        let storyBoard = UIStoryboard(name: "Custom", bundle: nil)
+        let homeController = storyBoard.instantiateViewController(identifier: "HomeStoryBoard")
+        self.navigationController?.pushViewController(homeController, animated: true)
     }
 }

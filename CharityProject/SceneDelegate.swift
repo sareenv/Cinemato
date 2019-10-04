@@ -22,9 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if(hasOpenBefore == false){
             window?.rootViewController = UINavigationController(rootViewController: SliderController())
         }else{
-            window?.rootViewController = HomeController()
+            let storyBoard = UIStoryboard(name: "Custom", bundle: nil)
+            let homeController = storyBoard.instantiateViewController(identifier: "HomeStoryBoard")
+            window?.rootViewController = homeController
         }
-        
         window?.makeKeyAndVisible()
     }
 

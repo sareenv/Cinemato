@@ -10,10 +10,11 @@ import UIKit
 
 class HomeController: UIViewController {
     
-   let isFirstTime = UserDefaults.standard
+    // UserDefault to manage the state of application launching for first time.
+    let isFirstTime = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         openState()
     }
     
