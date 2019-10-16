@@ -19,14 +19,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let hasOpenBefore = UserDefaults.standard.bool(forKey: "hasOpenBefore")
         print(hasOpenBefore)
         window?.windowScene = windowScene
-//        if(hasOpenBefore == false){
-//            window?.rootViewController = UINavigationController(rootViewController: SliderController())
-//        }else{
-//            let storyBoard = UIStoryboard(name: "Custom", bundle: nil)
-//            let homeController = storyBoard.instantiateViewController(identifier: "HomeStoryBoard")
-//            window?.rootViewController = homeController
-//        }
-        window?.rootViewController = SliderController()
+        if(hasOpenBefore == false){
+            window?.rootViewController = UINavigationController(rootViewController: SliderController())
+        }else{
+            let storyBoard = UIStoryboard(name: "Custom", bundle: nil)
+            let homeController = storyBoard.instantiateViewController(identifier: "HomeStoryBoard")
+            window?.rootViewController = homeController
+        }
         window?.makeKeyAndVisible()
     }
 

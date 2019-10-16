@@ -16,6 +16,13 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         openState()
+        navigationSettings()
+    }
+    
+    fileprivate func navigationSettings(){
+        let item = UIBarButtonItem(image: UIImage.init(systemName: "list.dash"), style: .plain, target: self, action: nil)
+        item.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.navigationItem.leftBarButtonItem = item
     }
     
     fileprivate func openState(){
