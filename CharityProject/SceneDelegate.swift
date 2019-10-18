@@ -22,9 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if(hasOpenBefore == false){
             window?.rootViewController = UINavigationController(rootViewController: SliderController())
         }else{
-            let storyBoard = UIStoryboard(name: "Custom", bundle: nil)
-            let homeController = storyBoard.instantiateViewController(identifier: "HomeStoryBoard")
-            window?.rootViewController = homeController
+            let tabController = MainTabBarController()
+            window?.rootViewController = tabController
         }
         window?.makeKeyAndVisible()
     }

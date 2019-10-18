@@ -14,10 +14,35 @@
                     <view key="view" contentMode="scaleToFill" id="667-K2-Bc4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gqE-3l-e1p">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="charityCell" rowHeight="141" id="x6k-pS-H4Z">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="141"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x6k-pS-H4Z" id="koj-hV-q6i">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="141"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gqE-3l-e1p" firstAttribute="top" secondItem="n0f-pI-qFS" secondAttribute="top" id="Aus-v2-1e3"/>
+                            <constraint firstAttribute="bottom" secondItem="gqE-3l-e1p" secondAttribute="bottom" id="e7d-Bp-5Q9"/>
+                            <constraint firstItem="gqE-3l-e1p" firstAttribute="trailing" secondItem="n0f-pI-qFS" secondAttribute="trailing" id="pu7-IC-dkE"/>
+                            <constraint firstItem="gqE-3l-e1p" firstAttribute="leading" secondItem="n0f-pI-qFS" secondAttribute="leading" id="q1x-Nz-na2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="n0f-pI-qFS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Charityo" id="Qy3-24-Tj5"/>
+                    <connections>
+                        <outlet property="charityTableView" destination="gqE-3l-e1p" id="zFZ-VR-Kxb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRb-Sj-Hyk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
