@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lEL-BP-wLf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iDw-HH-JZT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -7,36 +7,69 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home Controller-->
+        <!--Charityo-->
         <scene sceneID="YaO-qb-tiR">
             <objects>
-                <viewController storyboardIdentifier="HomeStoryBoard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lEL-BP-wLf" customClass="HomeController" customModule="CharityProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lEL-BP-wLf" customClass="HomeController" customModule="CharityProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="667-K2-Bc4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBX-dD-bV9">
-                                <rect key="frame" x="20" y="408" width="374" height="80"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Hhq-pL-1by"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <state key="normal" title="Welcome to Home">
-                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gqE-3l-e1p">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="charityCell" rowHeight="141" id="x6k-pS-H4Z">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="141"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x6k-pS-H4Z" id="koj-hV-q6i">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="141"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="RBX-dD-bV9" firstAttribute="leading" secondItem="n0f-pI-qFS" secondAttribute="leading" constant="20" id="8YE-7G-IVh"/>
-                            <constraint firstItem="n0f-pI-qFS" firstAttribute="trailing" secondItem="RBX-dD-bV9" secondAttribute="trailing" constant="20" id="FnZ-Pr-O6t"/>
-                            <constraint firstItem="RBX-dD-bV9" firstAttribute="centerY" secondItem="667-K2-Bc4" secondAttribute="centerY" id="mC3-e5-7FC"/>
+                            <constraint firstItem="gqE-3l-e1p" firstAttribute="top" secondItem="n0f-pI-qFS" secondAttribute="top" id="Aus-v2-1e3"/>
+                            <constraint firstAttribute="bottom" secondItem="gqE-3l-e1p" secondAttribute="bottom" id="e7d-Bp-5Q9"/>
+                            <constraint firstItem="gqE-3l-e1p" firstAttribute="trailing" secondItem="n0f-pI-qFS" secondAttribute="trailing" id="pu7-IC-dkE"/>
+                            <constraint firstItem="gqE-3l-e1p" firstAttribute="leading" secondItem="n0f-pI-qFS" secondAttribute="leading" id="q1x-Nz-na2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n0f-pI-qFS"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Charityo" id="Qy3-24-Tj5"/>
+                    <connections>
+                        <outlet property="charityTableView" destination="gqE-3l-e1p" id="zFZ-VR-Kxb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRb-Sj-Hyk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="739.13043478260875" y="91.741071428571431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mwO-ja-7YY">
+            <objects>
+                <navigationController storyboardIdentifier="HomeStoryBoard" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iDw-HH-JZT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="hnU-CY-C4k">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lEL-BP-wLf" kind="relationship" relationship="rootViewController" id="FTb-AD-PWV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KDc-q0-Qc8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-171.01449275362319" y="91.741071428571431"/>
         </scene>
