@@ -13,7 +13,6 @@ class SliderController: UICollectionViewController{
     fileprivate let cellId = "customCellId"
     let sliderContent: [SliderContent] = SliderContent.slides()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionViewSettings()
@@ -22,7 +21,6 @@ class SliderController: UICollectionViewController{
     
     
     fileprivate func collectionViewSettings(){
-        
         collectionView.delaysContentTouches = false
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -90,7 +88,6 @@ extension SliderController: CellButtonDetect{
     func detectButtonPressed() {
         let storyBoard = UIStoryboard(name: "Custom", bundle: nil)
         let homeController = storyBoard.instantiateViewController(identifier: "HomeStoryBoard")
-        
         self.present(homeController, animated: true, completion: nil)
     }
 }
