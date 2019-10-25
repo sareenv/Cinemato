@@ -55,6 +55,21 @@ class TopDonatorElementCell: UICollectionViewCell{
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
+        setupLayout()
+    }
+    
+    fileprivate func setupLayout(){
+        let layoutStackView = UIStackView(arrangedSubviews: [donatorImageView, donatorNameLabel])
+        layoutStackView.axis = .vertical
+        layoutStackView.distribution = .fill
+        layoutStackView.alignment = .center
+        layoutStackView.spacing = 2
+        addSubview(layoutStackView)
+        layoutStackView.translatesAutoresizingMaskIntoConstraints = false
+        layoutStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        layoutStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
+        layoutStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
+        layoutStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
     }
     
 
