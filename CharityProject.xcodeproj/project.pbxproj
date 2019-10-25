@@ -18,6 +18,7 @@
 		426C464823624EEA009EF616 /* DetailsCharityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C464723624EEA009EF616 /* DetailsCharityController.swift */; };
 		426C464B23625191009EF616 /* TopDonators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C464923625191009EF616 /* TopDonators.swift */; };
 		426C464C23625191009EF616 /* TopDonators.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426C464A23625191009EF616 /* TopDonators.xib */; };
+		427A508D2362658200BA5C2F /* Donator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A508C2362658200BA5C2F /* Donator.swift */; };
 		42EC96222347530500E85554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC96212347530500E85554 /* AppDelegate.swift */; };
 		42EC96242347530500E85554 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC96232347530500E85554 /* SceneDelegate.swift */; };
 		42EC96262347530500E85554 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC96252347530500E85554 /* HomeController.swift */; };
@@ -40,6 +41,7 @@
 		426C464723624EEA009EF616 /* DetailsCharityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCharityController.swift; sourceTree = "<group>"; };
 		426C464923625191009EF616 /* TopDonators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopDonators.swift; sourceTree = "<group>"; };
 		426C464A23625191009EF616 /* TopDonators.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopDonators.xib; sourceTree = "<group>"; };
+		427A508C2362658200BA5C2F /* Donator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donator.swift; sourceTree = "<group>"; };
 		42EC961E2347530500E85554 /* CharityProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CharityProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC96212347530500E85554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42EC96232347530500E85554 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				4224B304234DD19E000CCC6D /* SliderContent.swift */,
 				4212D3FD235DE4210088D876 /* CharityOrganisation.swift */,
+				427A508C2362658200BA5C2F /* Donator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				4212D401235DE6EC0088D876 /* HeaderCell.swift in Sources */,
 				42EC96242347530500E85554 /* SceneDelegate.swift in Sources */,
 				426C464B23625191009EF616 /* TopDonators.swift in Sources */,
+				427A508D2362658200BA5C2F /* Donator.swift in Sources */,
 				423B708C235093AA00B40E01 /* SliderCell.swift in Sources */,
 				4224B305234DD19E000CCC6D /* SliderContent.swift in Sources */,
 			);

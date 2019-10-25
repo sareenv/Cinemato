@@ -13,7 +13,6 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var charityTableView: UITableView!
     let isFirstTime = UserDefaults.standard
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         openState()
@@ -23,8 +22,12 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     fileprivate func tableViewSettings(){
         let charityOrganisationNib = UINib(nibName: "CharityOrganisationCell", bundle: nil)
         let headerCellNib = UINib(nibName: "HeaderCell", bundle: nil)
+        let topDonatorNib = UINib(nibName: "TopDonators", bundle: nil)
+        
         charityTableView.register(charityOrganisationNib, forCellReuseIdentifier: "charityOrgCell")
         charityTableView.register(headerCellNib, forCellReuseIdentifier: "HeaderCell")
+        charityTableView.register(topDonatorNib, forCellReuseIdentifier: "topDonatorsCell")
+        
         charityTableView.showsVerticalScrollIndicator = false
         charityTableView.separatorStyle = .none
         charityTableView.delegate = self
@@ -46,21 +49,30 @@ extension HomeController{
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let estimatedHeaderHeight = 20 * (self.view.frame.height / 100) // this will be 25% of the width
+        let estimatedHeaderHeight = 20 * (self.view.frame.height / 100) // this will be 20% of the width
         return estimatedHeaderHeight
     }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
           return 10
       }
     
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "charityOrgCell", for: indexPath) as! CharityOrganisationCell
+        
+        let cell = indexPath.row == 4 ? tableView.dequeueReusableCell(withIdentifier: "topDonatorsCell", for: indexPath) : tableView.dequeueReusableCell(withIdentifier: "charityOrgCell", for: indexPath) as! CharityOrganisationCell
+        print(cell.frame.height)
         return cell
+        
       }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.row == 4 ? 190 : 150
+    }
+   
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
         self.performSegue(withIdentifier: "showDetailCharityController", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
