@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="647" height="176"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleAspectFill" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BKf-p6-yjz">
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BKf-p6-yjz">
                         <rect key="frame" x="5" y="10" width="637" height="156"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="charity1" translatesAutoresizingMaskIntoConstraints="NO" id="USO-gd-ZL6">

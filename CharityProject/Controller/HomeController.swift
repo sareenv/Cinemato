@@ -70,6 +70,10 @@ extension HomeController{
       }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row == 4){
+            tableView.deselectRow(at: indexPath, animated: true)
+            return
+        }
         self.performSegue(withIdentifier: "showDetailCharityController", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }

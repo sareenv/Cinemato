@@ -27,7 +27,7 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Contributors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXD-1A-tMd">
-                        <rect key="frame" x="15" y="15" width="169" height="27"/>
+                        <rect key="frame" x="5" y="15" width="169" height="27"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,7 +37,7 @@
                     <constraint firstAttribute="trailing" secondItem="eae-OG-SVs" secondAttribute="trailing" id="37p-iA-iiY"/>
                     <constraint firstItem="eae-OG-SVs" firstAttribute="top" secondItem="aXD-1A-tMd" secondAttribute="bottom" constant="8" id="563-Xn-ep6"/>
                     <constraint firstItem="aXD-1A-tMd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="MC5-S8-Pdh"/>
-                    <constraint firstItem="aXD-1A-tMd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="mgR-AX-5z7"/>
+                    <constraint firstItem="aXD-1A-tMd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="mgR-AX-5z7"/>
                     <constraint firstAttribute="bottom" secondItem="eae-OG-SVs" secondAttribute="bottom" id="wO5-ZZ-Yzl"/>
                     <constraint firstItem="eae-OG-SVs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yRR-sP-h2I"/>
                 </constraints>
