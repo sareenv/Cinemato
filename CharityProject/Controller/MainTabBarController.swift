@@ -17,8 +17,8 @@ class MainTabBarController: UITabBarController {
         controller2.view.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
         controller2.tabBarItem = UITabBarItem(title: "Donate", image: #imageLiteral(resourceName: "donate"), selectedImage:#imageLiteral(resourceName: "donate"))
         
-        let controller3 = UIViewController()
-        controller3.view.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        let controller3 = UINavigationController(rootViewController: TopCharitesController())
+            
         controller3.tabBarItem = UITabBarItem(title: "Top Charites", image: #imageLiteral(resourceName: "charity"), selectedImage:#imageLiteral(resourceName: "charity"))
         
         let controller4 = UIViewController()
@@ -26,6 +26,7 @@ class MainTabBarController: UITabBarController {
         controller4.tabBarItem = UITabBarItem(title: "Account", image: #imageLiteral(resourceName: "account"), selectedImage:#imageLiteral(resourceName: "account"))
         self.viewControllers = [controller1, controller2, controller3, controller4]
         self.tabBar.tintColor = #colorLiteral(red: 0.5791940689, green: 0.1280144453, blue: 0.5726861358, alpha: 0.7514304577)
+        
     }
     
     fileprivate func generateControllers(storyBoardName: String = "", identifier: String = "", barItemTitle: String, barItemImage: UIImage) -> UIViewController {

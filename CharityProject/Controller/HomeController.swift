@@ -17,6 +17,12 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         openState()
         tableViewSettings()
+        apiFetch()
+    }
+    
+    fileprivate func apiFetch(){
+        let api = Api.instance
+        Api.downloadData()
     }
     
     fileprivate func tableViewSettings(){
@@ -74,13 +80,14 @@ extension HomeController{
             tableView.deselectRow(at: indexPath, animated: true)
             return
         }
-        self.performSegue(withIdentifier: "showDetailCharityController", sender: nil)
+        
+        // push to navigation controller.
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.alpha = 0
-        cell.transform = CGAffineTransform(translationX: -10, y: 0)
+        cell.transform = CGAffineTransform(translationX: -20, y: 0)
         UIView.animate(withDuration: 0.5) {
             cell.alpha = 1.5
             cell.transform = .identity

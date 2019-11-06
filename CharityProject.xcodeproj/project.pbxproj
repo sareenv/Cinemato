@@ -12,9 +12,14 @@
 		4212D3FE235DE4210088D876 /* CharityOrganisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212D3FD235DE4210088D876 /* CharityOrganisation.swift */; };
 		4212D401235DE6EC0088D876 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212D3FF235DE6EC0088D876 /* HeaderCell.swift */; };
 		4212D402235DE6EC0088D876 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4212D400235DE6EC0088D876 /* HeaderCell.xib */; };
+		4222BF1323697712006F0E66 /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4222BF1223697712006F0E66 /* DetailsController.swift */; };
+		4222BF1823699C96006F0E66 /* CharityDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4222BF1723699C96006F0E66 /* CharityDetailsCell.swift */; };
 		4224B305234DD19E000CCC6D /* SliderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224B304234DD19E000CCC6D /* SliderContent.swift */; };
 		423B708C235093AA00B40E01 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423B708B235093AA00B40E01 /* SliderCell.swift */; };
 		423B708E2350A23400B40E01 /* Referances in Resources */ = {isa = PBXBuildFile; fileRef = 423B708D2350A23400B40E01 /* Referances */; };
+		424A18CD236C4A0E0092A0D9 /* TopCharitesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A18CC236C4A0E0092A0D9 /* TopCharitesController.swift */; };
+		425186D8236F148800D0FA2B /* education.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 425186D7236F148800D0FA2B /* education.mp4 */; };
+		425186DF2372C85F00D0FA2B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425186DE2372C85F00D0FA2B /* Api.swift */; };
 		426C464823624EEA009EF616 /* DetailsCharityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C464723624EEA009EF616 /* DetailsCharityController.swift */; };
 		426C464B23625191009EF616 /* TopDonators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C464923625191009EF616 /* TopDonators.swift */; };
 		426C464C23625191009EF616 /* TopDonators.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426C464A23625191009EF616 /* TopDonators.xib */; };
@@ -35,9 +40,14 @@
 		4212D3FD235DE4210088D876 /* CharityOrganisation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityOrganisation.swift; sourceTree = "<group>"; };
 		4212D3FF235DE6EC0088D876 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		4212D400235DE6EC0088D876 /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
+		4222BF1223697712006F0E66 /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
+		4222BF1723699C96006F0E66 /* CharityDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityDetailsCell.swift; sourceTree = "<group>"; };
 		4224B304234DD19E000CCC6D /* SliderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderContent.swift; sourceTree = "<group>"; };
 		423B708B235093AA00B40E01 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		423B708D2350A23400B40E01 /* Referances */ = {isa = PBXFileReference; lastKnownFileType = text; path = Referances; sourceTree = "<group>"; };
+		424A18CC236C4A0E0092A0D9 /* TopCharitesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCharitesController.swift; sourceTree = "<group>"; };
+		425186D7236F148800D0FA2B /* education.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = education.mp4; sourceTree = "<group>"; };
+		425186DE2372C85F00D0FA2B /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		426C464723624EEA009EF616 /* DetailsCharityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCharityController.swift; sourceTree = "<group>"; };
 		426C464923625191009EF616 /* TopDonators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopDonators.swift; sourceTree = "<group>"; };
 		426C464A23625191009EF616 /* TopDonators.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopDonators.xib; sourceTree = "<group>"; };
@@ -73,6 +83,14 @@
 			path = Referances;
 			sourceTree = "<group>";
 		};
+		425186DD2372C84900D0FA2B /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				425186DE2372C85F00D0FA2B /* Api.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		42EC96152347530500E85554 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +110,7 @@
 		42EC96202347530500E85554 /* CharityProject */ = {
 			isa = PBXGroup;
 			children = (
+				425186DD2372C84900D0FA2B /* Api */,
 				423B708F2350A2B100B40E01 /* Referances */,
 				42EC963A2347628700E85554 /* StoryBoards */,
 				42EC96392347623F00E85554 /* Controller */,
@@ -100,6 +119,7 @@
 				42EC96212347530500E85554 /* AppDelegate.swift */,
 				42EC96232347530500E85554 /* SceneDelegate.swift */,
 				42EC962A2347530700E85554 /* Assets.xcassets */,
+				425186D7236F148800D0FA2B /* education.mp4 */,
 				42EC962C2347530700E85554 /* LaunchScreen.storyboard */,
 				42EC962F2347530700E85554 /* Info.plist */,
 			);
@@ -126,6 +146,7 @@
 				4212D400235DE6EC0088D876 /* HeaderCell.xib */,
 				426C464923625191009EF616 /* TopDonators.swift */,
 				426C464A23625191009EF616 /* TopDonators.xib */,
+				4222BF1723699C96006F0E66 /* CharityDetailsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -137,6 +158,8 @@
 				42EC96352347588600E85554 /* SliderController.swift */,
 				42EE5FEB2359C6AD00FDCD89 /* MainTabBarController.swift */,
 				426C464723624EEA009EF616 /* DetailsCharityController.swift */,
+				4222BF1223697712006F0E66 /* DetailsController.swift */,
+				424A18CC236C4A0E0092A0D9 /* TopCharitesController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -212,6 +235,7 @@
 				42EC963D2347630300E85554 /* Custom.storyboard in Resources */,
 				4212D3FC235DD5640088D876 /* CharityOrganisationCell.xib in Resources */,
 				42EC962E2347530700E85554 /* LaunchScreen.storyboard in Resources */,
+				425186D8236F148800D0FA2B /* education.mp4 in Resources */,
 				4212D402235DE6EC0088D876 /* HeaderCell.xib in Resources */,
 				42EC962B2347530700E85554 /* Assets.xcassets in Resources */,
 			);
@@ -224,9 +248,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4222BF1323697712006F0E66 /* DetailsController.swift in Sources */,
 				42EC96262347530500E85554 /* HomeController.swift in Sources */,
 				42EC96222347530500E85554 /* AppDelegate.swift in Sources */,
+				424A18CD236C4A0E0092A0D9 /* TopCharitesController.swift in Sources */,
 				426C464823624EEA009EF616 /* DetailsCharityController.swift in Sources */,
+				425186DF2372C85F00D0FA2B /* Api.swift in Sources */,
 				4212D3FB235DD5640088D876 /* CharityOrganisationCell.swift in Sources */,
 				42EC96362347588600E85554 /* SliderController.swift in Sources */,
 				4212D3FE235DE4210088D876 /* CharityOrganisation.swift in Sources */,
@@ -235,6 +262,7 @@
 				42EC96242347530500E85554 /* SceneDelegate.swift in Sources */,
 				426C464B23625191009EF616 /* TopDonators.swift in Sources */,
 				427A508D2362658200BA5C2F /* Donator.swift in Sources */,
+				4222BF1823699C96006F0E66 /* CharityDetailsCell.swift in Sources */,
 				423B708C235093AA00B40E01 /* SliderCell.swift in Sources */,
 				4224B305234DD19E000CCC6D /* SliderContent.swift in Sources */,
 			);
