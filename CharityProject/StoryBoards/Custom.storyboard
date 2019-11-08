@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Charityo-->
+        <!--Cinemato-->
         <scene sceneID="YaO-qb-tiR">
             <objects>
                 <viewController id="lEL-BP-wLf" customClass="HomeController" customModule="CharityProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,153 +56,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n0f-pI-qFS"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Charityo" largeTitleDisplayMode="always" id="Qy3-24-Tj5"/>
+                    <navigationItem key="navigationItem" title="Cinemato" largeTitleDisplayMode="always" id="Qy3-24-Tj5"/>
                     <connections>
-                        <outlet property="charityTableView" destination="gqE-3l-e1p" id="zFZ-VR-Kxb"/>
+                        <outlet property="moviesTableView" destination="gqE-3l-e1p" id="zFZ-VR-Kxb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRb-Sj-Hyk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="739.13043478260875" y="91.741071428571431"/>
-        </scene>
-        <!--Charityo-->
-        <scene sceneID="eWC-Kd-n6A">
-            <objects>
-                <tableViewController id="aQ3-cp-kAX" customClass="DetailsController" customModule="CharityProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ERC-in-ISW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailsCell" rowHeight="882" id="W8J-2j-0OF" customClass="CharityDetailsCell" customModule="CharityProject" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="882"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W8J-2j-0OF" id="57d-2j-Meq">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="882"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="charity1" translatesAutoresizingMaskIntoConstraints="NO" id="hX7-kM-DS7" customClass="CustomImageView" customModule="CharityProject" customModuleProvider="target">
-                                            <rect key="frame" x="10" y="10" width="394" height="199"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="199" id="Vac-UJ-vCE"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="5"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Vt9-sf-r0B">
-                                            <rect key="frame" x="10" y="229" width="394" height="433"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="foM-fo-wiY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="103"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Omina Charity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7e-E4-eW6">
-                                                            <rect key="frame" x="125" y="0.0" width="144" height="26.5"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                                            <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This charity group helps students in remote area to get quality education. We make sure all the content is geniune" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGb-q9-ihD">
-                                                            <rect key="frame" x="0.0" y="34.5" width="394" height="68.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vs-7w-RoN" customClass="CustomView" customModule="CharityProject" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="113" width="394" height="320"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donations Collections Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQt-6O-hg8">
-                                                            <rect key="frame" x="58" y="15" width="278" height="24"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                            <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="donation" translatesAutoresizingMaskIntoConstraints="NO" id="Rda-0H-OQe">
-                                                            <rect key="frame" x="72" y="44" width="250" height="200"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="250" id="1Sz-3H-zDo"/>
-                                                                <constraint firstAttribute="height" constant="200" id="FQC-sX-ImE"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="doq-19-YjV">
-                                                            <rect key="frame" x="142" y="252" width="110.5" height="42"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfy-eh-QFe">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="22.5" height="42"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
-                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkc-AK-vZ3">
-                                                                    <rect key="frame" x="25.5" y="0.0" width="85" height="42"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
-                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="0.31558098591549294" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstItem="doq-19-YjV" firstAttribute="centerX" secondItem="9vs-7w-RoN" secondAttribute="centerX" id="8WZ-fu-qFc"/>
-                                                        <constraint firstAttribute="height" constant="320" id="AH0-qO-s6B"/>
-                                                        <constraint firstItem="Rda-0H-OQe" firstAttribute="centerX" secondItem="9vs-7w-RoN" secondAttribute="centerX" id="P8I-95-i9b"/>
-                                                        <constraint firstItem="iQt-6O-hg8" firstAttribute="top" secondItem="9vs-7w-RoN" secondAttribute="top" constant="15" id="dfx-Kx-r2G"/>
-                                                        <constraint firstItem="Rda-0H-OQe" firstAttribute="top" secondItem="iQt-6O-hg8" secondAttribute="bottom" constant="5" id="jk1-sy-Ciz"/>
-                                                        <constraint firstItem="doq-19-YjV" firstAttribute="top" secondItem="Rda-0H-OQe" secondAttribute="bottom" constant="8" id="pew-2e-c9h"/>
-                                                        <constraint firstItem="iQt-6O-hg8" firstAttribute="centerX" secondItem="9vs-7w-RoN" secondAttribute="centerX" id="xY5-gN-atG"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
-                                            </subviews>
-                                        </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhZ-u3-bWK">
-                                            <rect key="frame" x="35" y="682" width="344" height="50"/>
-                                            <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="vbK-kM-COH"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <state key="normal" title="Help">
-                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </state>
-                                        </button>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="uhZ-u3-bWK" firstAttribute="top" secondItem="Vt9-sf-r0B" secondAttribute="bottom" constant="20" id="08c-v0-qPt"/>
-                                        <constraint firstItem="uhZ-u3-bWK" firstAttribute="centerX" secondItem="57d-2j-Meq" secondAttribute="centerX" id="1Cp-GQ-xuZ"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="uhZ-u3-bWK" secondAttribute="trailing" constant="15" id="GX3-60-t0W"/>
-                                        <constraint firstAttribute="trailing" secondItem="Vt9-sf-r0B" secondAttribute="trailing" constant="10" id="HiG-rn-58l"/>
-                                        <constraint firstAttribute="trailing" secondItem="hX7-kM-DS7" secondAttribute="trailing" constant="10" id="Mw6-oj-VW1"/>
-                                        <constraint firstItem="hX7-kM-DS7" firstAttribute="leading" secondItem="57d-2j-Meq" secondAttribute="leading" constant="10" id="P5O-5y-vIV"/>
-                                        <constraint firstItem="uhZ-u3-bWK" firstAttribute="leading" secondItem="57d-2j-Meq" secondAttribute="leadingMargin" constant="15" id="bz0-A9-Uy9"/>
-                                        <constraint firstItem="Vt9-sf-r0B" firstAttribute="leading" secondItem="57d-2j-Meq" secondAttribute="leading" constant="10" id="lEq-lZ-BQi"/>
-                                        <constraint firstItem="hX7-kM-DS7" firstAttribute="top" secondItem="57d-2j-Meq" secondAttribute="top" constant="10" id="lnQ-bQ-8jI"/>
-                                        <constraint firstItem="Vt9-sf-r0B" firstAttribute="top" secondItem="hX7-kM-DS7" secondAttribute="bottom" constant="20" id="uGV-nG-JJU"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="aQ3-cp-kAX" id="3Eb-oC-nFY"/>
-                            <outlet property="delegate" destination="aQ3-cp-kAX" id="Umt-aG-aTu"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Charityo" largeTitleDisplayMode="never" id="hwt-uH-yn7"/>
-                    <size key="freeformSize" width="414" height="1000"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RfR-u1-pCr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1863.7681159420292" y="91.741071428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mwO-ja-7YY">
@@ -230,8 +91,4 @@
             <point key="canvasLocation" x="-171.01449275362319" y="91.741071428571431"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="charity1" width="1824" height="1216"/>
-        <image name="donation" width="366" height="266"/>
-    </resources>
 </document>

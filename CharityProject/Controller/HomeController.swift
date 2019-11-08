@@ -10,36 +10,48 @@ import UIKit
 
 class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
-    @IBOutlet weak var charityTableView: UITableView!
+    @IBOutlet weak var moviesTableView: UITableView!
     let isFirstTime = UserDefaults.standard
+    
+    var movies: [Movie]?{
+        didSet{
+            self.moviesTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         openState()
         tableViewSettings()
-        apiFetch()
+        fetchTrendingData()
     }
     
-    fileprivate func apiFetch(){
+    
+    fileprivate func fetchTrendingData(){
         let api = Api.instance
-        Api.downloadData()
+        api.downloadMovies { (error, movie) in
+            if (error != nil){
+                return
+            }
+            
+            DispatchQueue.main.async {
+                // update the cells.
+                guard let movie = movie else { return }
+                self.movies = movie.results
+            }
+        }
     }
     
     fileprivate func tableViewSettings(){
         let charityOrganisationNib = UINib(nibName: "CharityOrganisationCell", bundle: nil)
         let headerCellNib = UINib(nibName: "HeaderCell", bundle: nil)
-        let topDonatorNib = UINib(nibName: "TopDonators", bundle: nil)
-        
-        charityTableView.register(charityOrganisationNib, forCellReuseIdentifier: "charityOrgCell")
-        charityTableView.register(headerCellNib, forCellReuseIdentifier: "HeaderCell")
-        charityTableView.register(topDonatorNib, forCellReuseIdentifier: "topDonatorsCell")
-    
-    
-        charityTableView.showsVerticalScrollIndicator = false
-        charityTableView.separatorStyle = .none
-        charityTableView.delegate = self
-        charityTableView.dataSource = self
-        charityTableView.estimatedRowHeight = 40
+        moviesTableView.register(charityOrganisationNib, forCellReuseIdentifier: "charityOrgCell")
+        moviesTableView.register(headerCellNib, forCellReuseIdentifier: "HeaderCell")
+        moviesTableView.showsVerticalScrollIndicator = false
+        moviesTableView.separatorStyle = .none
+        moviesTableView.delegate = self
+        moviesTableView.dataSource = self
+        moviesTableView.estimatedRowHeight = 40
     }
     
     fileprivate func openState(){
@@ -51,7 +63,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
 extension HomeController{
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = charityTableView.dequeueReusableCell(withIdentifier: "HeaderCell")
+        let view = moviesTableView.dequeueReusableCell(withIdentifier: "HeaderCell")
         return view
     }
     
@@ -65,12 +77,13 @@ extension HomeController{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-          return 10
+        return movies?.count ?? 0
       }
     
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = indexPath.row == 4 ? tableView.dequeueReusableCell(withIdentifier: "topDonatorsCell", for: indexPath) : tableView.dequeueReusableCell(withIdentifier: "charityOrgCell", for: indexPath) as! CharityOrganisationCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "charityOrgCell", for: indexPath) as! CharityOrganisationCell
+        cell.movieDetail = self.movies?[indexPath.item]
         return cell
         
       }

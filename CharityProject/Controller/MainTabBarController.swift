@@ -17,7 +17,7 @@ class MainTabBarController: UITabBarController {
         controller2.view.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
         controller2.tabBarItem = UITabBarItem(title: "Donate", image: #imageLiteral(resourceName: "donate"), selectedImage:#imageLiteral(resourceName: "donate"))
         
-        let controller3 = UINavigationController(rootViewController: TopCharitesController())
+        let controller3 = UINavigationController(rootViewController: UIViewController())
             
         controller3.tabBarItem = UITabBarItem(title: "Top Charites", image: #imageLiteral(resourceName: "charity"), selectedImage:#imageLiteral(resourceName: "charity"))
         

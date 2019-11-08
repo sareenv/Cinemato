@@ -27,22 +27,22 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="Ggm-ro-VtO">
-                                <rect key="frame" x="166" y="0.0" width="471" height="145"/>
+                                <rect key="frame" x="166" y="0.0" width="471" height="119"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Omani Charity Group" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEv-9M-2vG">
-                                        <rect key="frame" x="0.0" y="0.0" width="192.5" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEv-9M-2vG">
+                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This charity group helps students accross the world to get free education." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMQ-xF-fyn">
-                                        <rect key="frame" x="0.0" y="43" width="454.5" height="43"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMQ-xF-fyn">
+                                        <rect key="frame" x="0.0" y="43" width="76.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="9FF-L1-tDp">
-                                        <rect key="frame" x="0.0" y="105" width="180" height="40"/>
+                                        <rect key="frame" x="0.0" y="79" width="154" height="40"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me" translatesAutoresizingMaskIntoConstraints="NO" id="12i-B6-kOp">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -51,10 +51,10 @@
                                                     <constraint firstAttribute="width" constant="40" id="OLj-T6-Da2"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vinayak Sareen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftR-dI-BoM">
-                                                <rect key="frame" x="57" y="0.0" width="123" height="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019-10-04" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftR-dI-BoM">
+                                                <rect key="frame" x="57" y="0.0" width="97" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -73,8 +73,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="charityLogoImageView" destination="USO-gd-ZL6" id="gFG-bO-rRG"/>
-                <outlet property="charityRepImageView" destination="12i-B6-kOp" id="x0o-aL-ST2"/>
+                <outlet property="descriptionLabel" destination="pMQ-xF-fyn" id="4E6-KA-b0i"/>
+                <outlet property="movieCompanyImageView" destination="12i-B6-kOp" id="x0o-aL-ST2"/>
+                <outlet property="moviePosterImageView" destination="USO-gd-ZL6" id="gFG-bO-rRG"/>
+                <outlet property="movieReleaseDateLabel" destination="ftR-dI-BoM" id="tvb-Jg-bJk"/>
+                <outlet property="moviesTitle" destination="qEv-9M-2vG" id="Jgo-yu-Tx5"/>
             </connections>
             <point key="canvasLocation" x="373.1884057971015" y="108.48214285714285"/>
         </tableViewCell>

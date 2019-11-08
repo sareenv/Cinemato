@@ -8,12 +8,16 @@
 
 import UIKit
 
-
 class HeaderCell: UITableViewCell {
     @IBOutlet weak var headerSliderCollectionView: UICollectionView!
     
     let cellId = "HeaderCell"
-    let headerCellsImages: [UIImage] = [ #imageLiteral(resourceName: "HeaderCell2"),#imageLiteral(resourceName: "HeaderCell3"), #imageLiteral(resourceName: "charity1"), #imageLiteral(resourceName: "HeaderCell4")]
+    
+    var headerData: [Movie] = []{
+        didSet{
+            self.headerSliderCollectionView.reloadData()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,17 +29,36 @@ class HeaderCell: UITableViewCell {
         headerSliderCollectionView.delegate = self
         headerSliderCollectionView.dataSource = self
         headerSliderCollectionView.showsHorizontalScrollIndicator = false
+        fetchTrendingData()
     }
+    
+    
+    fileprivate func fetchTrendingData(){
+        let api = Api.instance
+        api.downloadTrendingMovies { (error, data)  in
+            if(error != nil){
+                return
+            }
+            // Update the cell
+            DispatchQueue.main.async {
+                // update the cells.
+                guard let data = data else { return }
+                self.headerData = data.results
+            }
+        }
+    }
+    
+    
 }
 
 extension HeaderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return headerData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! CustomHeaderElementCell
-        cell.headerElementImageView.image = headerCellsImages[indexPath.item]
+        cell.headerElementImageView.downloadUrlImage(imageUrlPath: headerData[indexPath.item].backdrop_path)
         return cell
     }
     

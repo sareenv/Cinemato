@@ -9,15 +9,30 @@
 import UIKit
 
 class CharityOrganisationCell: UITableViewCell {
+    
+    @IBOutlet weak var moviesTitle: UILabel!
+    @IBOutlet weak var movieReleaseDateLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var movieCompanyImageView: UIImageView!
+    @IBOutlet weak var moviePosterImageView: UIImageView!
+    
 
-    @IBOutlet weak var charityRepImageView: UIImageView!
-    @IBOutlet weak var charityLogoImageView: UIImageView!
+    var movieDetail: Movie?{
+        didSet{
+            self.moviesTitle.text = movieDetail?.title
+            self.movieReleaseDateLabel.text = movieDetail?.release_date
+            self.descriptionLabel.text = movieDetail?.overview
+            self.moviePosterImageView.downloadUrlImage(imageUrlPath: movieDetail?.backdrop_path ?? movieDetail?.poster_path ?? "")
+            self.movieCompanyImageView.downloadUrlImage(imageUrlPath: movieDetail?.backdrop_path ?? movieDetail?.poster_path ?? "")
+        }
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        charityRepImageView.layer.cornerRadius = charityRepImageView.frame.width / 2
-        charityRepImageView.clipsToBounds = true
-        charityLogoImageView.layer.cornerRadius = 7
-        charityLogoImageView.clipsToBounds = true
+        movieCompanyImageView.layer.cornerRadius = movieCompanyImageView.frame.width / 2
+        movieCompanyImageView.clipsToBounds = true
+        moviePosterImageView.layer.cornerRadius = 7
+        moviePosterImageView.clipsToBounds = true
     }
 }
