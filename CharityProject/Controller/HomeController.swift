@@ -13,6 +13,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
     @IBOutlet weak var moviesTableView: UITableView!
     let isFirstTime = UserDefaults.standard
+    var selectedIndex = 0
     
     var movies: [Movie]?{
         didSet{
@@ -29,7 +30,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     fileprivate func testYoutubeVideoLink(){
-        let link = "https://www.youtube.com/watch?v=t433PEQGErc"
+        _ = "https://www.youtube.com/watch?v=t433PEQGErc"
     }
     
     fileprivate func fetchTrendingData(){
@@ -48,9 +49,9 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     fileprivate func tableViewSettings(){
-        let charityOrganisationNib = UINib(nibName: "CharityOrganisationCell", bundle: nil)
+        let popularMoviesNib = UINib(nibName: "PopularMoviesCell", bundle: nil)
         let headerCellNib = UINib(nibName: "HeaderCell", bundle: nil)
-        moviesTableView.register(charityOrganisationNib, forCellReuseIdentifier: "charityOrgCell")
+        moviesTableView.register(popularMoviesNib, forCellReuseIdentifier: "popularMoviesCell")
         moviesTableView.register(headerCellNib, forCellReuseIdentifier: "HeaderCell")
         moviesTableView.showsVerticalScrollIndicator = false
         moviesTableView.separatorStyle = .none
@@ -86,27 +87,31 @@ extension HomeController{
       }
     
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "charityOrgCell", for: indexPath) as! CharityOrganisationCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "popularMoviesCell", for: indexPath) as! PopularMoviesCell
         cell.movieDetail = self.movies?[indexPath.item]
         return cell
-        
       }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(indexPath.row == 4){
-            tableView.deselectRow(at: indexPath, animated: true)
-            return
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "moviesDetail"){
+            if let detailsController = segue.destination as? DetailsMovieController{
+                detailsController.movie = self.movies?[selectedIndex]
+            }
         }
-        
-        // push to navigation controller.
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.item
+        self.performSegue(withIdentifier: "moviesDetail", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.alpha = 0
         cell.transform = CGAffineTransform(translationX: -20, y: 0)
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.23) {
             cell.alpha = 1.5
             cell.transform = .identity
         }

@@ -6,5 +6,5 @@ target 'CharityProject' do
   use_frameworks!
 
   # Pods for CharityProject
-
+  pod 'SDWebImage', '~> 5.0'
 end

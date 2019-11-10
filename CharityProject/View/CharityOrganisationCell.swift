@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SDWebImage
 
-class CharityOrganisationCell: UITableViewCell {
+class PopularMoviesCell: UITableViewCell {
     
     @IBOutlet weak var moviesTitle: UILabel!
     @IBOutlet weak var movieReleaseDateLabel: UILabel!
@@ -22,16 +23,19 @@ class CharityOrganisationCell: UITableViewCell {
             self.moviesTitle.text = movieDetail?.title
             self.movieReleaseDateLabel.text = movieDetail?.release_date
             self.descriptionLabel.text = movieDetail?.overview
-            self.moviePosterImageView.downloadUrlImage(imageUrlPath: movieDetail?.backdrop_path ?? movieDetail?.poster_path ?? "")
-            self.movieCompanyImageView.downloadUrlImage(imageUrlPath: movieDetail?.backdrop_path ?? movieDetail?.poster_path ?? "")
+            let imageUrl = URL(string: "http://image.tmdb.org/t/p/original"+(movieDetail?.backdrop_path ?? movieDetail?.poster_path ?? ""))
+            self.moviePosterImageView?.sd_setImage(with: imageUrl, completed: nil)
+            self.movieCompanyImageView.sd_setImage(with: imageUrl, completed: nil)
         }
     }
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        movieCompanyImageView.layer.cornerRadius = movieCompanyImageView.frame.width / 2
-        movieCompanyImageView.clipsToBounds = true
+        
+        movieCompanyImageView.layer.masksToBounds = true
+        movieCompanyImageView.layer.cornerRadius = 20
+        movieCompanyImageView.contentMode = .scaleAspectFill
         moviePosterImageView.layer.cornerRadius = 7
         moviePosterImageView.clipsToBounds = true
     }
