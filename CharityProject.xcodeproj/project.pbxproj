@@ -16,6 +16,7 @@
 		4224B305234DD19E000CCC6D /* SliderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224B304234DD19E000CCC6D /* SliderContent.swift */; };
 		423B708C235093AA00B40E01 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423B708B235093AA00B40E01 /* SliderCell.swift */; };
 		423B708E2350A23400B40E01 /* Referances in Resources */ = {isa = PBXBuildFile; fileRef = 423B708D2350A23400B40E01 /* Referances */; };
+		4250FA2C008D2A1316FF5EC4 /* Pods_CharityProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF5EDDFD634F822A89DC592 /* Pods_CharityProject.framework */; };
 		425186DF2372C85F00D0FA2B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425186DE2372C85F00D0FA2B /* Api.swift */; };
 		427A508D2362658200BA5C2F /* Donator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A508C2362658200BA5C2F /* Donator.swift */; };
 		428E4FD823759ACB00023E58 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E4FD723759ACB00023E58 /* ImageExtension.swift */; };
@@ -27,7 +28,7 @@
 		42EC962E2347530700E85554 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EC962C2347530700E85554 /* LaunchScreen.storyboard */; };
 		42EC96362347588600E85554 /* SliderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC96352347588600E85554 /* SliderController.swift */; };
 		42EC963D2347630300E85554 /* Custom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EC963C2347630300E85554 /* Custom.storyboard */; };
-		42EE5FEC2359C6AD00FDCD89 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE5FEB2359C6AD00FDCD89 /* MainTabBarController.swift */; };
+		42EE5FEC2359C6AD00FDCD89 /* CinematoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE5FEB2359C6AD00FDCD89 /* CinematoTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +45,7 @@
 		427A508C2362658200BA5C2F /* Donator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donator.swift; sourceTree = "<group>"; };
 		428E4FD723759ACB00023E58 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		428E4FDB2375F52E00023E58 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
-		42EC961E2347530500E85554 /* CharityProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CharityProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42EC961E2347530500E85554 /* Cinemtiyo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinemtiyo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC96212347530500E85554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42EC96232347530500E85554 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		42EC96252347530500E85554 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -53,7 +54,10 @@
 		42EC962F2347530700E85554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42EC96352347588600E85554 /* SliderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderController.swift; sourceTree = "<group>"; };
 		42EC963C2347630300E85554 /* Custom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Custom.storyboard; sourceTree = "<group>"; };
-		42EE5FEB2359C6AD00FDCD89 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		42EE5FEB2359C6AD00FDCD89 /* CinematoTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinematoTabBarController.swift; sourceTree = "<group>"; };
+		7AF5EDDFD634F822A89DC592 /* Pods_CharityProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CharityProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95589896E38F9B851E8A7C4B /* Pods-CharityProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CharityProject.debug.xcconfig"; path = "Target Support Files/Pods-CharityProject/Pods-CharityProject.debug.xcconfig"; sourceTree = "<group>"; };
+		CF2EBCD3953490B45B79B764 /* Pods-CharityProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CharityProject.release.xcconfig"; path = "Target Support Files/Pods-CharityProject/Pods-CharityProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,12 +65,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4250FA2C008D2A1316FF5EC4 /* Pods_CharityProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		116DEC6319075888FD29C293 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				95589896E38F9B851E8A7C4B /* Pods-CharityProject.debug.xcconfig */,
+				CF2EBCD3953490B45B79B764 /* Pods-CharityProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		423B708F2350A2B100B40E01 /* Referances */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,13 +110,15 @@
 			children = (
 				42EC96202347530500E85554 /* CharityProject */,
 				42EC961F2347530500E85554 /* Products */,
+				116DEC6319075888FD29C293 /* Pods */,
+				6AF5F32AC6510A0FA71A603D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		42EC961F2347530500E85554 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				42EC961E2347530500E85554 /* CharityProject.app */,
+				42EC961E2347530500E85554 /* Cinemtiyo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,7 +171,7 @@
 			children = (
 				42EC96252347530500E85554 /* HomeController.swift */,
 				42EC96352347588600E85554 /* SliderController.swift */,
-				42EE5FEB2359C6AD00FDCD89 /* MainTabBarController.swift */,
+				42EE5FEB2359C6AD00FDCD89 /* CinematoTabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,6 +184,14 @@
 			path = StoryBoards;
 			sourceTree = "<group>";
 		};
+		6AF5F32AC6510A0FA71A603D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7AF5EDDFD634F822A89DC592 /* Pods_CharityProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,6 +199,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42EC96322347530700E85554 /* Build configuration list for PBXNativeTarget "CharityProject" */;
 			buildPhases = (
+				754DA09FDFD1E9AA5FA7C750 /* [CP] Check Pods Manifest.lock */,
 				42EC961A2347530500E85554 /* Sources */,
 				42EC961B2347530500E85554 /* Frameworks */,
 				42EC961C2347530500E85554 /* Resources */,
@@ -185,7 +210,7 @@
 			);
 			name = CharityProject;
 			productName = CharityProject;
-			productReference = 42EC961E2347530500E85554 /* CharityProject.app */;
+			productReference = 42EC961E2347530500E85554 /* Cinemtiyo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -237,6 +262,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		754DA09FDFD1E9AA5FA7C750 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CharityProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		42EC961A2347530500E85554 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -249,7 +299,7 @@
 				4212D3FB235DD5640088D876 /* CharityOrganisationCell.swift in Sources */,
 				42EC96362347588600E85554 /* SliderController.swift in Sources */,
 				4212D3FE235DE4210088D876 /* CharityOrganisation.swift in Sources */,
-				42EE5FEC2359C6AD00FDCD89 /* MainTabBarController.swift in Sources */,
+				42EE5FEC2359C6AD00FDCD89 /* CinematoTabBarController.swift in Sources */,
 				4212D401235DE6EC0088D876 /* HeaderCell.swift in Sources */,
 				42EC96242347530500E85554 /* SceneDelegate.swift in Sources */,
 				427A508D2362658200BA5C2F /* Donator.swift in Sources */,
@@ -390,6 +440,7 @@
 		};
 		42EC96332347530700E85554 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95589896E38F9B851E8A7C4B /* Pods-CharityProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -400,14 +451,15 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tech.CharityProject;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Cinemtiyo;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		42EC96342347530700E85554 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF2EBCD3953490B45B79B764 /* Pods-CharityProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -418,9 +470,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tech.CharityProject;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Cinemtiyo;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

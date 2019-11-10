@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if(hasOpenBefore == false){
             window?.rootViewController = UINavigationController(rootViewController: SliderController())
         }else{
-            let tabController = MainTabBarController()
+            let tabController = CinematoTabBarController()
             window?.rootViewController = tabController
         }
         window?.makeKeyAndVisible()

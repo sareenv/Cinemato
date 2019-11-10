@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
     @IBOutlet weak var moviesTableView: UITableView!
@@ -24,8 +25,12 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         openState()
         tableViewSettings()
         fetchTrendingData()
+        testYoutubeVideoLink()
     }
     
+    fileprivate func testYoutubeVideoLink(){
+        let link = "https://www.youtube.com/watch?v=t433PEQGErc"
+    }
     
     fileprivate func fetchTrendingData(){
         let api = Api.instance
