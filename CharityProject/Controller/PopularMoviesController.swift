@@ -9,7 +9,7 @@
 import UIKit
 
 
-class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PopularMoviesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
     @IBOutlet weak var moviesTableView: UITableView!
     let isFirstTime = UserDefaults.standard
@@ -66,7 +66,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
 }
 
 
-extension HomeController{
+extension PopularMoviesController{
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = moviesTableView.dequeueReusableCell(withIdentifier: "HeaderCell")

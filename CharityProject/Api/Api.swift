@@ -27,6 +27,28 @@ class Api{
     }
     
     
+    func downloadWallImages(id: Int, completionHandler: @escaping (ApiErrors?, MovieImages?) -> ()){
+        let session = URLSession.shared
+        let baseUrl = "https://api.themoviedb.org/3/"
+        let apiKey = "?api_key=48011e814c676dd12ae5d6e76288b2ae"
+        let imagesRelativePath = "movie/\(id)/images"
+        let url = baseUrl + imagesRelativePath + apiKey
+        guard let imagesUrl = URL(string: url) else { return }
+
+        session.dataTask(with: imagesUrl) { (data, resp, error) in
+            if(error != nil){
+                return
+            }
+            guard let data = data else { return }
+            guard let imageCovers = try? JSONDecoder().decode(MovieImages.self, from: data) else {
+                completionHandler(.jsonParseError, nil)
+                return
+            }
+           
+            completionHandler(nil, imageCovers)
+        }.resume()
+    }
+    
     func downloadMovies(completionHandler: @escaping (ApiErrors?, Movies?) -> ()){
         let session = URLSession.shared
         let baseUrl = "https://api.themoviedb.org/3/"
