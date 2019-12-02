@@ -17,9 +17,9 @@
 		425186DF2372C85F00D0FA2B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425186DE2372C85F00D0FA2B /* Api.swift */; };
 		4251F52E2378BAEC00677452 /* DetailsMovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251F52D2378BAEC00677452 /* DetailsMovieController.swift */; };
 		4251F5302378EE4900677452 /* MovieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251F52F2378EE4900677452 /* MovieImage.swift */; };
-		427A508D2362658200BA5C2F /* Donator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A508C2362658200BA5C2F /* Donator.swift */; };
 		428E4FD823759ACB00023E58 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E4FD723759ACB00023E58 /* ImageExtension.swift */; };
 		428E4FDC2375F52E00023E58 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E4FDB2375F52E00023E58 /* Movies.swift */; };
+		429A85E72394AA380017B447 /* CinemtiyoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429A85E62394AA380017B447 /* CinemtiyoTests.swift */; };
 		42D5F2E92378A6D90057E18B /* PopularMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D5F2E82378A6D90057E18B /* PopularMoviesCell.swift */; };
 		42EC96222347530500E85554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC96212347530500E85554 /* AppDelegate.swift */; };
 		42EC96242347530500E85554 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC96232347530500E85554 /* SceneDelegate.swift */; };
@@ -31,6 +31,16 @@
 		42EE5FEC2359C6AD00FDCD89 /* CinematoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE5FEB2359C6AD00FDCD89 /* CinematoTabBarController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		429A85E92394AA380017B447 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42EC96162347530500E85554 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42EC961D2347530500E85554;
+			remoteInfo = CharityProject;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		4212D3FA235DD5640088D876 /* PopularMoviesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularMoviesCell.xib; sourceTree = "<group>"; };
 		4212D3FF235DE6EC0088D876 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
@@ -41,9 +51,11 @@
 		425186DE2372C85F00D0FA2B /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		4251F52D2378BAEC00677452 /* DetailsMovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMovieController.swift; sourceTree = "<group>"; };
 		4251F52F2378EE4900677452 /* MovieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImage.swift; sourceTree = "<group>"; };
-		427A508C2362658200BA5C2F /* Donator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donator.swift; sourceTree = "<group>"; };
 		428E4FD723759ACB00023E58 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		428E4FDB2375F52E00023E58 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		429A85E42394AA380017B447 /* CinemtiyoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemtiyoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		429A85E62394AA380017B447 /* CinemtiyoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemtiyoTests.swift; sourceTree = "<group>"; };
+		429A85E82394AA380017B447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42D5F2E82378A6D90057E18B /* PopularMoviesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesCell.swift; sourceTree = "<group>"; };
 		42EC961E2347530500E85554 /* Cinemtiyo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinemtiyo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC96212347530500E85554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +73,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		429A85E12394AA380017B447 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42EC961B2347530500E85554 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -105,10 +124,20 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		429A85E52394AA380017B447 /* CinemtiyoTests */ = {
+			isa = PBXGroup;
+			children = (
+				429A85E62394AA380017B447 /* CinemtiyoTests.swift */,
+				429A85E82394AA380017B447 /* Info.plist */,
+			);
+			path = CinemtiyoTests;
+			sourceTree = "<group>";
+		};
 		42EC96152347530500E85554 = {
 			isa = PBXGroup;
 			children = (
 				42EC96202347530500E85554 /* CharityProject */,
+				429A85E52394AA380017B447 /* CinemtiyoTests */,
 				42EC961F2347530500E85554 /* Products */,
 				116DEC6319075888FD29C293 /* Pods */,
 				6AF5F32AC6510A0FA71A603D /* Frameworks */,
@@ -119,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				42EC961E2347530500E85554 /* Cinemtiyo.app */,
+				429A85E42394AA380017B447 /* CinemtiyoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				4224B304234DD19E000CCC6D /* SliderContent.swift */,
-				427A508C2362658200BA5C2F /* Donator.swift */,
 				428E4FDB2375F52E00023E58 /* Movies.swift */,
 				4251F52F2378EE4900677452 /* MovieImage.swift */,
 			);
@@ -195,6 +224,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		429A85E32394AA380017B447 /* CinemtiyoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 429A85EB2394AA380017B447 /* Build configuration list for PBXNativeTarget "CinemtiyoTests" */;
+			buildPhases = (
+				429A85E02394AA380017B447 /* Sources */,
+				429A85E12394AA380017B447 /* Frameworks */,
+				429A85E22394AA380017B447 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				429A85EA2394AA380017B447 /* PBXTargetDependency */,
+			);
+			name = CinemtiyoTests;
+			productName = CinemtiyoTests;
+			productReference = 429A85E42394AA380017B447 /* CinemtiyoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		42EC961D2347530500E85554 /* CharityProject */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42EC96322347530700E85554 /* Build configuration list for PBXNativeTarget "CharityProject" */;
@@ -224,6 +271,10 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Vinayak Sareen";
 				TargetAttributes = {
+					429A85E32394AA380017B447 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 42EC961D2347530500E85554;
+					};
 					42EC961D2347530500E85554 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -243,11 +294,19 @@
 			projectRoot = "";
 			targets = (
 				42EC961D2347530500E85554 /* CharityProject */,
+				429A85E32394AA380017B447 /* CinemtiyoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		429A85E22394AA380017B447 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42EC961C2347530500E85554 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -306,6 +365,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		429A85E02394AA380017B447 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				429A85E72394AA380017B447 /* CinemtiyoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42EC961A2347530500E85554 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -320,7 +387,6 @@
 				42EE5FEC2359C6AD00FDCD89 /* CinematoTabBarController.swift in Sources */,
 				4212D401235DE6EC0088D876 /* HeaderCell.swift in Sources */,
 				42EC96242347530500E85554 /* SceneDelegate.swift in Sources */,
-				427A508D2362658200BA5C2F /* Donator.swift in Sources */,
 				428E4FDC2375F52E00023E58 /* Movies.swift in Sources */,
 				423B708C235093AA00B40E01 /* SliderCell.swift in Sources */,
 				4251F5302378EE4900677452 /* MovieImage.swift in Sources */,
@@ -329,6 +395,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		429A85EA2394AA380017B447 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42EC961D2347530500E85554 /* CharityProject */;
+			targetProxy = 429A85E92394AA380017B447 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		42EC962C2347530700E85554 /* LaunchScreen.storyboard */ = {
@@ -342,6 +416,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		429A85EC2394AA380017B447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z6YU2DE97Z;
+				INFOPLIST_FILE = CinemtiyoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.CinemtiyoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cinemtiyo.app/Cinemtiyo";
+			};
+			name = Debug;
+		};
+		429A85ED2394AA380017B447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z6YU2DE97Z;
+				INFOPLIST_FILE = CinemtiyoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.CinemtiyoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cinemtiyo.app/Cinemtiyo";
+			};
+			name = Release;
+		};
 		42EC96302347530700E85554 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -497,6 +611,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		429A85EB2394AA380017B447 /* Build configuration list for PBXNativeTarget "CinemtiyoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				429A85EC2394AA380017B447 /* Debug */,
+				429A85ED2394AA380017B447 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		42EC96192347530500E85554 /* Build configuration list for PBXProject "CharityProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
