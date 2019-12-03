@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,13 +13,12 @@
 		4224B305234DD19E000CCC6D /* SliderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224B304234DD19E000CCC6D /* SliderContent.swift */; };
 		423B708C235093AA00B40E01 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423B708B235093AA00B40E01 /* SliderCell.swift */; };
 		423B708E2350A23400B40E01 /* Referances in Resources */ = {isa = PBXBuildFile; fileRef = 423B708D2350A23400B40E01 /* Referances */; };
-		4250FA2C008D2A1316FF5EC4 /* Pods_CharityProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF5EDDFD634F822A89DC592 /* Pods_CharityProject.framework */; };
+		424AF06C2396A53C00E9A5AE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 424AF06B2396A53C00E9A5AE /* SDWebImage */; };
 		425186DF2372C85F00D0FA2B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425186DE2372C85F00D0FA2B /* Api.swift */; };
 		4251F52E2378BAEC00677452 /* DetailsMovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251F52D2378BAEC00677452 /* DetailsMovieController.swift */; };
 		4251F5302378EE4900677452 /* MovieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251F52F2378EE4900677452 /* MovieImage.swift */; };
 		428E4FD823759ACB00023E58 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E4FD723759ACB00023E58 /* ImageExtension.swift */; };
 		428E4FDC2375F52E00023E58 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E4FDB2375F52E00023E58 /* Movies.swift */; };
-		429A85E72394AA380017B447 /* CinemtiyoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429A85E62394AA380017B447 /* CinemtiyoTests.swift */; };
 		42D5F2E92378A6D90057E18B /* PopularMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D5F2E82378A6D90057E18B /* PopularMoviesCell.swift */; };
 		42EC96222347530500E85554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC96212347530500E85554 /* AppDelegate.swift */; };
 		42EC96242347530500E85554 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC96232347530500E85554 /* SceneDelegate.swift */; };
@@ -30,16 +29,6 @@
 		42EC963D2347630300E85554 /* Custom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EC963C2347630300E85554 /* Custom.storyboard */; };
 		42EE5FEC2359C6AD00FDCD89 /* CinematoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE5FEB2359C6AD00FDCD89 /* CinematoTabBarController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		429A85E92394AA380017B447 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 42EC96162347530500E85554 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 42EC961D2347530500E85554;
-			remoteInfo = CharityProject;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4212D3FA235DD5640088D876 /* PopularMoviesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularMoviesCell.xib; sourceTree = "<group>"; };
@@ -53,9 +42,6 @@
 		4251F52F2378EE4900677452 /* MovieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImage.swift; sourceTree = "<group>"; };
 		428E4FD723759ACB00023E58 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		428E4FDB2375F52E00023E58 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
-		429A85E42394AA380017B447 /* CinemtiyoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemtiyoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		429A85E62394AA380017B447 /* CinemtiyoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemtiyoTests.swift; sourceTree = "<group>"; };
-		429A85E82394AA380017B447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42D5F2E82378A6D90057E18B /* PopularMoviesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesCell.swift; sourceTree = "<group>"; };
 		42EC961E2347530500E85554 /* Cinemtiyo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinemtiyo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC96212347530500E85554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,39 +53,20 @@
 		42EC96352347588600E85554 /* SliderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderController.swift; sourceTree = "<group>"; };
 		42EC963C2347630300E85554 /* Custom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Custom.storyboard; sourceTree = "<group>"; };
 		42EE5FEB2359C6AD00FDCD89 /* CinematoTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinematoTabBarController.swift; sourceTree = "<group>"; };
-		7AF5EDDFD634F822A89DC592 /* Pods_CharityProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CharityProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95589896E38F9B851E8A7C4B /* Pods-CharityProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CharityProject.debug.xcconfig"; path = "Target Support Files/Pods-CharityProject/Pods-CharityProject.debug.xcconfig"; sourceTree = "<group>"; };
-		CF2EBCD3953490B45B79B764 /* Pods-CharityProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CharityProject.release.xcconfig"; path = "Target Support Files/Pods-CharityProject/Pods-CharityProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		429A85E12394AA380017B447 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		42EC961B2347530500E85554 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4250FA2C008D2A1316FF5EC4 /* Pods_CharityProject.framework in Frameworks */,
+				424AF06C2396A53C00E9A5AE /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		116DEC6319075888FD29C293 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				95589896E38F9B851E8A7C4B /* Pods-CharityProject.debug.xcconfig */,
-				CF2EBCD3953490B45B79B764 /* Pods-CharityProject.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		423B708F2350A2B100B40E01 /* Referances */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,23 +91,11 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		429A85E52394AA380017B447 /* CinemtiyoTests */ = {
-			isa = PBXGroup;
-			children = (
-				429A85E62394AA380017B447 /* CinemtiyoTests.swift */,
-				429A85E82394AA380017B447 /* Info.plist */,
-			);
-			path = CinemtiyoTests;
-			sourceTree = "<group>";
-		};
 		42EC96152347530500E85554 = {
 			isa = PBXGroup;
 			children = (
-				42EC96202347530500E85554 /* CharityProject */,
-				429A85E52394AA380017B447 /* CinemtiyoTests */,
+				42EC96202347530500E85554 /* Cinemtiyo */,
 				42EC961F2347530500E85554 /* Products */,
-				116DEC6319075888FD29C293 /* Pods */,
-				6AF5F32AC6510A0FA71A603D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,12 +103,11 @@
 			isa = PBXGroup;
 			children = (
 				42EC961E2347530500E85554 /* Cinemtiyo.app */,
-				429A85E42394AA380017B447 /* CinemtiyoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		42EC96202347530500E85554 /* CharityProject */ = {
+		42EC96202347530500E85554 /* Cinemtiyo */ = {
 			isa = PBXGroup;
 			children = (
 				428E4FD62375993A00023E58 /* Extension */,
@@ -169,7 +123,7 @@
 				42EC962C2347530700E85554 /* LaunchScreen.storyboard */,
 				42EC962F2347530700E85554 /* Info.plist */,
 			);
-			path = CharityProject;
+			path = Cinemtiyo;
 			sourceTree = "<group>";
 		};
 		42EC96372347623400E85554 /* Model */ = {
@@ -213,50 +167,25 @@
 			path = StoryBoards;
 			sourceTree = "<group>";
 		};
-		6AF5F32AC6510A0FA71A603D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7AF5EDDFD634F822A89DC592 /* Pods_CharityProject.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		429A85E32394AA380017B447 /* CinemtiyoTests */ = {
+		42EC961D2347530500E85554 /* Cinemtiyo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 429A85EB2394AA380017B447 /* Build configuration list for PBXNativeTarget "CinemtiyoTests" */;
+			buildConfigurationList = 42EC96322347530700E85554 /* Build configuration list for PBXNativeTarget "Cinemtiyo" */;
 			buildPhases = (
-				429A85E02394AA380017B447 /* Sources */,
-				429A85E12394AA380017B447 /* Frameworks */,
-				429A85E22394AA380017B447 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				429A85EA2394AA380017B447 /* PBXTargetDependency */,
-			);
-			name = CinemtiyoTests;
-			productName = CinemtiyoTests;
-			productReference = 429A85E42394AA380017B447 /* CinemtiyoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		42EC961D2347530500E85554 /* CharityProject */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 42EC96322347530700E85554 /* Build configuration list for PBXNativeTarget "CharityProject" */;
-			buildPhases = (
-				754DA09FDFD1E9AA5FA7C750 /* [CP] Check Pods Manifest.lock */,
 				42EC961A2347530500E85554 /* Sources */,
 				42EC961B2347530500E85554 /* Frameworks */,
 				42EC961C2347530500E85554 /* Resources */,
-				ADDD36C6D779624EF39420BE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CharityProject;
+			name = Cinemtiyo;
+			packageProductDependencies = (
+				424AF06B2396A53C00E9A5AE /* SDWebImage */,
+			);
 			productName = CharityProject;
 			productReference = 42EC961E2347530500E85554 /* Cinemtiyo.app */;
 			productType = "com.apple.product-type.application";
@@ -271,16 +200,12 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Vinayak Sareen";
 				TargetAttributes = {
-					429A85E32394AA380017B447 = {
-						CreatedOnToolsVersion = 11.0;
-						TestTargetID = 42EC961D2347530500E85554;
-					};
 					42EC961D2347530500E85554 = {
 						CreatedOnToolsVersion = 11.0;
 					};
 				};
 			};
-			buildConfigurationList = 42EC96192347530500E85554 /* Build configuration list for PBXProject "CharityProject" */;
+			buildConfigurationList = 42EC96192347530500E85554 /* Build configuration list for PBXProject "Cinemtiyo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -289,24 +214,19 @@
 				Base,
 			);
 			mainGroup = 42EC96152347530500E85554;
+			packageReferences = (
+				424AF06A2396A53C00E9A5AE /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 42EC961F2347530500E85554 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				42EC961D2347530500E85554 /* CharityProject */,
-				429A85E32394AA380017B447 /* CinemtiyoTests */,
+				42EC961D2347530500E85554 /* Cinemtiyo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		429A85E22394AA380017B447 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		42EC961C2347530500E85554 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,57 +242,7 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		754DA09FDFD1E9AA5FA7C750 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CharityProject-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ADDD36C6D779624EF39420BE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CharityProject/Pods-CharityProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CharityProject/Pods-CharityProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CharityProject/Pods-CharityProject-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		429A85E02394AA380017B447 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				429A85E72394AA380017B447 /* CinemtiyoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		42EC961A2347530500E85554 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,14 +266,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		429A85EA2394AA380017B447 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 42EC961D2347530500E85554 /* CharityProject */;
-			targetProxy = 429A85E92394AA380017B447 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		42EC962C2347530700E85554 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -416,46 +278,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		429A85EC2394AA380017B447 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6YU2DE97Z;
-				INFOPLIST_FILE = CinemtiyoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = tech.CinemtiyoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cinemtiyo.app/Cinemtiyo";
-			};
-			name = Debug;
-		};
-		429A85ED2394AA380017B447 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6YU2DE97Z;
-				INFOPLIST_FILE = CinemtiyoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = tech.CinemtiyoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cinemtiyo.app/Cinemtiyo";
-			};
-			name = Release;
-		};
 		42EC96302347530700E85554 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -572,17 +394,16 @@
 		};
 		42EC96332347530700E85554 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95589896E38F9B851E8A7C4B /* Pods-CharityProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6YU2DE97Z;
-				INFOPLIST_FILE = CharityProject/Info.plist;
+				INFOPLIST_FILE = Cinemtiyo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tech.CharityProject;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.Cinemtiyo;
 				PRODUCT_NAME = Cinemtiyo;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -591,17 +412,16 @@
 		};
 		42EC96342347530700E85554 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF2EBCD3953490B45B79B764 /* Pods-CharityProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6YU2DE97Z;
-				INFOPLIST_FILE = CharityProject/Info.plist;
+				INFOPLIST_FILE = Cinemtiyo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tech.CharityProject;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.Cinemtiyo;
 				PRODUCT_NAME = Cinemtiyo;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -611,16 +431,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		429A85EB2394AA380017B447 /* Build configuration list for PBXNativeTarget "CinemtiyoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				429A85EC2394AA380017B447 /* Debug */,
-				429A85ED2394AA380017B447 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		42EC96192347530500E85554 /* Build configuration list for PBXProject "CharityProject" */ = {
+		42EC96192347530500E85554 /* Build configuration list for PBXProject "Cinemtiyo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42EC96302347530700E85554 /* Debug */,
@@ -629,7 +440,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42EC96322347530700E85554 /* Build configuration list for PBXNativeTarget "CharityProject" */ = {
+		42EC96322347530700E85554 /* Build configuration list for PBXNativeTarget "Cinemtiyo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42EC96332347530700E85554 /* Debug */,
@@ -639,6 +450,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		424AF06A2396A53C00E9A5AE /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		424AF06B2396A53C00E9A5AE /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 424AF06A2396A53C00E9A5AE /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 42EC96162347530500E85554 /* Project object */;
 }
