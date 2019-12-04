@@ -86,8 +86,8 @@ extension SliderController: UICollectionViewDelegateFlowLayout{
 
 extension SliderController: CellButtonDetect{
     func detectButtonPressed() {
-        let storyBoard = UIStoryboard(name: "Custom", bundle: nil)
-        let homeController = storyBoard.instantiateViewController(identifier: "HomeStoryBoard")
-        self.present(homeController, animated: true, completion: nil)
+        let controller = CinematoTabBarController()
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: true, completion: nil)
     }
 }

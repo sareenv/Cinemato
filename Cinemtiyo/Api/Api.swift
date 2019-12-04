@@ -75,6 +75,31 @@ class Api{
         }.resume()
     }
     
+    
+    func fetchSimilarMovies(movieId: Int, completionHandler: @escaping (ApiErrors?, Movies?)->()){
+        let session = URLSession.shared
+        let baseUrl = "https://api.themoviedb.org/3/"
+        let similarPath = "movie/\(movieId)/similar"
+        let apiKey = "?api_key=48011e814c676dd12ae5d6e76288b2ae"
+        let searchSimilarUrlString = baseUrl + similarPath + apiKey
+        guard let searchSimilarUrl = URL(string: searchSimilarUrlString) else { return }
+        
+        session.dataTask(with: searchSimilarUrl) { (data, response, error) in
+                   if (error != nil) {
+                       completionHandler(.networkError, nil)
+                       return
+                   }
+                   guard let data = data else { return }
+                   
+               guard let trendingData = try? JSONDecoder().decode(Movies.self, from: data) else {
+                       completionHandler(.jsonParseError, nil)
+                       return
+                   }
+                   completionHandler(nil, trendingData)
+        }.resume()
+    }
+    
+    
     func downloadTrendingMovies(completionHandler: @escaping (ApiErrors?, Movies?)->()){
         let session = URLSession.shared
         let baseUrl = "https://api.themoviedb.org/3/"
