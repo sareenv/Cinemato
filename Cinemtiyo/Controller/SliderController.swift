@@ -11,6 +11,8 @@ import UIKit
 class SliderController: UICollectionViewController{
 
     fileprivate let cellId = "customCellId"
+    fileprivate let cellId1 = "cellId1"
+    
     let sliderContent: [SliderContent] = SliderContent.slides()
     
     override func viewDidLoad() {
@@ -25,6 +27,9 @@ class SliderController: UICollectionViewController{
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         collectionView.register(SliderCell.self, forCellWithReuseIdentifier: cellId)
+        
+        let signupNib = UINib(nibName: "SliderSignupCellCollectionViewCell", bundle: nil)
+        collectionView.register(signupNib, forCellWithReuseIdentifier: cellId1)
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else { return }
@@ -38,6 +43,10 @@ class SliderController: UICollectionViewController{
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if(indexPath.item == 3){
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId1, for: indexPath) as! SliderSignupCellCollectionViewCell
+            return cell
+        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SliderCell
         cell.sliderContent = sliderContent[indexPath.item]
         cell.customDelegate = self
@@ -80,9 +89,6 @@ extension SliderController: UICollectionViewDelegateFlowLayout{
     }
 }
 
-/*
-    This is my custom delegate method.
- */
 
 extension SliderController: CellButtonDetect{
     func detectButtonPressed() {
@@ -91,3 +97,5 @@ extension SliderController: CellButtonDetect{
         self.present(controller, animated: true, completion: nil)
     }
 }
+
+

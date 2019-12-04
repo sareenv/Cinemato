@@ -17,10 +17,7 @@ class DetailsMovieController: UIViewController{
     @IBOutlet weak var trailerButton: UIButton!
     @IBOutlet weak var attributesCollectionView: UICollectionView!
     
-    
     var movie: Movie? = nil
-  
-    
     let padding:CGFloat = 6
     
     override func viewDidLoad() {
