@@ -25,6 +25,7 @@
 		4251F52E2378BAEC00677452 /* DetailsMovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251F52D2378BAEC00677452 /* DetailsMovieController.swift */; };
 		4251F5302378EE4900677452 /* MovieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251F52F2378EE4900677452 /* MovieImage.swift */; };
 		4256862023995E5D008B1FD0 /* PopularMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4256861F23995E5D008B1FD0 /* PopularMovies.swift */; };
+		42568623239970A3008B1FD0 /* XCDYouTubeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 42568622239970A3008B1FD0 /* XCDYouTubeKit */; };
 		428E4FD823759ACB00023E58 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E4FD723759ACB00023E58 /* ImageExtension.swift */; };
 		428E4FDC2375F52E00023E58 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E4FDB2375F52E00023E58 /* Movies.swift */; };
 		42D5F2E92378A6D90057E18B /* PopularMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D5F2E82378A6D90057E18B /* PopularMoviesCell.swift */; };
@@ -112,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				424AF06C2396A53C00E9A5AE /* SDWebImage in Frameworks */,
+				42568623239970A3008B1FD0 /* XCDYouTubeKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +314,7 @@
 			name = Cinemtiyo;
 			packageProductDependencies = (
 				424AF06B2396A53C00E9A5AE /* SDWebImage */,
+				42568622239970A3008B1FD0 /* XCDYouTubeKit */,
 			);
 			productName = CharityProject;
 			productReference = 42EC961E2347530500E85554 /* Cinemtiyo.app */;
@@ -351,6 +354,7 @@
 			mainGroup = 42EC96152347530500E85554;
 			packageReferences = (
 				424AF06A2396A53C00E9A5AE /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				42568621239970A3008B1FD0 /* XCRemoteSwiftPackageReference "XCDYouTubeKit" */,
 			);
 			productRefGroup = 42EC961F2347530500E85554 /* Products */;
 			projectDirPath = "";
@@ -740,6 +744,14 @@
 				minimumVersion = 5.3.3;
 			};
 		};
+		42568621239970A3008B1FD0 /* XCRemoteSwiftPackageReference "XCDYouTubeKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/0xced/XCDYouTubeKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -757,6 +769,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 424AF06A2396A53C00E9A5AE /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		42568622239970A3008B1FD0 /* XCDYouTubeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42568621239970A3008B1FD0 /* XCRemoteSwiftPackageReference "XCDYouTubeKit" */;
+			productName = XCDYouTubeKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

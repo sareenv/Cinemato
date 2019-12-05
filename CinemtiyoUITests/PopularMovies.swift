@@ -19,7 +19,7 @@ class PopularMovies: XCTestCase {
         
     }
 
-    func testExample() {
+    func testPopularMovies() {
         
     }
 
