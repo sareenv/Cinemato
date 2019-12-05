@@ -182,6 +182,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="lsI-pO-DK6"/>
                     <connections>
+                        <outlet property="addWatchList" destination="yRd-X6-dJl" id="P4v-8S-PSb"/>
                         <outlet property="imagesCollectionView" destination="OSc-hD-79q" id="Zap-Dd-WSw"/>
                         <outlet property="movieCoverPoster" destination="han-MX-Bfj" id="g2y-pT-RAv"/>
                         <outlet property="movieDescriptionTextView" destination="zlU-Cl-h3H" id="uBG-DB-rXf"/>
