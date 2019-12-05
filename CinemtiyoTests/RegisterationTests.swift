@@ -25,13 +25,13 @@ class CinemtiyoTests: XCTestCase {
     
     func testregisterationMissingUsername() {
         let result = signup.missingChecks(username: "", email: "sareenv@uni.coventry.ac.uk", password: "BXWT3-fgd")
-        XCTAssertEqual(result, false)
+        XCTAssertEqual(result, true)
     }
     
     
     func testregisterationMissingEmail() {
        let result = signup.missingChecks(username: "sareenv", email: "", password: "BXWT3-fgd")
-       XCTAssertEqual(result, false)
+       XCTAssertEqual(result, true)
     }
     
     func testShortPassword() {
@@ -56,7 +56,7 @@ class CinemtiyoTests: XCTestCase {
     
     func testregisterationMissingPassword() {
         let result = signup.missingChecks(username: "sareenv", email: "sareenv@uni.coventry.ac.uk", password: "")
-        XCTAssertEqual(result, false)
+        XCTAssertEqual(result, true)
     }
 
 }

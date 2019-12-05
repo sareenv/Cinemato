@@ -10,6 +10,7 @@ import UIKit
 
 class SliderSignupCellCollectionViewCell: UICollectionViewCell {
     
+    weak var customDelegate: CellButtonDetect?
     
     @IBOutlet weak var imagePickerButton: UIButton!{
         didSet{
@@ -24,6 +25,7 @@ class SliderSignupCellCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var singupButton: UIButton!{
         didSet{
             singupButton.layer.cornerRadius = 5
@@ -52,8 +54,8 @@ class SliderSignupCellCollectionViewCell: UICollectionViewCell {
     }
     
     func missingChecks(username: String, email: String, password: String) -> Bool {
-        if(username.count == 0 || email.count <= 0 || password.count <= 0) {return false}
-        return true
+        if(username.count == 0 || email.count <= 0 || password.count <= 0) {return true}
+        return false
     }
     
     func isValidEmail(email: String) -> Bool{
@@ -62,15 +64,38 @@ class SliderSignupCellCollectionViewCell: UICollectionViewCell {
         return pred.evaluate(with: email)
     }
     
-    func showAlertController() {
-        
+    func showAlertController(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+    }
+    
+    func registerationChecks(){
+        let missingChecksResults = missingChecks(username: usernameTextField.text ?? "", email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+        if(missingChecksResults == true){
+            showAlertController(title: "Missing Details Error", message: "Missing details are entered into the system")
+            return
+        }else if(isValidEmail(email: emailTextField.text ?? "") == false){
+            showAlertController(title: "Invalid Email Error", message: "The entered email donot conforms to valid email pattern")
+            return
+        }else if(checkShortPassword(password: passwordTextField.text ?? "") == true){
+            showAlertController(title: "Weak Password Error", message: "The password length is very short")
+            return
+        }
     }
     
     @IBAction func signupBtnPressed(_ sender: Any) {
-        
-        usernameTextField.layer.borderWidth = 1.2
-        usernameTextField.layer.borderColor = UIColor.red.cgColor
+        registerationChecks()
     }
+    
+    
+    @IBAction func alreadyHaveAccount() {
+        print("Already have an account")
+        guard let delegate = customDelegate else { return }
+        delegate.detectButtonPressed()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.accessibilityIdentifier = "RegisterationCell"

@@ -13,7 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        /*
+         This is to invoke the state to be first time when ever the slider UI Tests are running
+         https://www.swiftbysundell.com/articles/getting-started-with-xcode-ui-testing-in-swift/
+         */
         
+        let isFirstTime = UserDefaults.standard
+        if CommandLine.arguments.contains("--sliderTesting") {
+            // reset the state here.
+            isFirstTime.set(false, forKey: "hasOpenBefore")
+        }
         return true
     }
 

@@ -8,7 +8,6 @@
 
 import UIKit
 
-// protocol to detect button Pressed.
 protocol CellButtonDetect: class {
     func detectButtonPressed()
 }

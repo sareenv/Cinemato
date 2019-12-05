@@ -76,6 +76,9 @@
                                 <state key="normal" title="Already have an account ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="alreadyHaveAccount" destination="q7i-3C-EaH" eventType="touchUpInside" id="i1w-Xy-H7A"/>
+                                </connections>
                             </button>
                         </subviews>
                     </stackView>
@@ -89,6 +92,7 @@
             </collectionViewCellContentView>
             <size key="customSize" width="798" height="503"/>
             <connections>
+                <outlet property="emailTextField" destination="fVR-G6-De8" id="1C2-5Q-j0A"/>
                 <outlet property="imagePickerButton" destination="7s5-75-vwm" id="6gL-yr-o04"/>
                 <outlet property="passwordTextField" destination="5jY-DZ-YuT" id="h0G-dm-deu"/>
                 <outlet property="singupButton" destination="Ipz-Ki-B4t" id="jxp-OO-uZl"/>

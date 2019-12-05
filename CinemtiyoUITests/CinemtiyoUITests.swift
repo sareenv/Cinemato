@@ -15,6 +15,7 @@ class CinemtiyoUITests: XCTestCase {
     override func setUp() {
         continueAfterFailure = false
         app = XCUIApplication()
+        app.launchArguments.append("--sliderTesting")
         app.launch()
     }
 
@@ -22,25 +23,16 @@ class CinemtiyoUITests: XCTestCase {
         app.terminate()
     }
     
-    
-    func testRegisteration() {
-//        let collectionViewsQuery = XCUIApplication().collectionViews
-//        let cellsQuery = collectionViewsQuery.cells
-//        cellsQuery.otherElements.containing(.staticText, identifier:"User Registeration")
-//        let usernameTextField = cellsQuery.textFields["Enter Username"]
-//        XCTAssertTrue(usernameTextField.exists)
-    }
-
-    func testSliders() {
+    func testSlidersInvalidRegisterationDetails() {
         let collectionViewsQuery = XCUIApplication().collectionViews
         let cellsQuery = collectionViewsQuery.cells
-        cellsQuery.otherElements.containing(.staticText, identifier:"Online Review Trending Movies").element.swipeLeft()
+        cellsQuery.otherElements.containing(.staticText, identifier:"Trending Movies").element.swipeLeft()
         cellsQuery.otherElements.containing(.staticText, identifier:"Connect with Entertainment").element.swipeLeft()
         cellsQuery.otherElements.containing(.staticText, identifier:"Awesome Feeling").element.swipeLeft()
         let usernameTextField = collectionViewsQuery.textFields["Enter Username"]
         XCTAssertTrue(usernameTextField.exists)
         usernameTextField.tap()
-        usernameTextField.typeText("sareenv")
+        usernameTextField.typeText("")
         let emailTextField = collectionViewsQuery.textFields["Enter email"]
         XCTAssertTrue(emailTextField.exists)
         emailTextField.tap()
@@ -48,12 +40,12 @@ class CinemtiyoUITests: XCTestCase {
         let passwordTextField = collectionViewsQuery.secureTextFields["Enter password"]
         XCTAssertTrue(passwordTextField.exists)
         passwordTextField.tap()
-        passwordTextField.typeText("BXWT3-db")
-        let createAccountbutton = collectionViewsQuery.buttons["Select Profile Image"]
-        XCTAssertTrue(createAccountbutton.exists)
-        createAccountbutton.tap()
-        expectation(for: NSPredicate(format: "exists == 1", argumentArray: nil), evaluatedWith: createAccountbutton, handler: nil)
-        waitForExpectations(timeout: 6, handler: nil)
+        passwordTextField.typeText("")
+        collectionViewsQuery.buttons["Create an Account"].tap()
+        let alert = app.alerts["Missing Details Error"].scrollViews.otherElements
+        let alertActionButton = alert.buttons["OK"]
+         XCTAssertTrue(alertActionButton.exists)
+        alertActionButton.tap()
         
     }
 }
