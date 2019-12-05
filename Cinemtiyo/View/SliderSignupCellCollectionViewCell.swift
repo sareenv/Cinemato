@@ -73,6 +73,7 @@ class SliderSignupCellCollectionViewCell: UICollectionViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.accessibilityIdentifier = "RegisterationCell"
     }
 }
 

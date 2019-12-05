@@ -21,8 +21,17 @@ class CinemtiyoUITests: XCTestCase {
     override func tearDown() {
         app.terminate()
     }
+    
+    
+    func testRegisteration() {
+        let collectionViewsQuery = XCUIApplication().collectionViews
+        let cellsQuery = collectionViewsQuery.cells
+        cellsQuery.otherElements.containing(.staticText, identifier:"User Registeration")
+        let usernameTextField = cellsQuery.textFields["Enter Username"]
+        XCTAssertTrue(usernameTextField.exists)
+    }
 
-    func testSliderRegisteration() {
+    func testSliders() {
         let collectionViewsQuery = XCUIApplication().collectionViews
         let cellsQuery = collectionViewsQuery.cells
         cellsQuery.otherElements.containing(.staticText, identifier:"Digital Charity Application").element.swipeLeft()

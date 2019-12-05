@@ -17,17 +17,23 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4xO-Y0-c3P">
-                        <rect key="frame" x="20" y="39" width="758" height="425"/>
+                        <rect key="frame" x="20" y="22.5" width="758" height="458"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Registeration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aV0-DZ-JWF">
+                                <rect key="frame" x="0.0" y="0.0" width="758" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="0.75107284330985913" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7s5-75-vwm">
-                                <rect key="frame" x="0.0" y="0.0" width="758" height="180"/>
+                                <rect key="frame" x="0.0" y="33" width="758" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="Ey7-rF-lWs"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3qR-7m-uax">
-                                <rect key="frame" x="0.0" y="190" width="758" height="40"/>
+                                <rect key="frame" x="0.0" y="223" width="758" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QjW-Rk-DBo"/>
                                 </constraints>
@@ -35,7 +41,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fVR-G6-De8">
-                                <rect key="frame" x="0.0" y="240" width="758" height="40"/>
+                                <rect key="frame" x="0.0" y="273" width="758" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="wMT-pg-1cP"/>
                                 </constraints>
@@ -43,7 +49,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5jY-DZ-YuT">
-                                <rect key="frame" x="0.0" y="290" width="758" height="40"/>
+                                <rect key="frame" x="0.0" y="323" width="758" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="uAS-GP-xHY"/>
                                 </constraints>
@@ -51,7 +57,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipz-Ki-B4t">
-                                <rect key="frame" x="0.0" y="340" width="758" height="45"/>
+                                <rect key="frame" x="0.0" y="373" width="758" height="45"/>
                                 <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="fjX-aT-dzn"/>
@@ -65,7 +71,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zm3-FZ-CML">
-                                <rect key="frame" x="0.0" y="395" width="758" height="30"/>
+                                <rect key="frame" x="0.0" y="428" width="758" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Already have an account ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
