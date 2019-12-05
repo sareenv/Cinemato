@@ -18,13 +18,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         let hasOpenBefore = UserDefaults.standard.bool(forKey: "hasOpenBefore")
         window?.windowScene = windowScene
-//        if(hasOpenBefore == false){
-//            window?.rootViewController = UINavigationController(rootViewController: SliderController())
-//        }else{
-//            let tabController = CinematoTabBarController()
-//            window?.rootViewController = tabController
-//        }
-        window?.rootViewController = CinematoTabBarController()
+        if(hasOpenBefore == false){
+            window?.rootViewController = UINavigationController(rootViewController: SliderController())
+        }else{
+            let tabController = CinematoTabBarController()
+            window?.rootViewController = tabController
+        }
         window?.makeKeyAndVisible()
     }
 
