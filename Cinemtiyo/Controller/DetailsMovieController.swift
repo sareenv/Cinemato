@@ -8,6 +8,8 @@
 
 import UIKit
 import SDWebImage
+import AVKit
+import XCDYouTubeKit
 
 class DetailsMovieController: UIViewController{
     
@@ -18,8 +20,19 @@ class DetailsMovieController: UIViewController{
     @IBOutlet weak var addWatchList: UIButton!
     @IBOutlet weak var imagesCollectionView: UICollectionView!
     
+    @IBOutlet weak var locateCinemaButton: UIButton!
+    
     
     var movie: Movie? = nil
+    var images: [MovieImage]?{
+        didSet {
+            DispatchQueue.main.async { [unowned self] in
+                self.imagesCollectionView.reloadData()
+            }
+        }
+    }
+    
+    
     let padding:CGFloat = 6
     
     override func viewDidLoad() {
@@ -28,24 +41,59 @@ class DetailsMovieController: UIViewController{
         setupNavigation()
         setupDetails()
         imagesCollectionViewSettings()
+        fetchMovieImages()
     }
+    
+    
+    fileprivate func fetchMovieImages() {
+        let api = Api.instance
+        api.downloadWallImages(id: movie?.id ?? 0) { (error, images) in
+            if let error = error {
+                print(error)
+                return
+            }
+            DispatchQueue.main.async {
+                self.images = images?.backdrops
+            }
+        }
+    }
+    
     
     fileprivate func imagesCollectionViewSettings() {
         imagesCollectionView.delegate = self
         imagesCollectionView.dataSource = self
+        guard let collectionViewLayout = imagesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
+        collectionViewLayout.estimatedItemSize = .init(width: 120, height: 120)
+        
     }
     
     @IBAction func watchTrailer() {
         // here goes the avplayer.
+        print("Playing the trailer video")
+        // the path needs to be changed
+        XCDYouTubeClient.default().getVideoWithIdentifier("8CjYw1hARhY") { (video, error) in
+            if let streamURL = video?.streamURLs[XCDYouTubeVideoQuality.medium360.rawValue]{
+                let playerController = AVPlayerViewController()
+                playerController.player = AVPlayer(url: streamURL)
+                self.present(playerController, animated: true) {
+                    playerController.player?.play()
+                }
+            }
+        }
     }
     
     @IBAction func addtoWatchList() {
         // to watch list and store it in the core data for the presistance.
+        print("123123")
+        tabBarController?.tabBar.items?[1].badgeValue = "1"
     }
     
     fileprivate func trailerButtonSettings(){
         trailerButton.layer.cornerRadius = 20
         trailerButton.clipsToBounds = true
+        addWatchList.layer.cornerRadius = 5
+        addWatchList.clipsToBounds = true
+        locateCinemaButton.layer.cornerRadius = 5
     }
     
     fileprivate func setupDetails(){
@@ -65,7 +113,7 @@ class DetailsMovieController: UIViewController{
 
 extension DetailsMovieController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return images?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -75,19 +123,38 @@ extension DetailsMovieController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let estimatedWidth = (self.imagesCollectionView.frame.width - 15)/3
-        print(estimatedWidth)
         return .init(width: estimatedWidth, height: 120)
     }
     
+    
+    /* Source: https://stackoverflow.com/questions/48644435/resize-image-sdwebimage
+        This block of function below changes the size of the image downloading.
+     */
+    
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage!
+        }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieImageCell", for: indexPath)
-        cell.backgroundColor = UIColor.green
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieImageCell", for: indexPath) as! CustomImageCell
+        let imagePath = "http://image.tmdb.org/t/p/original" + (images?[indexPath.item].file_path ?? "")
+        cell.movieImageView.sd_setImage(with: URL(string: imagePath), completed: nil)
+        
+        cell.movieImageView.contentMode = .scaleAspectFill
+        cell.movieImageView.clipsToBounds = true
+        guard let image = cell.movieImageView.image else { return cell}
+        cell.movieImageView.image = self.resizeImage(image: image, newWidth: 100)
+        cell.setNeedsLayout()
         return cell
     }
-    
-    
-    
-    
+
 }
 
 

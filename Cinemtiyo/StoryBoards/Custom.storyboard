@@ -99,10 +99,10 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlU-Cl-h3H">
-                                <rect key="frame" x="10" y="217" width="394" height="130"/>
+                                <rect key="frame" x="10" y="217" width="394" height="120"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="ZGj-fs-NXb"/>
+                                    <constraint firstAttribute="height" constant="120" id="ZGj-fs-NXb"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -125,7 +125,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OSc-hD-79q">
-                                <rect key="frame" x="5" y="427" width="404" height="435"/>
+                                <rect key="frame" x="5" y="420" width="404" height="442"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="85Y-4c-Kle">
                                     <size key="itemSize" width="123" height="115"/>
@@ -134,30 +134,60 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieImageCell" id="gzB-z4-bbL">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" reuseIdentifier="movieImageCell" translatesAutoresizingMaskIntoConstraints="NO" id="gzB-z4-bbL" customClass="CustomImageCell" customModule="Cinemtiyo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="123" height="115"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DqA-1E-DnM">
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="DqA-1E-DnM">
                                             <rect key="frame" x="0.0" y="0.0" width="123" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="charity1" translatesAutoresizingMaskIntoConstraints="NO" id="gbm-lC-JRc"/>
+                                            </subviews>
                                             <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="gbm-lC-JRc" secondAttribute="bottom" id="LXE-Mn-ibz"/>
+                                                <constraint firstItem="gbm-lC-JRc" firstAttribute="top" secondItem="DqA-1E-DnM" secondAttribute="top" id="dtp-Yl-Axb"/>
+                                                <constraint firstItem="gbm-lC-JRc" firstAttribute="leading" secondItem="DqA-1E-DnM" secondAttribute="leading" id="img-DL-KWK"/>
+                                                <constraint firstAttribute="trailing" secondItem="gbm-lC-JRc" secondAttribute="trailing" id="yI7-gN-nA1"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="123" height="115"/>
+                                        <connections>
+                                            <outlet property="movieImageView" destination="gbm-lC-JRc" id="6PM-Bd-hqP"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRd-X6-dJl">
-                                <rect key="frame" x="123.5" y="362" width="167" height="45"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="rAi-AI-MLR"/>
-                                    <constraint firstAttribute="width" constant="167" id="vx7-2B-IV3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <state key="normal" title="Add to Watch list">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RzL-aa-ohb">
+                                <rect key="frame" x="5" y="347" width="404" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRd-X6-dJl">
+                                        <rect key="frame" x="0.0" y="0.0" width="155" height="45"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="155" id="vww-qM-5Xg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <state key="normal" title="Add to Watch list">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addtoWatchList" destination="Q15-Kn-65p" eventType="touchUpInside" id="adN-Vn-cLT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGY-dz-zz9">
+                                        <rect key="frame" x="160" y="0.0" width="244" height="45"/>
+                                        <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="MBg-b8-7rQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="Locate Cinema">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -165,16 +195,17 @@
                             <constraint firstItem="auD-HJ-NBT" firstAttribute="trailing" secondItem="zlU-Cl-h3H" secondAttribute="trailing" constant="10" id="5b3-yG-kdp"/>
                             <constraint firstItem="auD-HJ-NBT" firstAttribute="trailing" secondItem="OSc-hD-79q" secondAttribute="trailing" constant="5.0499999999999998" id="DWC-PS-Xcj"/>
                             <constraint firstItem="1ky-zu-G4Y" firstAttribute="top" secondItem="han-MX-Bfj" secondAttribute="bottom" constant="12" id="IUn-4v-Xff"/>
-                            <constraint firstItem="OSc-hD-79q" firstAttribute="top" secondItem="yRd-X6-dJl" secondAttribute="bottom" constant="20" id="M5T-Zh-fju"/>
                             <constraint firstItem="auD-HJ-NBT" firstAttribute="trailing" secondItem="gvz-DE-LFy" secondAttribute="trailing" constant="15" id="Mvc-g1-vlX"/>
-                            <constraint firstItem="yRd-X6-dJl" firstAttribute="centerX" secondItem="RdL-Gj-nBw" secondAttribute="centerX" id="QNQ-pr-mpv"/>
                             <constraint firstItem="OSc-hD-79q" firstAttribute="leading" secondItem="auD-HJ-NBT" secondAttribute="leading" constant="5" id="QdV-0Y-9qm"/>
                             <constraint firstItem="1ky-zu-G4Y" firstAttribute="leading" secondItem="auD-HJ-NBT" secondAttribute="leading" constant="12" id="TKV-IM-vKf"/>
                             <constraint firstItem="han-MX-Bfj" firstAttribute="top" secondItem="RdL-Gj-nBw" secondAttribute="top" id="V6J-YL-td7"/>
                             <constraint firstAttribute="trailing" secondItem="han-MX-Bfj" secondAttribute="trailing" id="Whx-gW-25A"/>
                             <constraint firstItem="OSc-hD-79q" firstAttribute="bottom" secondItem="auD-HJ-NBT" secondAttribute="bottom" id="Wih-hB-NjR"/>
+                            <constraint firstItem="RzL-aa-ohb" firstAttribute="top" secondItem="zlU-Cl-h3H" secondAttribute="bottom" constant="10" id="YXV-vl-okA"/>
+                            <constraint firstItem="RzL-aa-ohb" firstAttribute="leading" secondItem="auD-HJ-NBT" secondAttribute="leading" constant="5" id="bc3-p8-nKj"/>
+                            <constraint firstItem="OSc-hD-79q" firstAttribute="top" secondItem="RzL-aa-ohb" secondAttribute="bottom" constant="28" id="emX-dd-4RF"/>
+                            <constraint firstItem="auD-HJ-NBT" firstAttribute="trailing" secondItem="RzL-aa-ohb" secondAttribute="trailing" constant="5" id="iIN-K7-8ka"/>
                             <constraint firstItem="zlU-Cl-h3H" firstAttribute="top" secondItem="1ky-zu-G4Y" secondAttribute="bottom" constant="7" id="ik7-G0-KQ7"/>
-                            <constraint firstItem="yRd-X6-dJl" firstAttribute="top" secondItem="zlU-Cl-h3H" secondAttribute="bottom" constant="15" id="og1-1y-JyO"/>
                             <constraint firstItem="zlU-Cl-h3H" firstAttribute="leading" secondItem="auD-HJ-NBT" secondAttribute="leading" constant="10" id="qJ5-BW-eoG"/>
                             <constraint firstItem="han-MX-Bfj" firstAttribute="leading" secondItem="auD-HJ-NBT" secondAttribute="leading" id="tN8-fk-nXm"/>
                         </constraints>
@@ -184,6 +215,7 @@
                     <connections>
                         <outlet property="addWatchList" destination="yRd-X6-dJl" id="P4v-8S-PSb"/>
                         <outlet property="imagesCollectionView" destination="OSc-hD-79q" id="Zap-Dd-WSw"/>
+                        <outlet property="locateCinemaButton" destination="fGY-dz-zz9" id="ZNf-Fc-s0I"/>
                         <outlet property="movieCoverPoster" destination="han-MX-Bfj" id="g2y-pT-RAv"/>
                         <outlet property="movieDescriptionTextView" destination="zlU-Cl-h3H" id="uBG-DB-rXf"/>
                         <outlet property="movieTitleLabel" destination="mZr-6D-Y7t" id="cPI-Dn-Yyv"/>
@@ -221,6 +253,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="charity1" width="1824" height="1216"/>
         <image name="movie" width="1728" height="1152"/>
     </resources>
 </document>
