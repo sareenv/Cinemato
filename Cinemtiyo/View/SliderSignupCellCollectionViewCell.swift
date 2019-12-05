@@ -13,7 +13,7 @@ class SliderSignupCellCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imagePickerButton: UIButton!{
         didSet{
-            let attributedString = NSAttributedString(string: "Select Profile Image", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 20), NSAttributedString.Key.foregroundColor: UIColor.purple])
+            let attributedString = NSAttributedString(string: "Select Profile Image", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 20), NSAttributedString.Key.foregroundColor: UIColor.black])
             imagePickerButton.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 0.3132702465)
             imagePickerButton.setAttributedTitle(attributedString, for: .normal)
             imagePickerButton.addTarget(self, action: #selector(setProfileImage), for: .touchUpInside)
@@ -42,8 +42,14 @@ class SliderSignupCellCollectionViewCell: UICollectionViewCell {
          imagePickerView?.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
     }
     
+    
+    func missingChecks(username: String, email: String, password: String) -> Bool {
+        if(username.count == 0 || email.count <= 0 || password.count <= 0) {return false}
+        return true
+    }
+    
     @IBAction func signupBtnPressed(_ sender: Any) {
-        // Signup and goto the backend.
+        print("123123")
     }
     override func awakeFromNib() {
         super.awakeFromNib()

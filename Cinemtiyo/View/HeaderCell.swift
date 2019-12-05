@@ -71,8 +71,6 @@ extension HeaderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("\(indexPath.item)")
-        
         /*
          This needs to be replaced with the viewController'sView.
          */

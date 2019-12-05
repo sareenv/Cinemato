@@ -17,7 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
         let hasOpenBefore = UserDefaults.standard.bool(forKey: "hasOpenBefore")
-        print(hasOpenBefore)
         window?.windowScene = windowScene
         if(hasOpenBefore == false){
             window?.rootViewController = UINavigationController(rootViewController: SliderController())
