@@ -17,8 +17,10 @@
 		424AF06E2397325500E9A5AE /* SimilarMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424AF06D2397325500E9A5AE /* SimilarMoviesCell.swift */; };
 		424AF0792397DF6E00E9A5AE /* SliderSignupCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424AF0772397DF6E00E9A5AE /* SliderSignupCellCollectionViewCell.swift */; };
 		424AF07A2397DF6E00E9A5AE /* SliderSignupCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424AF0782397DF6E00E9A5AE /* SliderSignupCellCollectionViewCell.xib */; };
-		424AF08223983F0C00E9A5AE /* CinemtiyoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424AF08123983F0C00E9A5AE /* CinemtiyoTests.swift */; };
+		424AF08223983F0C00E9A5AE /* RegisterationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424AF08123983F0C00E9A5AE /* RegisterationTests.swift */; };
 		424AF08B2398440400E9A5AE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 424AF08A2398440400E9A5AE /* SDWebImage */; };
+		424AF0932398B14000E9A5AE /* CinemtiyoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424AF0922398B14000E9A5AE /* CinemtiyoUITests.swift */; };
+		424AF09B2398B14900E9A5AE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 424AF09A2398B14900E9A5AE /* SDWebImage */; };
 		425186DF2372C85F00D0FA2B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425186DE2372C85F00D0FA2B /* Api.swift */; };
 		4251F52E2378BAEC00677452 /* DetailsMovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251F52D2378BAEC00677452 /* DetailsMovieController.swift */; };
 		4251F5302378EE4900677452 /* MovieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251F52F2378EE4900677452 /* MovieImage.swift */; };
@@ -43,6 +45,13 @@
 			remoteGlobalIDString = 42EC961D2347530500E85554;
 			remoteInfo = Cinemtiyo;
 		};
+		424AF0952398B14000E9A5AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42EC96162347530500E85554 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42EC961D2347530500E85554;
+			remoteInfo = Cinemtiyo;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -56,8 +65,11 @@
 		424AF0772397DF6E00E9A5AE /* SliderSignupCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderSignupCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		424AF0782397DF6E00E9A5AE /* SliderSignupCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderSignupCellCollectionViewCell.xib; sourceTree = "<group>"; };
 		424AF07F23983F0C00E9A5AE /* CinemtiyoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemtiyoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		424AF08123983F0C00E9A5AE /* CinemtiyoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemtiyoTests.swift; sourceTree = "<group>"; };
+		424AF08123983F0C00E9A5AE /* RegisterationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationTests.swift; sourceTree = "<group>"; };
 		424AF08323983F0C00E9A5AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		424AF0902398B14000E9A5AE /* CinemtiyoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemtiyoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		424AF0922398B14000E9A5AE /* CinemtiyoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemtiyoUITests.swift; sourceTree = "<group>"; };
+		424AF0942398B14000E9A5AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		425186DE2372C85F00D0FA2B /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		4251F52D2378BAEC00677452 /* DetailsMovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMovieController.swift; sourceTree = "<group>"; };
 		4251F52F2378EE4900677452 /* MovieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImage.swift; sourceTree = "<group>"; };
@@ -85,6 +97,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		424AF08D2398B14000E9A5AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				424AF09B2398B14900E9A5AE /* SDWebImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42EC961B2347530500E85554 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -107,7 +127,7 @@
 		424AF08023983F0C00E9A5AE /* CinemtiyoTests */ = {
 			isa = PBXGroup;
 			children = (
-				424AF08123983F0C00E9A5AE /* CinemtiyoTests.swift */,
+				424AF08123983F0C00E9A5AE /* RegisterationTests.swift */,
 				424AF08323983F0C00E9A5AE /* Info.plist */,
 			);
 			path = CinemtiyoTests;
@@ -118,6 +138,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		424AF0912398B14000E9A5AE /* CinemtiyoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				424AF0922398B14000E9A5AE /* CinemtiyoUITests.swift */,
+				424AF0942398B14000E9A5AE /* Info.plist */,
+			);
+			path = CinemtiyoUITests;
 			sourceTree = "<group>";
 		};
 		425186DD2372C84900D0FA2B /* Api */ = {
@@ -141,6 +170,7 @@
 			children = (
 				42EC96202347530500E85554 /* Cinemtiyo */,
 				424AF08023983F0C00E9A5AE /* CinemtiyoTests */,
+				424AF0912398B14000E9A5AE /* CinemtiyoUITests */,
 				42EC961F2347530500E85554 /* Products */,
 				424AF0892398440400E9A5AE /* Frameworks */,
 			);
@@ -151,6 +181,7 @@
 			children = (
 				42EC961E2347530500E85554 /* Cinemtiyo.app */,
 				424AF07F23983F0C00E9A5AE /* CinemtiyoTests.xctest */,
+				424AF0902398B14000E9A5AE /* CinemtiyoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,6 +273,27 @@
 			productReference = 424AF07F23983F0C00E9A5AE /* CinemtiyoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		424AF08F2398B14000E9A5AE /* CinemtiyoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 424AF0972398B14000E9A5AE /* Build configuration list for PBXNativeTarget "CinemtiyoUITests" */;
+			buildPhases = (
+				424AF08C2398B14000E9A5AE /* Sources */,
+				424AF08D2398B14000E9A5AE /* Frameworks */,
+				424AF08E2398B14000E9A5AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				424AF0962398B14000E9A5AE /* PBXTargetDependency */,
+			);
+			name = CinemtiyoUITests;
+			packageProductDependencies = (
+				424AF09A2398B14900E9A5AE /* SDWebImage */,
+			);
+			productName = CinemtiyoUITests;
+			productReference = 424AF0902398B14000E9A5AE /* CinemtiyoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		42EC961D2347530500E85554 /* Cinemtiyo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42EC96322347530700E85554 /* Build configuration list for PBXNativeTarget "Cinemtiyo" */;
@@ -276,6 +328,10 @@
 						CreatedOnToolsVersion = 11.0;
 						TestTargetID = 42EC961D2347530500E85554;
 					};
+					424AF08F2398B14000E9A5AE = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 42EC961D2347530500E85554;
+					};
 					42EC961D2347530500E85554 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -299,12 +355,20 @@
 			targets = (
 				42EC961D2347530500E85554 /* Cinemtiyo */,
 				424AF07E23983F0C00E9A5AE /* CinemtiyoTests */,
+				424AF08F2398B14000E9A5AE /* CinemtiyoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		424AF07D23983F0C00E9A5AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		424AF08E2398B14000E9A5AE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -332,7 +396,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				424AF08223983F0C00E9A5AE /* CinemtiyoTests.swift in Sources */,
+				424AF08223983F0C00E9A5AE /* RegisterationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		424AF08C2398B14000E9A5AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				424AF0932398B14000E9A5AE /* CinemtiyoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +438,11 @@
 			isa = PBXTargetDependency;
 			target = 42EC961D2347530500E85554 /* Cinemtiyo */;
 			targetProxy = 424AF08423983F0C00E9A5AE /* PBXContainerItemProxy */;
+		};
+		424AF0962398B14000E9A5AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42EC961D2347530500E85554 /* Cinemtiyo */;
+			targetProxy = 424AF0952398B14000E9A5AE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -418,6 +495,44 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cinemtiyo.app/Cinemtiyo";
+			};
+			name = Release;
+		};
+		424AF0982398B14000E9A5AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z6YU2DE97Z;
+				INFOPLIST_FILE = CinemtiyoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.CinemtiyoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cinemtiyo;
+			};
+			name = Debug;
+		};
+		424AF0992398B14000E9A5AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z6YU2DE97Z;
+				INFOPLIST_FILE = CinemtiyoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.CinemtiyoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cinemtiyo;
 			};
 			name = Release;
 		};
@@ -583,6 +698,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		424AF0972398B14000E9A5AE /* Build configuration list for PBXNativeTarget "CinemtiyoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				424AF0982398B14000E9A5AE /* Debug */,
+				424AF0992398B14000E9A5AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		42EC96192347530500E85554 /* Build configuration list for PBXProject "Cinemtiyo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -621,6 +745,11 @@
 			productName = SDWebImage;
 		};
 		424AF08A2398440400E9A5AE /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 424AF06A2396A53C00E9A5AE /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		424AF09A2398B14900E9A5AE /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 424AF06A2396A53C00E9A5AE /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
