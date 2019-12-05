@@ -4,9 +4,9 @@ The repository contains the IOS project developed using swift programming langua
 
 
 ## Screen Shots
-<center>
-	<img src="app1.png" width="230px" height="230px" /> 	
-</center>
+<p align="center">
+	<img src="app1.png" /> 	
+</p>
 
 ## Testing. 
 The project implements both Unit Testing and Acceptance testing. Each test case is fully isolated from each other and has no impact on other tests. 
