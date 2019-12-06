@@ -34,6 +34,10 @@ class DetailsMovieController: UIViewController{
     
     let padding:CGFloat = 6
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         trailerButtonSettings()
@@ -76,8 +80,13 @@ class DetailsMovieController: UIViewController{
     }
     
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
+    
     @IBAction func locateCinema(_ sender: Any) {
-        print("Locating cinema")
         self.performSegue(withIdentifier: "cinemaMaps", sender: nil)
     }
     
@@ -104,7 +113,7 @@ class DetailsMovieController: UIViewController{
     @IBAction func addtoWatchList() {
         // to watch list and store it in the core data for the presistance.
         print("123123")
-        tabBarController?.tabBar.items?[1].badgeValue = "1"
+        self.performSegue(withIdentifier: "savetoWatchList", sender: nil)
     }
     
     fileprivate func trailerButtonSettings(){
