@@ -16,6 +16,20 @@ class WatchListController: UITableViewController {
     
     var moviesWatchList: [WatchListMovie] = [WatchListMovie]()
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchData()
+        self.tableView.reloadData()
+    }
+    
+    fileprivate func fetchData(){
+        do{
+            moviesWatchList = try context.fetch(WatchListMovie.fetchRequest())
+        } catch {
+            print("Fetch Failed")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "customMovieCell")

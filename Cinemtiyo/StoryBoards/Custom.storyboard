@@ -131,7 +131,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" reuseIdentifier="movieImageCell" translatesAutoresizingMaskIntoConstraints="NO" id="gzB-z4-bbL" customClass="CustomImageCell" customModule="Cinemtiyo" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" reuseIdentifier="movieImageCell" translatesAutoresizingMaskIntoConstraints="NO" id="gzB-z4-bbL" customClass="CustomImageCell" customModule="Cinemtiyo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="123" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="DqA-1E-DnM">
@@ -223,11 +223,66 @@
                         <outlet property="movieTitleLabel" destination="mZr-6D-Y7t" id="cPI-Dn-Yyv"/>
                         <outlet property="trailerButton" destination="gvz-DE-LFy" id="xnh-Uy-a8d"/>
                         <segue destination="tWo-SF-FY5" kind="show" identifier="cinemaMaps" id="gde-kP-niC"/>
+                        <segue destination="xFy-yX-gfF" kind="show" identifier="savetoWatchList" id="EBE-qM-9CH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iv5-1B-dDC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1660.8695652173915" y="91.741071428571431"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1Ha-bi-EgE">
+            <objects>
+                <viewController id="xFy-yX-gfF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fbI-zC-Vp9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="B3t-wv-mik">
+                                <rect key="frame" x="20" y="156" width="374" height="676"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avangers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nR-jD-X8h">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a5B-yY-fXY">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="562.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5K-1q-PJv">
+                                        <rect key="frame" x="0.0" y="626" width="374" height="50"/>
+                                        <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="9pH-np-QUq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="Save Movie">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="B3t-wv-mik" firstAttribute="top" secondItem="NWu-PM-D5h" secondAttribute="top" constant="16" id="Fbv-Uv-MIU"/>
+                            <constraint firstItem="NWu-PM-D5h" firstAttribute="bottom" secondItem="B3t-wv-mik" secondAttribute="bottom" constant="30" id="WUL-zj-HT8"/>
+                            <constraint firstItem="NWu-PM-D5h" firstAttribute="trailing" secondItem="B3t-wv-mik" secondAttribute="trailing" constant="20" id="a1x-Na-fYI"/>
+                            <constraint firstItem="B3t-wv-mik" firstAttribute="leading" secondItem="NWu-PM-D5h" secondAttribute="leading" constant="20" id="duU-yu-xWe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NWu-PM-D5h"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="buf-em-cxz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FHk-r6-jDi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1661" y="823"/>
         </scene>
         <!--Cinema-->
         <scene sceneID="VRx-Ry-E1Z">
