@@ -25,11 +25,7 @@ class AddMovieController: UIViewController{
         super.viewDidLoad()
     }
     
-    var movieName: String? {
-        didSet {
-            print("Got the value \(movieName ?? "")")
-        }
-    }
+    var movieName: String?
     
     
     

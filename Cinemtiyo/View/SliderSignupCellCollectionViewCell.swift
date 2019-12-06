@@ -91,7 +91,6 @@ class SliderSignupCellCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func alreadyHaveAccount() {
-        print("Already have an account")
         guard let delegate = customDelegate else { return }
         delegate.detectButtonPressed()
     }

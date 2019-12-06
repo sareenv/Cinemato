@@ -8,8 +8,6 @@ Images for Slider / Onboarding screen
 
 
 Tab Bar Icons
-
--------------
 Icons8 - Software is used to get sutaible tabBar Icons for this application.
 ---------------------------------------------
 
@@ -19,3 +17,9 @@ Api
 The most important Api used for creating this application is themoviedb.org.
 ------
 
+libraries
+    - Dependency Manager : Swift Package manager.
+    - Libraries
+        - SDWebImage
+        - XCDToutubeKit
+    
