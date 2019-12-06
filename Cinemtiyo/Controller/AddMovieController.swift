@@ -11,12 +11,18 @@ import UIKit
 class AddMovieController: UIViewController{
     
     @IBOutlet weak var movieNoteTextView: UITextView!
-
-    
-    @IBOutlet weak var movieNameLabel: UILabel!
+    @IBOutlet weak var movieNameLabel: UILabel!{
+        didSet{
+            movieNameLabel.text = movieName ?? ""
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
     var movieName: String? {
@@ -25,9 +31,7 @@ class AddMovieController: UIViewController{
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    
     
     @IBAction func addToWatchListButtonPressed() {
         saveWatchListToCoreData(movieNameLabel.text ?? "", movieNoteTextView.text ?? "")

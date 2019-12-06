@@ -81,7 +81,13 @@ class DetailsMovieController: UIViewController{
     
     
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "savetoWatchList" {
+            if let nextViewController = segue.destination as? AddMovieController {
+                nextViewController.movieName = movie?.title
+            }
+        }
+    }
     
     
     @IBAction func locateCinema(_ sender: Any) {
@@ -109,9 +115,7 @@ class DetailsMovieController: UIViewController{
     
     
     @IBAction func addtoWatchList() {
-        let addController = AddMovieController()
-        addController.movieName = movie?.title
-        self.present(addController, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "savetoWatchList", sender: nil)
     }
     
     fileprivate func trailerButtonSettings(){
