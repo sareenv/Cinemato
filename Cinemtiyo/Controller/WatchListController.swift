@@ -50,7 +50,13 @@ class WatchListController: UITableViewController {
      let movie = moviesWatchList[indexPath.row]
      if let task = movie.movieName{
          cell.textLabel?.text = task
+        cell.textLabel?.numberOfLines = 0
      }
+        
+    if let taskNote = movie.movieNote{
+        cell.detailTextLabel?.text = taskNote
+        cell.detailTextLabel?.numberOfLines = 0
+        }
         return cell
     }
     
