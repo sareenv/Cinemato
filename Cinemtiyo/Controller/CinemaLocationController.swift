@@ -20,6 +20,10 @@ class CinemaLocationController: UIViewController, MKMapViewDelegate {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         manager = CLLocationManager()
