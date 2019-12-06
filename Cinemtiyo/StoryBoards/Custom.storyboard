@@ -230,10 +230,10 @@
             </objects>
             <point key="canvasLocation" x="1660.8695652173915" y="91.741071428571431"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie Watch List-->
         <scene sceneID="1Ha-bi-EgE">
             <objects>
-                <viewController id="xFy-yX-gfF" sceneMemberID="viewController">
+                <viewController id="xFy-yX-gfF" customClass="AddMovieController" customModule="Cinemtiyo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fbI-zC-Vp9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -277,7 +277,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NWu-PM-D5h"/>
                     </view>
-                    <navigationItem key="navigationItem" id="buf-em-cxz"/>
+                    <navigationItem key="navigationItem" title="Movie Watch List" id="buf-em-cxz"/>
+                    <connections>
+                        <outlet property="movieLabel" destination="8nR-jD-X8h" id="qQ3-St-EJw"/>
+                        <outlet property="movieNoteTextView" destination="a5B-yY-fXY" id="yLK-2z-194"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FHk-r6-jDi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
