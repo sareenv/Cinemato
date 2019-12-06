@@ -23,6 +23,8 @@ class SearchController: UITableViewController{
     }
     
     fileprivate func tableViewSettings() {
+        let searchCell = UINib(nibName: "SearchTableViewCell", bundle: nil)
+        tableView.register(searchCell, forCellReuseIdentifier: "movieSearch")
         tableView.rowHeight = 120
     }
     
@@ -35,7 +37,8 @@ class SearchController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieSearch", for: indexPath )
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieSearch", for: indexPath ) as! SearchTableViewCell
+        cell.movieImageView.image = UIImage(named: "movie")
         return cell
     }
     
