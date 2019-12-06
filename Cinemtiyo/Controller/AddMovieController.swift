@@ -24,6 +24,7 @@ class AddMovieController: UIViewController{
     
     @IBAction func addToWatchListButtonPressed() {
         saveWatchListToCoreData(movieLabel.text ?? "", movieNoteTextView.text ?? "")
+        self.navigationController?.popViewController(animated: true)
     }
     
     fileprivate func saveWatchListToCoreData(_ movieName: String, _ movieNote: String){
