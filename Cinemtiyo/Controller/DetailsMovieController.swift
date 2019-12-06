@@ -110,7 +110,7 @@ class DetailsMovieController: UIViewController{
     
     @IBAction func addtoWatchList() {
         let addController = AddMovieController()
-        addController.movieNameTextLabel.text = movie?.title
+        addController.movieName = movie?.title
         self.present(addController, animated: true, completion: nil)
     }
     

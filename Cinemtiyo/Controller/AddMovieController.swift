@@ -11,21 +11,26 @@ import UIKit
 class AddMovieController: UIViewController{
     
     @IBOutlet weak var movieNoteTextView: UITextView!
+
     
-    @IBOutlet weak var movieNameTextLabel: UILabel!
-    
+    @IBOutlet weak var movieNameLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
+    var movieName: String? {
+        didSet {
+            print("Got the value \(movieName ?? "")")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func addToWatchListButtonPressed() {
-        saveWatchListToCoreData(movieNameTextLabel.text ?? "", movieNoteTextView.text ?? "")
+        saveWatchListToCoreData(movieNameLabel.text ?? "", movieNoteTextView.text ?? "")
         self.navigationController?.popViewController(animated: true)
     }
     
