@@ -282,7 +282,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Movie Watch List" id="buf-em-cxz"/>
                     <connections>
-                        <outlet property="movieLabel" destination="8nR-jD-X8h" id="qQ3-St-EJw"/>
+                        <outlet property="movieNameTextLabel" destination="8nR-jD-X8h" id="d2s-HI-pMB"/>
                         <outlet property="movieNoteTextView" destination="a5B-yY-fXY" id="yLK-2z-194"/>
                     </connections>
                 </viewController>
