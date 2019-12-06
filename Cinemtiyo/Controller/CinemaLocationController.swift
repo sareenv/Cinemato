@@ -13,13 +13,20 @@ class CinemaLocationController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     var manager: CLLocationManager?
-    var userLocation: CLLocationCoordinate2D?
+    var userLocation: CLLocationCoordinate2D? {
+        didSet {
+            self.setMapRegion()
+            searchNearByCinemas()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         manager = CLLocationManager()
         mapViewSettings()
         detectUserLocation()
+        setMapRegion()
+        searchNearByCinemas()
     }
     
     func detectUserLocation() {
@@ -27,6 +34,44 @@ class CinemaLocationController: UIViewController, MKMapViewDelegate {
         manager?.desiredAccuracy = .greatestFiniteMagnitude
         manager?.requestAlwaysAuthorization()
         manager?.startUpdatingLocation()
+    }
+    
+    fileprivate func searchNearByCinemas() {
+        guard let userLocation = userLocation else { return }
+           let request = MKLocalSearch.Request()
+           request.naturalLanguageQuery = "Cinema"
+           request.region = mapView.region
+           let locationSearch = MKLocalSearch(request: request)
+           locationSearch.start { (response, error) in
+               if let error = error{
+                   let alertController = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
+                   alertController.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                   self.present(alertController, animated: true, completion: nil)
+                   return
+               }
+               self.mapView.removeAnnotations(self.mapView.annotations)
+               
+               response?.mapItems.forEach({ (item) in
+                   let annotation = MKPointAnnotation()
+                   annotation.coordinate = item.placemark.coordinate
+                   annotation.title = item.name
+                   annotation.subtitle = item.placemark.title
+                   self.mapView.addAnnotation(annotation)
+               })
+               let currentPlaceAnnotation = MKPointAnnotation()
+               currentPlaceAnnotation.coordinate = userLocation
+               
+               self.mapView.addAnnotation(currentPlaceAnnotation)
+               self.mapView.showAnnotations(self.mapView.annotations, animated: true)
+           }
+    }
+    
+    func setMapRegion() {
+        guard let userLocation = userLocation else { return }
+        let location = CLLocationCoordinate2D(latitude: userLocation.latitude, longitude: userLocation.longitude)
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let region = MKCoordinateRegion(center: location, span: span)
+        self.mapView.setRegion(region, animated: true)
     }
     
     fileprivate func mapViewSettings() {

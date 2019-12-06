@@ -11,6 +11,7 @@
 		4212D401235DE6EC0088D876 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212D3FF235DE6EC0088D876 /* HeaderCell.swift */; };
 		4212D402235DE6EC0088D876 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4212D400235DE6EC0088D876 /* HeaderCell.xib */; };
 		4224B305234DD19E000CCC6D /* SliderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224B304234DD19E000CCC6D /* SliderContent.swift */; };
+		4239E769239A85AC00B58E33 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4239E767239A85AC00B58E33 /* Model.xcdatamodeld */; };
 		423B708C235093AA00B40E01 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423B708B235093AA00B40E01 /* SliderCell.swift */; };
 		423B708E2350A23400B40E01 /* Referances in Resources */ = {isa = PBXBuildFile; fileRef = 423B708D2350A23400B40E01 /* Referances */; };
 		424AF06C2396A53C00E9A5AE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 424AF06B2396A53C00E9A5AE /* SDWebImage */; };
@@ -30,6 +31,7 @@
 		425686292399C479008B1FD0 /* CinemaLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425686282399C479008B1FD0 /* CinemaLocationController.swift */; };
 		4256862B2399CC2C008B1FD0 /* Trailers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4256862A2399CC2C008B1FD0 /* Trailers.swift */; };
 		4256862D2399D92F008B1FD0 /* CustomHeaderSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4256862C2399D92F008B1FD0 /* CustomHeaderSlider.swift */; };
+		4256862F239A82B2008B1FD0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4256862E239A82B2008B1FD0 /* MapKit.framework */; };
 		428E4FD823759ACB00023E58 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E4FD723759ACB00023E58 /* ImageExtension.swift */; };
 		428E4FDC2375F52E00023E58 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E4FDB2375F52E00023E58 /* Movies.swift */; };
 		42D5F2E92378A6D90057E18B /* PopularMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D5F2E82378A6D90057E18B /* PopularMoviesCell.swift */; };
@@ -70,6 +72,7 @@
 		4212D3FF235DE6EC0088D876 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		4212D400235DE6EC0088D876 /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		4224B304234DD19E000CCC6D /* SliderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderContent.swift; sourceTree = "<group>"; };
+		4239E768239A85AC00B58E33 /* Movie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Movie.xcdatamodel; sourceTree = "<group>"; };
 		423B708B235093AA00B40E01 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		423B708D2350A23400B40E01 /* Referances */ = {isa = PBXFileReference; lastKnownFileType = text; path = Referances; sourceTree = "<group>"; };
 		424AF0772397DF6E00E9A5AE /* SliderSignupCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderSignupCellCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -89,6 +92,7 @@
 		425686282399C479008B1FD0 /* CinemaLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaLocationController.swift; sourceTree = "<group>"; };
 		4256862A2399CC2C008B1FD0 /* Trailers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trailers.swift; sourceTree = "<group>"; };
 		4256862C2399D92F008B1FD0 /* CustomHeaderSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderSlider.swift; sourceTree = "<group>"; };
+		4256862E239A82B2008B1FD0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		428E4FD723759ACB00023E58 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		428E4FDB2375F52E00023E58 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		42D5F2E82378A6D90057E18B /* PopularMoviesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesCell.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4256862F239A82B2008B1FD0 /* MapKit.framework in Frameworks */,
 				424AF06C2396A53C00E9A5AE /* SDWebImage in Frameworks */,
 				42568623239970A3008B1FD0 /* XCDYouTubeKit in Frameworks */,
 			);
@@ -158,6 +163,7 @@
 		424AF0892398440400E9A5AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4256862E239A82B2008B1FD0 /* MapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 				42EC962A2347530700E85554 /* Assets.xcassets */,
 				42EC962C2347530700E85554 /* LaunchScreen.storyboard */,
 				42EC962F2347530700E85554 /* Info.plist */,
+				4239E767239A85AC00B58E33 /* Model.xcdatamodeld */,
 			);
 			path = Cinemtiyo;
 			sourceTree = "<group>";
@@ -459,6 +466,7 @@
 				4256862D2399D92F008B1FD0 /* CustomHeaderSlider.swift in Sources */,
 				4B150FAA2399F7A000EBD5C2 /* SearchTableViewCell.swift in Sources */,
 				425186DF2372C85F00D0FA2B /* Api.swift in Sources */,
+				4239E769239A85AC00B58E33 /* Model.xcdatamodeld in Sources */,
 				42EC96362347588600E85554 /* SliderController.swift in Sources */,
 				42EE5FEC2359C6AD00FDCD89 /* CinematoTabBarController.swift in Sources */,
 				425686292399C479008B1FD0 /* CinemaLocationController.swift in Sources */,
@@ -708,7 +716,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tech.Cinemtiyo;
 				PRODUCT_NAME = Cinemtiyo;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -726,7 +734,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tech.Cinemtiyo;
 				PRODUCT_NAME = Cinemtiyo;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -812,6 +820,19 @@
 			productName = XCDYouTubeKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		4239E767239A85AC00B58E33 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4239E768239A85AC00B58E33 /* Movie.xcdatamodel */,
+			);
+			currentVersion = 4239E768239A85AC00B58E33 /* Movie.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 42EC96162347530500E85554 /* Project object */;
 }

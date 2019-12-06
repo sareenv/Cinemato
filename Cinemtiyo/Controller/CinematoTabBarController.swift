@@ -19,9 +19,9 @@ class CinematoTabBarController: UITabBarController {
         let controller2 = generateControllers(storyBoardName: "Search", identifier: "SearchStoryBoard", barItemTitle: "Search", barItemImage: #imageLiteral(resourceName: "search"))
       
         
-        let controller3 = UINavigationController(rootViewController: UIViewController())
+        let controller3 = UINavigationController(rootViewController: WatchListController())
             
-        controller3.tabBarItem = UITabBarItem(title: "TV Shows", image: #imageLiteral(resourceName: "tv"), tag: 0)
+        controller3.tabBarItem = UITabBarItem(title: "Watch List", image: #imageLiteral(resourceName: "tv"), tag: 0)
         
         let controller4 = UIViewController()
         controller4.view.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
