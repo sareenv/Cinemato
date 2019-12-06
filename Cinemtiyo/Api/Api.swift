@@ -100,6 +100,26 @@ class Api{
     }
     
     
+    func downloadTrailers(movieId: Int, completionHandler: @escaping (ApiErrors?, Trailers?)->()) {
+        let urlString = "https://api.themoviedb.org/3/movie/\(movieId)/videos?api_key=48011e814c676dd12ae5d6e76288b2ae"
+        guard let trailerUrl = URL(string: urlString) else { return }
+        
+        let session = URLSession.shared
+        session.dataTask(with: trailerUrl) { (data, response, error) in
+            if (error != nil) {
+                completionHandler(.networkError, nil)
+                return
+            }
+            guard let data = data else { return }
+            
+        guard let trendingData = try? JSONDecoder().decode(Trailers.self, from: data) else {
+                completionHandler(.jsonParseError, nil)
+                return
+            }
+            completionHandler(nil, trendingData)
+        }.resume()
+    }
+    
     func downloadTrendingMovies(completionHandler: @escaping (ApiErrors?, Movies?)->()){
         let session = URLSession.shared
         let baseUrl = "https://api.themoviedb.org/3/"

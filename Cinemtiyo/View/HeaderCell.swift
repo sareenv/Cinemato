@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import XCDYouTubeKit
 
 class HeaderCell: UITableViewCell {
     @IBOutlet weak var headerSliderCollectionView: UICollectionView!
@@ -47,8 +49,6 @@ class HeaderCell: UITableViewCell {
             }
         }
     }
-    
-    
 }
 
 extension HeaderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -70,63 +70,31 @@ extension HeaderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         return .init(top: 5, left: 5, bottom: 5, right: 5)
     }
     
+    
+    fileprivate func playTrailer(videoKey: String){
+            let avPlayerController = AVPlayerViewController()
+            
+            XCDYouTubeClient.default().getVideoWithIdentifier(videoKey) { (video, error) in
+            if let streamURL = video?.streamURLs[XCDYouTubeVideoQuality.medium360.rawValue]{
+                avPlayerController.player = AVPlayer(url: streamURL)
+                let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
+                keyWindow?.rootViewController?.present(avPlayerController, animated: true, completion: {
+                    avPlayerController.player?.play()
+                })
+            }
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        /*
-         This needs to be replaced with the viewController'sView.
-         */
-        let sview = UIView()
-        sview.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
-        /* referance:
-         The keywindow is the shared window which acts the base of the herirachy.
-         https://stackoverflow.com/questions/57134259/how-to-resolve-keywindow-was-deprecated-in-ios-13-0
-         */
-        let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
-        keyWindow?.addSubview(sview)
-        
-        sview.frame = CGRect(x: 0, y: 0, width:  120, height: 120)
-        
-        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 5, options: .curveEaseOut, animations: {
-            sview.frame = CGRect(x: 0, y: 0, width: keyWindow?.frame.width ?? 120, height: keyWindow?.frame.height ?? 120)
-        })
-        
+        let fetchMovieDetailsApi = Api.instance
+        fetchMovieDetailsApi.downloadTrailers(movieId: headerData[indexPath.item].id ) { [unowned self] (error, trailer) in
+            if(trailer?.results.count ?? 0 <= 0) { return }
+            DispatchQueue.main.async {
+                self.playTrailer(videoKey: trailer!.results[0].key)
+            }
+        }
     }
     
 }
 
 
-class CustomHeaderElementCell: UICollectionViewCell{
-    
-    let headerElementImageView: UIImageView = {
-        let iv = UIImageView()
-       
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.image = #imageLiteral(resourceName: "charity1") // this needs to be replaced with datasource option.
-        iv.contentMode = .scaleAspectFill
-        return iv
-    }()
-    
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        addLayout()
-    }
-    
-    fileprivate func addLayout(){
-        self.addSubview(headerElementImageView)
-        
-        headerElementImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
-        headerElementImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
-        headerElementImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
-        headerElementImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
-        headerElementImageView.layer.cornerRadius = 7
-        headerElementImageView.clipsToBounds = true
-    }
-    
-    @objc func handleElementTapped(){
-        print("123123")
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("Some error")
-    }
-}

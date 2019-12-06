@@ -61,17 +61,11 @@ class DetailsMovieController: UIViewController{
     
     fileprivate func imagesCollectionViewSettings() {
         imagesCollectionView.delegate = self
-        imagesCollectionView.dataSource = self
-        guard let collectionViewLayout = imagesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
-        collectionViewLayout.estimatedItemSize = .init(width: 120, height: 120)
-        
+        imagesCollectionView.dataSource = self        
     }
     
-    @IBAction func watchTrailer() {
-        // here goes the avplayer.
-        print("Playing the trailer video")
-        // the path needs to be changed
-        XCDYouTubeClient.default().getVideoWithIdentifier("8CjYw1hARhY") { (video, error) in
+    fileprivate func playVideo(videoKey: String){
+        XCDYouTubeClient.default().getVideoWithIdentifier(videoKey) { [unowned self] (video, error) in
             if let streamURL = video?.streamURLs[XCDYouTubeVideoQuality.medium360.rawValue]{
                 let playerController = AVPlayerViewController()
                 playerController.player = AVPlayer(url: streamURL)
@@ -82,6 +76,19 @@ class DetailsMovieController: UIViewController{
         }
     }
     
+    @IBAction func watchTrailer() {
+        // here goes the avplayer.
+        print("Playing the trailer video")
+        let fetchMovieDetailsApi = Api.instance
+        fetchMovieDetailsApi.downloadTrailers(movieId: movie?.id ?? 0) { (error, trailer) in
+            if(trailer?.results.count ?? 0 <= 0) { return }
+            DispatchQueue.main.async {
+                self.playVideo(videoKey: trailer?.results[0].key ?? "")
+            }
+        }
+        
+    }
+    
     @IBAction func addtoWatchList() {
         // to watch list and store it in the core data for the presistance.
         print("123123")
@@ -89,7 +96,7 @@ class DetailsMovieController: UIViewController{
     }
     
     fileprivate func trailerButtonSettings(){
-        trailerButton.layer.cornerRadius = 20
+        trailerButton.layer.cornerRadius = 8
         trailerButton.clipsToBounds = true
         addWatchList.layer.cornerRadius = 5
         addWatchList.clipsToBounds = true
@@ -127,21 +134,6 @@ extension DetailsMovieController: UICollectionViewDelegate, UICollectionViewData
     }
     
     
-    /* Source: https://stackoverflow.com/questions/48644435/resize-image-sdwebimage
-        This block of function below changes the size of the image downloading.
-     */
-    
-    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
-        let scale = newWidth / image.size.width
-        let newHeight = image.size.height * scale
-        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
-        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return newImage!
-        }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieImageCell", for: indexPath) as! CustomImageCell
         let imagePath = "http://image.tmdb.org/t/p/original" + (images?[indexPath.item].file_path ?? "")
@@ -149,9 +141,7 @@ extension DetailsMovieController: UICollectionViewDelegate, UICollectionViewData
         
         cell.movieImageView.contentMode = .scaleAspectFill
         cell.movieImageView.clipsToBounds = true
-        guard let image = cell.movieImageView.image else { return cell}
-        cell.movieImageView.image = self.resizeImage(image: image, newWidth: 100)
-        cell.setNeedsLayout()
+        //guard let image = cell.movieImageView.image else { return cell}
         return cell
     }
 
