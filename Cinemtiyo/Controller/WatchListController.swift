@@ -36,12 +36,36 @@ class WatchListController: UITableViewController {
         tableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
     
+    fileprivate func navigationSettings() {
+        self.navigationItem.title = "Movies Watch List"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return moviesWatchList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMovieCell", for: indexPath)
+     let movie = moviesWatchList[indexPath.row]
+     if let task = movie.movieName{
+         cell.textLabel?.text = task
+     }
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+           if editingStyle == .delete {
+               let deletionTask = self.moviesWatchList[indexPath.row]
+               context.delete(deletionTask)
+               (UIApplication.shared.delegate as! AppDelegate).saveContext()
+               
+               do {
+                    self.moviesWatchList = try context.fetch(WatchListMovie.fetchRequest())
+               } catch {
+                     print("Fetching Failed")
+                }
+            }
+            tableView.reloadData()
+        }
 }

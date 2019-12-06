@@ -12,6 +12,7 @@
 		4212D402235DE6EC0088D876 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4212D400235DE6EC0088D876 /* HeaderCell.xib */; };
 		4224B305234DD19E000CCC6D /* SliderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224B304234DD19E000CCC6D /* SliderContent.swift */; };
 		4239E769239A85AC00B58E33 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4239E767239A85AC00B58E33 /* Model.xcdatamodeld */; };
+		4239E76B239A8D9600B58E33 /* AddMovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4239E76A239A8D9600B58E33 /* AddMovieController.swift */; };
 		423B708C235093AA00B40E01 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423B708B235093AA00B40E01 /* SliderCell.swift */; };
 		423B708E2350A23400B40E01 /* Referances in Resources */ = {isa = PBXBuildFile; fileRef = 423B708D2350A23400B40E01 /* Referances */; };
 		424AF06C2396A53C00E9A5AE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 424AF06B2396A53C00E9A5AE /* SDWebImage */; };
@@ -73,6 +74,7 @@
 		4212D400235DE6EC0088D876 /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		4224B304234DD19E000CCC6D /* SliderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderContent.swift; sourceTree = "<group>"; };
 		4239E768239A85AC00B58E33 /* Movie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Movie.xcdatamodel; sourceTree = "<group>"; };
+		4239E76A239A8D9600B58E33 /* AddMovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieController.swift; sourceTree = "<group>"; };
 		423B708B235093AA00B40E01 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		423B708D2350A23400B40E01 /* Referances */ = {isa = PBXFileReference; lastKnownFileType = text; path = Referances; sourceTree = "<group>"; };
 		424AF0772397DF6E00E9A5AE /* SliderSignupCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderSignupCellCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -272,8 +274,9 @@
 				42EE5FEB2359C6AD00FDCD89 /* CinematoTabBarController.swift */,
 				4251F52D2378BAEC00677452 /* DetailsMovieController.swift */,
 				425686262399C439008B1FD0 /* WatchListController.swift */,
-				4B150F9E2399E7ED00EBD5C2 /* SearchController.swift */,
 				425686282399C479008B1FD0 /* CinemaLocationController.swift */,
+				4239E76A239A8D9600B58E33 /* AddMovieController.swift */,
+				4B150F9E2399E7ED00EBD5C2 /* SearchController.swift */,
 				4B150F9B2399E71C00EBD5C2 /* TVController.swift */,
 			);
 			path = Controller;
@@ -466,6 +469,7 @@
 				4256862D2399D92F008B1FD0 /* CustomHeaderSlider.swift in Sources */,
 				4B150FAA2399F7A000EBD5C2 /* SearchTableViewCell.swift in Sources */,
 				425186DF2372C85F00D0FA2B /* Api.swift in Sources */,
+				4239E76B239A8D9600B58E33 /* AddMovieController.swift in Sources */,
 				4239E769239A85AC00B58E33 /* Model.xcdatamodeld in Sources */,
 				42EC96362347588600E85554 /* SliderController.swift in Sources */,
 				42EE5FEC2359C6AD00FDCD89 /* CinematoTabBarController.swift in Sources */,
