@@ -19,7 +19,6 @@ class DetailsMovieController: UIViewController{
     @IBOutlet weak var trailerButton: UIButton!
     @IBOutlet weak var addWatchList: UIButton!
     @IBOutlet weak var imagesCollectionView: UICollectionView!
-    
     @IBOutlet weak var locateCinemaButton: UIButton!
     
     
@@ -76,6 +75,14 @@ class DetailsMovieController: UIViewController{
         }
     }
     
+    
+    @IBAction func locateCinema(_ sender: Any) {
+        print("Locating cinema")
+        self.performSegue(withIdentifier: "cinemaMaps", sender: nil)
+    }
+    
+    
+    
     @IBAction func watchTrailer() {
         // here goes the avplayer.
         print("Playing the trailer video")
@@ -88,6 +95,11 @@ class DetailsMovieController: UIViewController{
         }
         
     }
+    
+    
+    
+    
+    
     
     @IBAction func addtoWatchList() {
         // to watch list and store it in the core data for the presistance.
@@ -138,10 +150,8 @@ extension DetailsMovieController: UICollectionViewDelegate, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieImageCell", for: indexPath) as! CustomImageCell
         let imagePath = "http://image.tmdb.org/t/p/original" + (images?[indexPath.item].file_path ?? "")
         cell.movieImageView.sd_setImage(with: URL(string: imagePath), completed: nil)
-        
         cell.movieImageView.contentMode = .scaleAspectFill
         cell.movieImageView.clipsToBounds = true
-        //guard let image = cell.movieImageView.image else { return cell}
         return cell
     }
 

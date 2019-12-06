@@ -184,6 +184,9 @@
                                         <state key="normal" title="Locate Cinema">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="locateCinema:" destination="Q15-Kn-65p" eventType="touchUpInside" id="lKt-1K-LHH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -219,11 +222,42 @@
                         <outlet property="movieDescriptionTextView" destination="zlU-Cl-h3H" id="uBG-DB-rXf"/>
                         <outlet property="movieTitleLabel" destination="mZr-6D-Y7t" id="cPI-Dn-Yyv"/>
                         <outlet property="trailerButton" destination="gvz-DE-LFy" id="xnh-Uy-a8d"/>
+                        <segue destination="tWo-SF-FY5" kind="show" identifier="cinemaMaps" id="gde-kP-niC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iv5-1B-dDC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1660.8695652173915" y="91.741071428571431"/>
+        </scene>
+        <!--Cinema-->
+        <scene sceneID="VRx-Ry-E1Z">
+            <objects>
+                <viewController id="tWo-SF-FY5" customClass="CinemaLocationController" customModule="Cinemtiyo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l2J-uq-tqN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Bwv-Na-9Ob">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Bwv-Na-9Ob" firstAttribute="top" secondItem="67Z-x4-zX2" secondAttribute="top" id="5pw-Ei-hI1"/>
+                            <constraint firstItem="Bwv-Na-9Ob" firstAttribute="leading" secondItem="67Z-x4-zX2" secondAttribute="leading" id="DRH-1k-heo"/>
+                            <constraint firstItem="67Z-x4-zX2" firstAttribute="bottom" secondItem="Bwv-Na-9Ob" secondAttribute="bottom" id="kCZ-cB-ZXr"/>
+                            <constraint firstItem="67Z-x4-zX2" firstAttribute="trailing" secondItem="Bwv-Na-9Ob" secondAttribute="trailing" id="sjg-LY-s9s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="67Z-x4-zX2"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cinema" id="iJW-w5-PCB"/>
+                    <connections>
+                        <outlet property="mapView" destination="Bwv-Na-9Ob" id="e4T-fa-fhQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pqK-Aj-WrI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2658" y="92"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mwO-ja-7YY">
