@@ -82,7 +82,11 @@ class DetailsMovieController: UIViewController{
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "savetoWatchList" {
+            if let nextViewController = segue.destination as? AddMovieController {
+                nextViewController.movieTile = movie?.title ?? ""
+            }
+        }
     }
     
     
@@ -112,7 +116,6 @@ class DetailsMovieController: UIViewController{
     
     @IBAction func addtoWatchList() {
         // to watch list and store it in the core data for the presistance.
-        print("123123")
         self.performSegue(withIdentifier: "savetoWatchList", sender: nil)
     }
     

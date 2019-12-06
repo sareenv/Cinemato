@@ -30,10 +30,15 @@ class WatchListController: UITableViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    fileprivate func tableViewSettings() {
+        tableView.rowHeight = 120
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "customMovieCell")
         tableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableViewSettings()
         navigationSettings()
     }
     
@@ -47,16 +52,17 @@ class WatchListController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMovieCell", for: indexPath)
-     let movie = moviesWatchList[indexPath.row]
-     if let task = movie.movieName{
-         cell.textLabel?.text = task
-        cell.textLabel?.numberOfLines = 0
-     }
+        let movie = moviesWatchList[indexPath.row]
+        if let task = movie.movieName{
+            cell.textLabel?.text = task
+            cell.textLabel?.numberOfLines = 0
+        }
         
-    if let taskNote = movie.movieNote{
-        cell.detailTextLabel?.text = taskNote
-        cell.detailTextLabel?.numberOfLines = 0
+        if let taskNote = movie.movieNote{
+            cell.detailTextLabel?.text = taskNote
+            cell.detailTextLabel?.numberOfLines = 0
         }
         return cell
     }

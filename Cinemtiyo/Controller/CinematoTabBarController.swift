@@ -22,10 +22,8 @@ class CinematoTabBarController: UITabBarController {
         let controller3 = UINavigationController(rootViewController: WatchListController())
         controller3.tabBarItem = UITabBarItem(title: "Watch List", image: #imageLiteral(resourceName: "tv"), tag: 0)
         
-        let controller4 = UIViewController()
-        controller4.view.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-        controller4.tabBarItem = UITabBarItem(title: "Account", image: #imageLiteral(resourceName: "account"), selectedImage:#imageLiteral(resourceName: "account"))
-        self.viewControllers = [controller1, controller3, controller2, controller4]
+      
+        self.viewControllers = [controller1, controller3, controller2]
         self.tabBar.tintColor = #colorLiteral(red: 0.7795123458, green: 0.4400732517, blue: 0.7914783955, alpha: 1)
         self.tabBar.isTranslucent = false
     }

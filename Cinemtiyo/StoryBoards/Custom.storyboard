@@ -290,7 +290,7 @@
             </objects>
             <point key="canvasLocation" x="1661" y="823"/>
         </scene>
-        <!--Cinema-->
+        <!--Nearby Cinema-->
         <scene sceneID="VRx-Ry-E1Z">
             <objects>
                 <viewController id="tWo-SF-FY5" customClass="CinemaLocationController" customModule="Cinemtiyo" customModuleProvider="target" sceneMemberID="viewController">
@@ -311,7 +311,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="67Z-x4-zX2"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Cinema" id="iJW-w5-PCB"/>
+                    <navigationItem key="navigationItem" title="Nearby Cinema" id="iJW-w5-PCB"/>
                     <connections>
                         <outlet property="mapView" destination="Bwv-Na-9Ob" id="e4T-fa-fhQ"/>
                     </connections>

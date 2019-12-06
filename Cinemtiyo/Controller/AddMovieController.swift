@@ -13,6 +13,12 @@ class AddMovieController: UIViewController{
     @IBOutlet weak var movieLabel: UILabel!
     @IBOutlet weak var movieNoteTextView: UITextView!
     
+    var movieTile: String? {
+        didSet {
+            movieLabel.text = movieTile ?? ""
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
