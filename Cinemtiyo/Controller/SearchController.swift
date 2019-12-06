@@ -36,13 +36,6 @@ class SearchController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieSearch", for: indexPath )
-        cell.textLabel?.text = "Avangers"
-        cell.textLabel?.numberOfLines = 0
-        cell.detailTextLabel?.text = "Avangers is really great movie"
-        cell.detailTextLabel?.numberOfLines = 0
-        cell.imageView?.image = #imageLiteral(resourceName: "movie")
-        cell.imageView?.contentMode = .scaleAspectFill
-        cell.imageView?.clipsToBounds = true
         return cell
     }
     

@@ -44,6 +44,8 @@
 		4B150F9C2399E71C00EBD5C2 /* TVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B150F9B2399E71C00EBD5C2 /* TVController.swift */; };
 		4B150F9F2399E7ED00EBD5C2 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B150F9E2399E7ED00EBD5C2 /* SearchController.swift */; };
 		4B150FA12399E89500EBD5C2 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B150FA02399E89500EBD5C2 /* Search.storyboard */; };
+		4B150FA42399F5B800EBD5C2 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B150FA22399F5B800EBD5C2 /* SearchTableViewCell.swift */; };
+		4B150FA52399F5B800EBD5C2 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B150FA32399F5B800EBD5C2 /* SearchTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		4B150F9B2399E71C00EBD5C2 /* TVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVController.swift; sourceTree = "<group>"; };
 		4B150F9E2399E7ED00EBD5C2 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		4B150FA02399E89500EBD5C2 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		4B150FA22399F5B800EBD5C2 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		4B150FA32399F5B800EBD5C2 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +251,8 @@
 				424AF0782397DF6E00E9A5AE /* SliderSignupCellCollectionViewCell.xib */,
 				425686242399A0D4008B1FD0 /* CustomImageCell.swift */,
 				4256862C2399D92F008B1FD0 /* CustomHeaderSlider.swift */,
+				4B150FA22399F5B800EBD5C2 /* SearchTableViewCell.swift */,
+				4B150FA32399F5B800EBD5C2 /* SearchTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -409,6 +415,7 @@
 			files = (
 				423B708E2350A23400B40E01 /* Referances in Resources */,
 				42EC963D2347630300E85554 /* Custom.storyboard in Resources */,
+				4B150FA52399F5B800EBD5C2 /* SearchTableViewCell.xib in Resources */,
 				4212D3FC235DD5640088D876 /* PopularMoviesCell.xib in Resources */,
 				42EC962E2347530700E85554 /* LaunchScreen.storyboard in Resources */,
 				4212D402235DE6EC0088D876 /* HeaderCell.xib in Resources */,
@@ -450,6 +457,7 @@
 				425686252399A0D4008B1FD0 /* CustomImageCell.swift in Sources */,
 				42EC96222347530500E85554 /* AppDelegate.swift in Sources */,
 				4256862D2399D92F008B1FD0 /* CustomHeaderSlider.swift in Sources */,
+				4B150FA42399F5B800EBD5C2 /* SearchTableViewCell.swift in Sources */,
 				425186DF2372C85F00D0FA2B /* Api.swift in Sources */,
 				42EC96362347588600E85554 /* SliderController.swift in Sources */,
 				42EE5FEC2359C6AD00FDCD89 /* CinematoTabBarController.swift in Sources */,
