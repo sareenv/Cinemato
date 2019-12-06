@@ -41,6 +41,9 @@
 		42EC96362347588600E85554 /* SliderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC96352347588600E85554 /* SliderController.swift */; };
 		42EC963D2347630300E85554 /* Custom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EC963C2347630300E85554 /* Custom.storyboard */; };
 		42EE5FEC2359C6AD00FDCD89 /* CinematoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE5FEB2359C6AD00FDCD89 /* CinematoTabBarController.swift */; };
+		4B150F9C2399E71C00EBD5C2 /* TVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B150F9B2399E71C00EBD5C2 /* TVController.swift */; };
+		4B150F9F2399E7ED00EBD5C2 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B150F9E2399E7ED00EBD5C2 /* SearchController.swift */; };
+		4B150FA12399E89500EBD5C2 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B150FA02399E89500EBD5C2 /* Search.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,9 @@
 		42EC96352347588600E85554 /* SliderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderController.swift; sourceTree = "<group>"; };
 		42EC963C2347630300E85554 /* Custom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Custom.storyboard; sourceTree = "<group>"; };
 		42EE5FEB2359C6AD00FDCD89 /* CinematoTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinematoTabBarController.swift; sourceTree = "<group>"; };
+		4B150F9B2399E71C00EBD5C2 /* TVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVController.swift; sourceTree = "<group>"; };
+		4B150F9E2399E7ED00EBD5C2 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		4B150FA02399E89500EBD5C2 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +260,8 @@
 				4251F52D2378BAEC00677452 /* DetailsMovieController.swift */,
 				425686262399C439008B1FD0 /* WatchListController.swift */,
 				425686282399C479008B1FD0 /* CinemaLocationController.swift */,
+				4B150F9B2399E71C00EBD5C2 /* TVController.swift */,
+				4B150F9E2399E7ED00EBD5C2 /* SearchController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -262,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				42EC963C2347630300E85554 /* Custom.storyboard */,
+				4B150FA02399E89500EBD5C2 /* Search.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -404,6 +413,7 @@
 				42EC962E2347530700E85554 /* LaunchScreen.storyboard in Resources */,
 				4212D402235DE6EC0088D876 /* HeaderCell.xib in Resources */,
 				42EC962B2347530700E85554 /* Assets.xcassets in Resources */,
+				4B150FA12399E89500EBD5C2 /* Search.storyboard in Resources */,
 				424AF07A2397DF6E00E9A5AE /* SliderSignupCellCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +445,7 @@
 				4251F52E2378BAEC00677452 /* DetailsMovieController.swift in Sources */,
 				428E4FD823759ACB00023E58 /* ImageExtension.swift in Sources */,
 				42D5F2E92378A6D90057E18B /* PopularMoviesCell.swift in Sources */,
+				4B150F9C2399E71C00EBD5C2 /* TVController.swift in Sources */,
 				42EC96262347530500E85554 /* PopularMoviesController.swift in Sources */,
 				425686252399A0D4008B1FD0 /* CustomImageCell.swift in Sources */,
 				42EC96222347530500E85554 /* AppDelegate.swift in Sources */,
@@ -450,6 +461,7 @@
 				428E4FDC2375F52E00023E58 /* Movies.swift in Sources */,
 				423B708C235093AA00B40E01 /* SliderCell.swift in Sources */,
 				4251F5302378EE4900677452 /* MovieImage.swift in Sources */,
+				4B150F9F2399E7ED00EBD5C2 /* SearchController.swift in Sources */,
 				4256862B2399CC2C008B1FD0 /* Trailers.swift in Sources */,
 				4224B305234DD19E000CCC6D /* SliderContent.swift in Sources */,
 			);
