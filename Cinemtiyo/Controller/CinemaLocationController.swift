@@ -90,4 +90,18 @@ extension CinemaLocationController: CLLocationManagerDelegate{
         userLocation = currentLatitude
         manager.stopUpdatingLocation()
        }
+    
+    func openMapsAppWithDirections(to coordinate: CLLocationCoordinate2D, destinationName name: String) {
+      let options = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+      let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
+      let mapItem = MKMapItem(placemark: placemark)
+      mapItem.name = name // Provide the name of the destination in the To: field
+      mapItem.openInMaps(launchOptions: options)
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let desiredLocation = view.annotation?.coordinate
+        guard let userLocation = userLocation else { return }
+        openMapsAppWithDirections(to: desiredLocation ?? userLocation, destinationName: (view.annotation?.title ?? "") ?? "")
+    }
 }
