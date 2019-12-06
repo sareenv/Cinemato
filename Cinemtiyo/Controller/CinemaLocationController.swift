@@ -105,3 +105,14 @@ extension CinemaLocationController: CLLocationManagerDelegate{
         openMapsAppWithDirections(to: desiredLocation ?? userLocation, destinationName: (view.annotation?.title ?? "") ?? "")
     }
 }
+
+extension CinemaLocationController{
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "id")
+        annotationView.pinTintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+        annotationView.canShowCallout = true
+        let btn = UIButton(type: .detailDisclosure)
+        annotationView.rightCalloutAccessoryView = btn
+        return annotationView
+    }
+}
