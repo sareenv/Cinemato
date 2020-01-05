@@ -8,5 +8,3 @@ The repository contains the IOS project developed using swift programming langua
 	<img src="app1.png" /> 	
 </p>
 
-## Testing. 
-The project implements both Unit Testing and Acceptance testing. Each test case is fully isolated from each other and has no impact on other tests. 
