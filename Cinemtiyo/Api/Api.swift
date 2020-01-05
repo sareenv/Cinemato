@@ -17,7 +17,6 @@ import Foundation
  The library allows the developers to make http request to the api endpoints.
  */
 
-
 class Api{
     private init(){}
     static let instance = Api()

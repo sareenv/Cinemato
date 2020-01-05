@@ -165,7 +165,88 @@ extension DetailsMovieController: UICollectionViewDelegate, UICollectionViewData
         cell.movieImageView.clipsToBounds = true
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Selected Index is \(indexPath.item)")
+        let cell = collectionView.cellForItem(at: indexPath) as! CustomImageCell
+        guard let moviePosterImage = cell.movieImageView.image else { return }
+        let blackView = BlackView(frame: .zero, color: .black)
+        blackView.selectedImage = moviePosterImage
+        let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
+        keyWindow?.rootViewController?.view.addSubview(blackView)
+        blackView.fillSuperView()
+    }
 
 }
 
+
+
+class BlackView: UIView {
+    
+    var selectedImage: UIImage? {
+        didSet {
+            print("Im comming here")
+            guard let image = selectedImage else { return }
+            self.setupImageView(image: image)
+        }
+    }
+    
+    convenience init(frame: CGRect, color: UIColor) {
+        self.init(frame: frame)
+        self.backgroundColor = color
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    lazy var imageView = UIImageView()
+    
+    fileprivate func setupImageView(image: UIImage) {
+        imageView.image = image
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode  = .scaleAspectFill
+        self.addSubview(imageView)
+        imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
+         imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
+         imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 230).isActive = true
+        imageView.isUserInteractionEnabled = true
+        
+        let tapGesture = UIPanGestureRecognizer(target: self, action: #selector(handleTap))
+        imageView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTap() {
+        self.removeFromSuperview()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+
+
+extension UIView {
+    
+    func fillSuperView() {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        guard let superView = self.superview else { return }
+        self.topAnchor.constraint(equalTo: superView.topAnchor, constant: 0).isActive = true
+        self.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: 0).isActive = true
+        self.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 0).isActive = true
+        self.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: 0).isActive = true
+    }
+}
+
+extension UIImageView {
+    convenience init(image: UIImage, contentMode: UIView.ContentMode, translateResizingMask: Bool = false) {
+        self.init(frame: .zero)
+        self.image = image
+        self.contentMode = contentMode
+        self.translatesAutoresizingMaskIntoConstraints = translateResizingMask
+    }
+}
 

@@ -10,40 +10,8 @@ import UIKit
 
 class SearchController: UITableViewController{
     
-    var searchResults: [String]? {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewSettings()
-        navigationSettings()
+        
     }
-    
-    fileprivate func tableViewSettings() {
-        let searchCell = UINib(nibName: "SearchTableViewCell", bundle: nil)
-        tableView.register(searchCell, forCellReuseIdentifier: "movieSearch")
-        tableView.rowHeight = 120
-    }
-    
-    fileprivate func navigationSettings() {
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieSearch", for: indexPath ) as! SearchTableViewCell
-        cell.movieImageView.image = UIImage(named: "movie")
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
 }
