@@ -35,7 +35,7 @@ class DetailsMovieController: UIViewController{
     let padding:CGFloat = 6
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        navigationSettings()
     }
     
     override func viewDidLoad() {
@@ -45,7 +45,29 @@ class DetailsMovieController: UIViewController{
         setupDetails()
         imagesCollectionViewSettings()
         fetchMovieImages()
+        navigationSettings()
     }
+    
+    
+    
+    
+    fileprivate func navigationSettings() {
+        self.navigationController?.navigationBar.barTintColor = UIColor(light: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), dark: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+        if #available(iOS 13.0, tvOS 13.0, *) {
+            // check the dark mode status.
+            if self.traitCollection.userInterfaceStyle == .dark {
+                self.navigationController?.navigationBar.isTranslucent = false
+            }else {
+                 self.navigationController?.navigationBar.isTranslucent = true
+            }
+        }
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(light: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), dark: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
+    }
+    
     
     
     fileprivate func fetchMovieImages() {
@@ -208,8 +230,8 @@ class BlackView: UIView {
         imageView.contentMode  = .scaleAspectFill
         self.addSubview(imageView)
         imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
-         imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
-         imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 230).isActive = true
         imageView.isUserInteractionEnabled = true
         

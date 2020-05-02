@@ -16,7 +16,7 @@ class CustomImageCell: UICollectionViewCell{
             movieImageView.layer.cornerRadius = 7
             movieImageView.clipsToBounds = true
             movieImageView.contentMode = .scaleAspectFill
-            movieImageView.backgroundColor = UIColor.gray
+            movieImageView.backgroundColor = UIColor(light: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), dark: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         }
     }
 }

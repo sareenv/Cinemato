@@ -65,6 +65,7 @@ class Api{
                            return
             }
             guard let data = data else { return }
+            
             guard let movies = try? JSONDecoder().decode(Movies.self, from: data) else {
                 completionHandler(.jsonParseError, nil)
                 return

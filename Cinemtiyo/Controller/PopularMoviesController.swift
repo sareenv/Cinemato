@@ -26,13 +26,28 @@ class PopularMoviesController: UIViewController, UITableViewDelegate, UITableVie
         openState()
         tableViewSettings()
         fetchTrendingData()
-        testYoutubeVideoLink()
     }
     
-   
     
-    fileprivate func testYoutubeVideoLink(){
-        _ = "https://www.youtube.com/watch?v=t433PEQGErc"
+    override func viewWillAppear(_ animated: Bool) {
+        navigationSettings()
+    }
+   
+    fileprivate func navigationSettings() {
+        self.navigationController?.navigationBar.barTintColor = UIColor(light: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), dark: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+        if #available(iOS 13.0, tvOS 13.0, *) {
+            // check the dark mode status.
+            if self.traitCollection.userInterfaceStyle == .dark {
+                self.navigationController?.navigationBar.isTranslucent = false
+            }else {
+                 self.navigationController?.navigationBar.isTranslucent = true
+            }
+        }
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(light: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), dark: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
     }
     
     fileprivate func fetchTrendingData(){
@@ -41,6 +56,7 @@ class PopularMoviesController: UIViewController, UITableViewDelegate, UITableVie
             if (error != nil){
                 return
             }
+            
             
             DispatchQueue.main.async {
                 // update the cells.

@@ -58,7 +58,7 @@ extension HeaderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! CustomHeaderElementCell
-        cell.headerElementImageView.downloadUrlImage(imageUrlPath: headerData[indexPath.item].backdrop_path)
+        cell.headerElementImageView.downloadUrlImage(imageUrlPath: headerData[indexPath.item].backdrop_path ?? "")
         return cell
     }
     
@@ -87,7 +87,7 @@ extension HeaderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let fetchMovieDetailsApi = Api.instance
-        fetchMovieDetailsApi.downloadTrailers(movieId: headerData[indexPath.item].id ) { [unowned self] (error, trailer) in
+        fetchMovieDetailsApi.downloadTrailers(movieId: headerData[indexPath.item].id ?? 1 ) { [unowned self] (error, trailer) in
             if(trailer?.results.count ?? 0 <= 0) { return }
             DispatchQueue.main.async {
                 self.playTrailer(videoKey: trailer!.results[0].key)
