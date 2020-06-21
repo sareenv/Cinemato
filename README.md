@@ -1,4 +1,4 @@
-# Movies Reviews Platform Application
+# Movies Reviews Application
 
 <p align="center">
 	<img src="app1.png" /> 	
