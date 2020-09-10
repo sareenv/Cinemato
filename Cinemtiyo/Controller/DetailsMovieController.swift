@@ -141,7 +141,7 @@ class DetailsMovieController: UIViewController{
     }
     
     fileprivate func trailerButtonSettings(){
-        trailerButton.layer.cornerRadius = 22
+        trailerButton.layer.cornerRadius = 17
         trailerButton.clipsToBounds = true
         addWatchList.layer.cornerRadius = 5
         addWatchList.clipsToBounds = true

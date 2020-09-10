@@ -34,7 +34,7 @@ class AddMovieController: UIViewController{
         self.navigationController?.popViewController(animated: true)
     }
     
-    fileprivate func saveWatchListToCoreData(_ movieName: String, _ movieNote: String){
+    fileprivate func saveWatchListToCoreData(_ movieName: String, _ movieNote: String) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let watchList = WatchListMovie(context: context)
         watchList.movieName = movieName

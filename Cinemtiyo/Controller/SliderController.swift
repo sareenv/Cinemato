@@ -43,12 +43,8 @@ class SliderController: UICollectionViewController{
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if(indexPath.item == 3){
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId1, for: indexPath) as! SliderSignupCellCollectionViewCell
-            cell.customDelegate = self
-            return cell
-        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SliderCell
+        cell.customDelegate = self
         cell.sliderContent = sliderContent[indexPath.item]
         cell.slideId = indexPath.item
         cell.pageControl.currentPage = indexPath.item

@@ -14,11 +14,7 @@ class CinematoTabBarController: UITabBarController {
         super.viewDidLoad()
         
         let controller1 = generateControllers(storyBoardName: "Custom", identifier: "HomeStoryBoard", barItemTitle: "Popular", barItemImage: #imageLiteral(resourceName: "fire"))
-        
-        
         let controller2 = generateControllers(storyBoardName: "Search", identifier: "SearchStoryBoard", barItemTitle: "Search", barItemImage: #imageLiteral(resourceName: "search"))
-      
-        
         let controller3 = UINavigationController(rootViewController: WatchListController())
         controller3.tabBarItem = UITabBarItem(title: "Watch List", image: #imageLiteral(resourceName: "tv"), tag: 0)
         
@@ -28,6 +24,7 @@ class CinematoTabBarController: UITabBarController {
         self.tabBar.isTranslucent = false
     }
     
+    // changes to support storyBoards and programmatic.
     fileprivate func generateControllers(storyBoardName: String = "", identifier: String = "", barItemTitle: String, barItemImage: UIImage) -> UIViewController {
         let storyBoard = UIStoryboard(name: storyBoardName, bundle: nil)
         let controller = storyBoard.instantiateViewController(identifier: identifier)

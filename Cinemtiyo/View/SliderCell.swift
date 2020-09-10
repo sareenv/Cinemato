@@ -13,7 +13,7 @@ protocol CellButtonDetect: class {
 }
 
 class SliderCell: UICollectionViewCell{
-    
+
     weak var customDelegate: CellButtonDetect?
     
     var slideId = 0{
