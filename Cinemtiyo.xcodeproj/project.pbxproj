@@ -18,14 +18,9 @@
 		424AF06C2396A53C00E9A5AE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 424AF06B2396A53C00E9A5AE /* SDWebImage */; };
 		424AF0792397DF6E00E9A5AE /* SliderSignupCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424AF0772397DF6E00E9A5AE /* SliderSignupCellCollectionViewCell.swift */; };
 		424AF07A2397DF6E00E9A5AE /* SliderSignupCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424AF0782397DF6E00E9A5AE /* SliderSignupCellCollectionViewCell.xib */; };
-		424AF08223983F0C00E9A5AE /* RegisterationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424AF08123983F0C00E9A5AE /* RegisterationTests.swift */; };
-		424AF08B2398440400E9A5AE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 424AF08A2398440400E9A5AE /* SDWebImage */; };
-		424AF0932398B14000E9A5AE /* CinemtiyoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424AF0922398B14000E9A5AE /* CinemtiyoUITests.swift */; };
-		424AF09B2398B14900E9A5AE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 424AF09A2398B14900E9A5AE /* SDWebImage */; };
 		425186DF2372C85F00D0FA2B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425186DE2372C85F00D0FA2B /* Api.swift */; };
 		4251F52E2378BAEC00677452 /* DetailsMovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251F52D2378BAEC00677452 /* DetailsMovieController.swift */; };
 		4251F5302378EE4900677452 /* MovieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251F52F2378EE4900677452 /* MovieImage.swift */; };
-		4256862023995E5D008B1FD0 /* PopularMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4256861F23995E5D008B1FD0 /* PopularMovies.swift */; };
 		42568623239970A3008B1FD0 /* XCDYouTubeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 42568622239970A3008B1FD0 /* XCDYouTubeKit */; };
 		425686252399A0D4008B1FD0 /* CustomImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425686242399A0D4008B1FD0 /* CustomImageCell.swift */; };
 		425686272399C439008B1FD0 /* WatchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425686262399C439008B1FD0 /* WatchListController.swift */; };
@@ -36,6 +31,7 @@
 		428E4FD823759ACB00023E58 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E4FD723759ACB00023E58 /* ImageExtension.swift */; };
 		428E4FDC2375F52E00023E58 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E4FDB2375F52E00023E58 /* Movies.swift */; };
 		42D5F2E92378A6D90057E18B /* PopularMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D5F2E82378A6D90057E18B /* PopularMoviesCell.swift */; };
+		42DAE7AE2509A83B001B9FD7 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DAE7AD2509A83B001B9FD7 /* SearchView.swift */; };
 		42EC96222347530500E85554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC96212347530500E85554 /* AppDelegate.swift */; };
 		42EC96242347530500E85554 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC96232347530500E85554 /* SceneDelegate.swift */; };
 		42EC96262347530500E85554 /* PopularMoviesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC96252347530500E85554 /* PopularMoviesController.swift */; };
@@ -51,23 +47,6 @@
 		4B150FAB2399F7A000EBD5C2 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B150FA92399F7A000EBD5C2 /* SearchTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		424AF08423983F0C00E9A5AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 42EC96162347530500E85554 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 42EC961D2347530500E85554;
-			remoteInfo = Cinemtiyo;
-		};
-		424AF0952398B14000E9A5AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 42EC96162347530500E85554 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 42EC961D2347530500E85554;
-			remoteInfo = Cinemtiyo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		4212D3FA235DD5640088D876 /* PopularMoviesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularMoviesCell.xib; sourceTree = "<group>"; };
 		4212D3FF235DE6EC0088D876 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
@@ -79,16 +58,9 @@
 		423B708D2350A23400B40E01 /* Referances */ = {isa = PBXFileReference; lastKnownFileType = text; path = Referances; sourceTree = "<group>"; };
 		424AF0772397DF6E00E9A5AE /* SliderSignupCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderSignupCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		424AF0782397DF6E00E9A5AE /* SliderSignupCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderSignupCellCollectionViewCell.xib; sourceTree = "<group>"; };
-		424AF07F23983F0C00E9A5AE /* CinemtiyoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemtiyoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		424AF08123983F0C00E9A5AE /* RegisterationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationTests.swift; sourceTree = "<group>"; };
-		424AF08323983F0C00E9A5AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		424AF0902398B14000E9A5AE /* CinemtiyoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemtiyoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		424AF0922398B14000E9A5AE /* CinemtiyoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemtiyoUITests.swift; sourceTree = "<group>"; };
-		424AF0942398B14000E9A5AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		425186DE2372C85F00D0FA2B /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		4251F52D2378BAEC00677452 /* DetailsMovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMovieController.swift; sourceTree = "<group>"; };
 		4251F52F2378EE4900677452 /* MovieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImage.swift; sourceTree = "<group>"; };
-		4256861F23995E5D008B1FD0 /* PopularMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovies.swift; sourceTree = "<group>"; };
 		425686242399A0D4008B1FD0 /* CustomImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageCell.swift; sourceTree = "<group>"; };
 		425686262399C439008B1FD0 /* WatchListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListController.swift; sourceTree = "<group>"; };
 		425686282399C479008B1FD0 /* CinemaLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaLocationController.swift; sourceTree = "<group>"; };
@@ -98,6 +70,7 @@
 		428E4FD723759ACB00023E58 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		428E4FDB2375F52E00023E58 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		42D5F2E82378A6D90057E18B /* PopularMoviesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesCell.swift; sourceTree = "<group>"; };
+		42DAE7AD2509A83B001B9FD7 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		42EC961E2347530500E85554 /* Cinemtiyo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinemtiyo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC96212347530500E85554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42EC96232347530500E85554 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,22 +89,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		424AF07C23983F0C00E9A5AE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				424AF08B2398440400E9A5AE /* SDWebImage in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		424AF08D2398B14000E9A5AE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				424AF09B2398B14900E9A5AE /* SDWebImage in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		42EC961B2347530500E85554 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,31 +110,12 @@
 			path = Referances;
 			sourceTree = "<group>";
 		};
-		424AF08023983F0C00E9A5AE /* CinemtiyoTests */ = {
-			isa = PBXGroup;
-			children = (
-				424AF08123983F0C00E9A5AE /* RegisterationTests.swift */,
-				424AF08323983F0C00E9A5AE /* Info.plist */,
-			);
-			path = CinemtiyoTests;
-			sourceTree = "<group>";
-		};
 		424AF0892398440400E9A5AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				4256862E239A82B2008B1FD0 /* MapKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		424AF0912398B14000E9A5AE /* CinemtiyoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				424AF0922398B14000E9A5AE /* CinemtiyoUITests.swift */,
-				4256861F23995E5D008B1FD0 /* PopularMovies.swift */,
-				424AF0942398B14000E9A5AE /* Info.plist */,
-			);
-			path = CinemtiyoUITests;
 			sourceTree = "<group>";
 		};
 		425186DD2372C84900D0FA2B /* Api */ = {
@@ -196,12 +134,18 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		42DAE7AA2509A806001B9FD7 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				42DAE7AD2509A83B001B9FD7 /* SearchView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		42EC96152347530500E85554 = {
 			isa = PBXGroup;
 			children = (
 				42EC96202347530500E85554 /* Cinemtiyo */,
-				424AF08023983F0C00E9A5AE /* CinemtiyoTests */,
-				424AF0912398B14000E9A5AE /* CinemtiyoUITests */,
 				42EC961F2347530500E85554 /* Products */,
 				424AF0892398440400E9A5AE /* Frameworks */,
 			);
@@ -211,8 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				42EC961E2347530500E85554 /* Cinemtiyo.app */,
-				424AF07F23983F0C00E9A5AE /* CinemtiyoTests.xctest */,
-				424AF0902398B14000E9A5AE /* CinemtiyoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,6 +162,7 @@
 		42EC96202347530500E85554 /* Cinemtiyo */ = {
 			isa = PBXGroup;
 			children = (
+				42DAE7AA2509A806001B9FD7 /* SwiftUI */,
 				428E4FD62375993A00023E58 /* Extension */,
 				425186DD2372C84900D0FA2B /* Api */,
 				423B708F2350A2B100B40E01 /* Referances */,
@@ -294,48 +237,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		424AF07E23983F0C00E9A5AE /* CinemtiyoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 424AF08823983F0C00E9A5AE /* Build configuration list for PBXNativeTarget "CinemtiyoTests" */;
-			buildPhases = (
-				424AF07B23983F0C00E9A5AE /* Sources */,
-				424AF07C23983F0C00E9A5AE /* Frameworks */,
-				424AF07D23983F0C00E9A5AE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				424AF08523983F0C00E9A5AE /* PBXTargetDependency */,
-			);
-			name = CinemtiyoTests;
-			packageProductDependencies = (
-				424AF08A2398440400E9A5AE /* SDWebImage */,
-			);
-			productName = CinemtiyoTests;
-			productReference = 424AF07F23983F0C00E9A5AE /* CinemtiyoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		424AF08F2398B14000E9A5AE /* CinemtiyoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 424AF0972398B14000E9A5AE /* Build configuration list for PBXNativeTarget "CinemtiyoUITests" */;
-			buildPhases = (
-				424AF08C2398B14000E9A5AE /* Sources */,
-				424AF08D2398B14000E9A5AE /* Frameworks */,
-				424AF08E2398B14000E9A5AE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				424AF0962398B14000E9A5AE /* PBXTargetDependency */,
-			);
-			name = CinemtiyoUITests;
-			packageProductDependencies = (
-				424AF09A2398B14900E9A5AE /* SDWebImage */,
-			);
-			productName = CinemtiyoUITests;
-			productReference = 424AF0902398B14000E9A5AE /* CinemtiyoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		42EC961D2347530500E85554 /* Cinemtiyo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42EC96322347530700E85554 /* Build configuration list for PBXNativeTarget "Cinemtiyo" */;
@@ -367,14 +268,6 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Vinayak Sareen";
 				TargetAttributes = {
-					424AF07E23983F0C00E9A5AE = {
-						CreatedOnToolsVersion = 11.0;
-						TestTargetID = 42EC961D2347530500E85554;
-					};
-					424AF08F2398B14000E9A5AE = {
-						CreatedOnToolsVersion = 11.0;
-						TestTargetID = 42EC961D2347530500E85554;
-					};
 					42EC961D2347530500E85554 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -398,27 +291,11 @@
 			projectRoot = "";
 			targets = (
 				42EC961D2347530500E85554 /* Cinemtiyo */,
-				424AF07E23983F0C00E9A5AE /* CinemtiyoTests */,
-				424AF08F2398B14000E9A5AE /* CinemtiyoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		424AF07D23983F0C00E9A5AE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		424AF08E2398B14000E9A5AE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		42EC961C2347530500E85554 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -438,23 +315,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		424AF07B23983F0C00E9A5AE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				424AF08223983F0C00E9A5AE /* RegisterationTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		424AF08C2398B14000E9A5AE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4256862023995E5D008B1FD0 /* PopularMovies.swift in Sources */,
-				424AF0932398B14000E9A5AE /* CinemtiyoUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		42EC961A2347530500E85554 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -467,6 +327,7 @@
 				425686252399A0D4008B1FD0 /* CustomImageCell.swift in Sources */,
 				42EC96222347530500E85554 /* AppDelegate.swift in Sources */,
 				4256862D2399D92F008B1FD0 /* CustomHeaderSlider.swift in Sources */,
+				42DAE7AE2509A83B001B9FD7 /* SearchView.swift in Sources */,
 				4B150FAA2399F7A000EBD5C2 /* SearchTableViewCell.swift in Sources */,
 				425186DF2372C85F00D0FA2B /* Api.swift in Sources */,
 				4239E76B239A8D9600B58E33 /* AddMovieController.swift in Sources */,
@@ -489,19 +350,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		424AF08523983F0C00E9A5AE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 42EC961D2347530500E85554 /* Cinemtiyo */;
-			targetProxy = 424AF08423983F0C00E9A5AE /* PBXContainerItemProxy */;
-		};
-		424AF0962398B14000E9A5AE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 42EC961D2347530500E85554 /* Cinemtiyo */;
-			targetProxy = 424AF0952398B14000E9A5AE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		42EC962C2347530700E85554 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -514,84 +362,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		424AF08623983F0C00E9A5AE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6YU2DE97Z;
-				INFOPLIST_FILE = CinemtiyoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = tech.CinemtiyoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cinemtiyo.app/Cinemtiyo";
-			};
-			name = Debug;
-		};
-		424AF08723983F0C00E9A5AE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6YU2DE97Z;
-				INFOPLIST_FILE = CinemtiyoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = tech.CinemtiyoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cinemtiyo.app/Cinemtiyo";
-			};
-			name = Release;
-		};
-		424AF0982398B14000E9A5AE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6YU2DE97Z;
-				INFOPLIST_FILE = CinemtiyoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = tech.CinemtiyoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Cinemtiyo;
-			};
-			name = Debug;
-		};
-		424AF0992398B14000E9A5AE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6YU2DE97Z;
-				INFOPLIST_FILE = CinemtiyoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = tech.CinemtiyoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Cinemtiyo;
-			};
-			name = Release;
-		};
 		42EC96302347530700E85554 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -745,24 +515,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		424AF08823983F0C00E9A5AE /* Build configuration list for PBXNativeTarget "CinemtiyoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				424AF08623983F0C00E9A5AE /* Debug */,
-				424AF08723983F0C00E9A5AE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		424AF0972398B14000E9A5AE /* Build configuration list for PBXNativeTarget "CinemtiyoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				424AF0982398B14000E9A5AE /* Debug */,
-				424AF0992398B14000E9A5AE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		42EC96192347530500E85554 /* Build configuration list for PBXProject "Cinemtiyo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -804,16 +556,6 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		424AF06B2396A53C00E9A5AE /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 424AF06A2396A53C00E9A5AE /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
-		424AF08A2398440400E9A5AE /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 424AF06A2396A53C00E9A5AE /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
-		424AF09A2398B14900E9A5AE /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 424AF06A2396A53C00E9A5AE /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;

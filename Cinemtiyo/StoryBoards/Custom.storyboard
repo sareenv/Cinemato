@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iDw-HH-JZT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iDw-HH-JZT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +20,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gqE-3l-e1p">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="141" id="x6k-pS-H4Z">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="141"/>
@@ -48,14 +50,14 @@
                                 <sections/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="n0f-pI-qFS"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gqE-3l-e1p" firstAttribute="top" secondItem="n0f-pI-qFS" secondAttribute="top" id="Aus-v2-1e3"/>
                             <constraint firstAttribute="bottom" secondItem="gqE-3l-e1p" secondAttribute="bottom" id="e7d-Bp-5Q9"/>
                             <constraint firstItem="gqE-3l-e1p" firstAttribute="trailing" secondItem="n0f-pI-qFS" secondAttribute="trailing" id="pu7-IC-dkE"/>
                             <constraint firstItem="gqE-3l-e1p" firstAttribute="leading" secondItem="n0f-pI-qFS" secondAttribute="leading" id="q1x-Nz-na2"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="n0f-pI-qFS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Cinemato" largeTitleDisplayMode="always" id="Qy3-24-Tj5"/>
                     <connections>
@@ -82,10 +84,10 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="1ky-zu-G4Y">
-                                <rect key="frame" x="12" y="162" width="94.5" height="48"/>
+                                <rect key="frame" x="12" y="162" width="94" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avangers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZr-6D-Y7t">
-                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -100,13 +102,13 @@
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlU-Cl-h3H">
                                 <rect key="frame" x="10" y="217" width="394" height="195.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvz-DE-LFy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvz-DE-LFy">
                                 <rect key="frame" x="292" y="172" width="107" height="40"/>
                                 <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -121,7 +123,7 @@
                                     <action selector="watchTrailer" destination="Q15-Kn-65p" eventType="touchUpInside" id="fiX-EK-JA2"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OSc-hD-79q">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OSc-hD-79q">
                                 <rect key="frame" x="5" y="495.5" width="404" height="366.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="85Y-4c-Kle">
@@ -139,6 +141,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="charity1" translatesAutoresizingMaskIntoConstraints="NO" id="gbm-lC-JRc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="123" height="115"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="8kq-Ou-RU1"/>
                                                         <constraint firstAttribute="height" constant="120" id="sKN-gn-Oqs"/>
@@ -164,7 +167,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RzL-aa-ohb">
                                 <rect key="frame" x="5" y="422.5" width="404" height="45"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRd-X6-dJl">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRd-X6-dJl">
                                         <rect key="frame" x="0.0" y="0.0" width="269" height="45"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
@@ -175,7 +178,7 @@
                                             <action selector="addtoWatchList" destination="Q15-Kn-65p" eventType="touchUpInside" id="adN-Vn-cLT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGY-dz-zz9">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGY-dz-zz9">
                                         <rect key="frame" x="277" y="0.0" width="127" height="45"/>
                                         <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -192,7 +195,8 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="auD-HJ-NBT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gvz-DE-LFy" firstAttribute="top" secondItem="han-MX-Bfj" secondAttribute="bottom" constant="22" id="53E-ZS-T6P"/>
                             <constraint firstItem="auD-HJ-NBT" firstAttribute="trailing" secondItem="zlU-Cl-h3H" secondAttribute="trailing" constant="10" id="5b3-yG-kdp"/>
@@ -213,7 +217,6 @@
                             <constraint firstItem="zlU-Cl-h3H" firstAttribute="leading" secondItem="auD-HJ-NBT" secondAttribute="leading" constant="10" id="qJ5-BW-eoG"/>
                             <constraint firstItem="han-MX-Bfj" firstAttribute="leading" secondItem="auD-HJ-NBT" secondAttribute="leading" id="tN8-fk-nXm"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="auD-HJ-NBT"/>
                     </view>
                     <navigationItem key="navigationItem" id="lsI-pO-DK6"/>
                     <connections>
@@ -251,12 +254,12 @@
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a5B-yY-fXY">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="562.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5K-1q-PJv">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5K-1q-PJv">
                                         <rect key="frame" x="0.0" y="626" width="374" height="50"/>
                                         <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -273,14 +276,14 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="NWu-PM-D5h"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="B3t-wv-mik" firstAttribute="top" secondItem="NWu-PM-D5h" secondAttribute="top" constant="16" id="Fbv-Uv-MIU"/>
                             <constraint firstItem="NWu-PM-D5h" firstAttribute="bottom" secondItem="B3t-wv-mik" secondAttribute="bottom" constant="30" id="WUL-zj-HT8"/>
                             <constraint firstItem="NWu-PM-D5h" firstAttribute="trailing" secondItem="B3t-wv-mik" secondAttribute="trailing" constant="20" id="a1x-Na-fYI"/>
                             <constraint firstItem="B3t-wv-mik" firstAttribute="leading" secondItem="NWu-PM-D5h" secondAttribute="leading" constant="20" id="duU-yu-xWe"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="NWu-PM-D5h"/>
                     </view>
                     <navigationItem key="navigationItem" title="Movie Watch List" id="buf-em-cxz"/>
                     <connections>
@@ -304,14 +307,14 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="67Z-x4-zX2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Bwv-Na-9Ob" firstAttribute="top" secondItem="67Z-x4-zX2" secondAttribute="top" id="5pw-Ei-hI1"/>
                             <constraint firstItem="Bwv-Na-9Ob" firstAttribute="leading" secondItem="67Z-x4-zX2" secondAttribute="leading" id="DRH-1k-heo"/>
                             <constraint firstItem="67Z-x4-zX2" firstAttribute="bottom" secondItem="Bwv-Na-9Ob" secondAttribute="bottom" id="kCZ-cB-ZXr"/>
                             <constraint firstItem="67Z-x4-zX2" firstAttribute="trailing" secondItem="Bwv-Na-9Ob" secondAttribute="trailing" id="sjg-LY-s9s"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="67Z-x4-zX2"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nearby Cinema" id="iJW-w5-PCB"/>
                     <connections>
@@ -332,10 +335,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" systemColor="darkTextColor"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" systemColor="darkTextColor"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -351,5 +354,20 @@
     <resources>
         <image name="charity1" width="1824" height="1216"/>
         <image name="movie" width="1728" height="1152"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
