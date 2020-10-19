@@ -12,8 +12,10 @@ import UIKit
 class PopularMoviesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
     @IBOutlet weak var moviesTableView: UITableView!
+    
     let isFirstTime = UserDefaults.standard
     var selectedIndex = 0
+    var timer: Timer?
     
     var movies: [Movie]?{
         didSet{
@@ -32,34 +34,31 @@ class PopularMoviesController: UIViewController, UITableViewDelegate, UITableVie
     override func viewWillAppear(_ animated: Bool) {
         navigationSettings()
     }
-   
+
     fileprivate func navigationSettings() {
-        self.navigationController?.navigationBar.barTintColor = UIColor(light: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), dark: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
-        if #available(iOS 13.0, tvOS 13.0, *) {
-            // check the dark mode status.
-            if self.traitCollection.userInterfaceStyle == .dark {
-                self.navigationController?.navigationBar.isTranslucent = false
-            }else {
-                 self.navigationController?.navigationBar.isTranslucent = true
-            }
-        }
-        
+        // fixed the color problem.
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.view.backgroundColor = UIColor.white
         let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(light: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), dark: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
+        
+        let searchController = UISearchController()
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+        
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
     }
     
     fileprivate func fetchTrendingData(){
         let api = Api.instance
-        api.downloadMovies { (error, movie) in
-            if (error != nil){
-                return
-            }
-            
-            
+        api.downloadMovies(pageNumber: 1) { (error, movie) in
+            if (error != nil) { return }
+         
             DispatchQueue.main.async {
-                // update the cells.
                 guard let movie = movie else { return }
                 self.movies = movie.results
             }
@@ -83,7 +82,6 @@ class PopularMoviesController: UIViewController, UITableViewDelegate, UITableVie
     }
 }
 
-
 extension PopularMoviesController{
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -92,12 +90,16 @@ extension PopularMoviesController{
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let estimatedHeaderHeight = 20 * (self.view.frame.height / 100) // this will be 20% of the width
+        let estimatedHeaderHeight = 32 * (self.view.frame.height / 100) // this will be 30% of the width
         return estimatedHeaderHeight
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 190
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -111,18 +113,13 @@ extension PopularMoviesController{
       }
     
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "moviesDetail"){
-            if let detailsController = segue.destination as? DetailsMovieController{
-                detailsController.movie = self.movies?[selectedIndex]
-            }
-        }
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath.item
-        self.performSegue(withIdentifier: "moviesDetail", sender: nil)
+        let movie = self.movies?[selectedIndex]
+        let detailsController = DetailsController()
+        detailsController.hidesBottomBarWhenPushed = true
+        detailsController.movie = movie
+        self.navigationController?.pushViewController(detailsController, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -134,7 +131,32 @@ extension PopularMoviesController{
             cell.transform = .identity
         }
     }
-    
 }
 
 
+extension PopularMoviesController: UISearchBarDelegate {
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        timer?.invalidate()
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
+            self.searchMovies(movieSearchTerm: searchText)
+           
+        })
+    }
+    
+    func searchMovies(movieSearchTerm: String) {
+        let api = Api.instance
+        api.searchMovies(movieSearchTerm: movieSearchTerm) { (error, movie) in
+            if (error != nil) { return }
+         
+            DispatchQueue.main.async {
+                guard let movie = movie else { return }
+                self.movies = movie.results
+                self.moviesTableView.reloadData()
+            }
+        }
+    }
+    
+}

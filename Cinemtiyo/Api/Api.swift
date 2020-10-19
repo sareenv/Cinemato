@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /* Singleton Pattern
     The class below shows the singleton pattern, as shown below the init method of the class
@@ -25,6 +26,26 @@ class Api{
         case jsonParseError, networkError, noDataError
     }
     
+    func downloadMovieCast(id: Int, completionHandler: @escaping (ApiErrors?, Cast?) -> ()) {
+        let session = URLSession.shared
+        let baseUrl = "https://api.themoviedb.org/3/"
+        let apiKey = "?api_key=48011e814c676dd12ae5d6e76288b2ae"
+        let castRelativePath = "movie/\(id)/credits"
+        let url = baseUrl + castRelativePath + apiKey
+        guard let castUrl = URL(string: url) else { return }
+        
+        session.dataTask(with: castUrl) { (data, resp, error) in
+            if(error != nil){
+                return
+            }
+            guard let data = data else { return }
+            guard let movieCast = try? JSONDecoder().decode(Cast.self, from: data) else {
+                completionHandler(.jsonParseError, nil)
+                return
+            }
+            completionHandler(nil, movieCast)
+        }.resume()
+    }
     
     func downloadWallImages(id: Int, completionHandler: @escaping (ApiErrors?, MovieImages?) -> ()){
         let session = URLSession.shared
@@ -48,15 +69,17 @@ class Api{
         }.resume()
     }
     
-    func downloadMovies(completionHandler: @escaping (ApiErrors?, Movies?) -> ()){
+    func downloadMovies(pageNumber: Int, completionHandler: @escaping (ApiErrors?, Movies?) -> ()){
         let session = URLSession.shared
         let baseUrl = "https://api.themoviedb.org/3/"
         let apiKey = "?api_key=48011e814c676dd12ae5d6e76288b2ae"
         let language = "&language=en-US"
-        let adult = "&include_adult=false"
+        let adult = "&include_adult=true"
         let popularMoviesRelativeUrlPath = "movie/popular"
+        let pageQuery = "&page=\(pageNumber)"
         
-        let moviesUrlString = baseUrl + popularMoviesRelativeUrlPath + apiKey + language + adult
+        let moviesUrlString = baseUrl + popularMoviesRelativeUrlPath + apiKey + language + adult + pageQuery
+        
         
         guard let moviesUrl = URL(string: moviesUrlString) else { return }
         session.dataTask(with: moviesUrl) { (data, response, error) in
@@ -76,10 +99,39 @@ class Api{
     }
     
     
-    func fetchSimilarMovies(movieId: Int, completionHandler: @escaping (ApiErrors?, Movies?)->()){
+    func searchMovies(movieSearchTerm: String, completionHandler:@escaping (ApiErrors?, Movies?) -> () ) {
         let session = URLSession.shared
         let baseUrl = "https://api.themoviedb.org/3/"
-        let similarPath = "movie/\(movieId)/similar"
+        let relativePath = "search/movie"
+        let apiKey = "?api_key=48011e814c676dd12ae5d6e76288b2ae"
+        let query = "&query=\(movieSearchTerm)"
+        let searchMovieTermUrlString = baseUrl + relativePath + apiKey + query
+        
+        print(searchMovieTermUrlString)
+        
+        guard let searchMovieTermUrl = URL(string: searchMovieTermUrlString) else { return }
+        
+        session.dataTask(with: searchMovieTermUrl) { (data, resp, error) in
+            if (error != nil) {
+                completionHandler(.networkError, nil)
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            guard let movies = try? JSONDecoder().decode(Movies.self, from: data) else {
+                completionHandler(.jsonParseError, nil)
+                return
+            }
+            completionHandler(nil, movies)
+        }.resume()
+    }
+    
+    
+    func downloadSimilarMovies(movieId: Int, completionHandler: @escaping (ApiErrors?, Movies?)->()){
+        let session = URLSession.shared
+        let baseUrl = "https://api.themoviedb.org/3/"
+        let similarPath = "movie/\(movieId)/recommendations"
         let apiKey = "?api_key=48011e814c676dd12ae5d6e76288b2ae"
         let searchSimilarUrlString = baseUrl + similarPath + apiKey
         guard let searchSimilarUrl = URL(string: searchSimilarUrlString) else { return }

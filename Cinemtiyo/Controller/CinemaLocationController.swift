@@ -11,7 +11,11 @@ import MapKit
 
 class CinemaLocationController: UIViewController, MKMapViewDelegate {
     
-    @IBOutlet weak var mapView: MKMapView!
+    let mapView: MKMapView = {
+        let mapView = MKMapView()
+        return mapView
+    }()
+    
     var manager: CLLocationManager?
     var userLocation: CLLocationCoordinate2D? {
         didSet {
@@ -22,10 +26,17 @@ class CinemaLocationController: UIViewController, MKMapViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        self.title = "Local Cinema"
+    }
+    
+    fileprivate func setupMapView() {
+        self.view.addSubview(mapView)
+        mapView.fillSuperView()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupMapView()
         manager = CLLocationManager()
         mapViewSettings()
         detectUserLocation()
@@ -43,7 +54,7 @@ class CinemaLocationController: UIViewController, MKMapViewDelegate {
     fileprivate func searchNearByCinemas() {
         guard let userLocation = userLocation else { return }
            let request = MKLocalSearch.Request()
-           request.naturalLanguageQuery = "Cinema"
+           request.naturalLanguageQuery = "movie theater"
            request.region = mapView.region
            let locationSearch = MKLocalSearch(request: request)
            locationSearch.start { (response, error) in
@@ -84,13 +95,27 @@ class CinemaLocationController: UIViewController, MKMapViewDelegate {
 }
 
 extension CinemaLocationController: CLLocationManagerDelegate{
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error is \(error.localizedDescription)")
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if(status == .denied) {
+            let alertController = UIAlertController(title: "Denied Access to the location", message: "App requires location to show nearby cinema", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let currentLatitude = locations.last?.coordinate
         guard currentLatitude != nil else { return }
         userLocation = currentLatitude
-        manager.stopUpdatingLocation()
        }
     
+
     func openMapsAppWithDirections(to coordinate: CLLocationCoordinate2D, destinationName name: String) {
       let options = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
       let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)

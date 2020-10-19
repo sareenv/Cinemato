@@ -14,11 +14,15 @@ class WatchListController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var moviesWatchList: [WatchListMovie] = [WatchListMovie]()
-    
-    
+    var moviesWatchList: [WatchListMovie] = [WatchListMovie]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         fetchData()
+        self.navigationController?.navigationBar.prefersLargeTitles = false
         self.tableView.reloadData()
     }
     
@@ -31,8 +35,8 @@ class WatchListController: UITableViewController {
     }
     
     fileprivate func tableViewSettings() {
-        tableView.rowHeight = 60
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "customMovieCell")
+        tableView.rowHeight = 70
+        tableView.register(BookMarkCell.self, forCellReuseIdentifier: "customMovieCell")
         tableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
     
@@ -43,7 +47,7 @@ class WatchListController: UITableViewController {
     }
     
     fileprivate func navigationSettings() {
-        self.navigationItem.title = "Movies Watch List"
+        self.navigationItem.title = "Watch List"
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
@@ -52,19 +56,20 @@ class WatchListController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customMovieCell", for: indexPath)
-        let movie = moviesWatchList[indexPath.row]
-        if let task = movie.movieName{
-            cell.textLabel?.text = task
-            cell.textLabel?.numberOfLines = 0
-        }
         
-        if let taskNote = movie.movieNote{
-            cell.detailTextLabel?.text = taskNote
-            cell.detailTextLabel?.numberOfLines = 0
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customMovieCell", for: indexPath) as! BookMarkCell
+        let movie = moviesWatchList[indexPath.row]
+        cell.textLabel?.text = movie.movieName ?? ""
+        cell.textLabel?.font = .boldSystemFont(ofSize: 14)
+        cell.textLabel?.numberOfLines = 0
+        cell.detailTextLabel?.text = movie.movieDescription ?? ""
+        cell.detailTextLabel?.numberOfLines = 2
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.present(FriendsController(), animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -80,5 +85,26 @@ class WatchListController: UITableViewController {
                 }
             }
             tableView.reloadData()
-        }
+    }
+    
+
+    
+}
+
+class BookMarkCell: UITableViewCell {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+class FriendsController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .red
+    }
 }

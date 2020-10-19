@@ -9,8 +9,6 @@
 import UIKit
 
 class CustomImageCell: UICollectionViewCell{
-    
-    
     @IBOutlet weak var movieImageView: UIImageView! {
         didSet {
             movieImageView.layer.cornerRadius = 7

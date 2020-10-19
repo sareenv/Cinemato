@@ -22,7 +22,7 @@ class SliderContent{
         let slide1 = SliderContent.init(image: #imageLiteral(resourceName: "slider1"), content: "Trending Movies", description: "View all the popular movies")
         let slide2 = SliderContent.init(image: #imageLiteral(resourceName: "slider2"), content: "Connect with Entertainment", description: "Plan to watch new entertaining movies")
         let slide3 = SliderContent.init(image: #imageLiteral(resourceName: "slider3"), content: "Awesome Feeling", description: "It feels awesome to plan and watch movies with friends and family")
-        let slide4 = SliderContent.init(image: #imageLiteral(resourceName: "slider4"), content: "You can also join our team", description: "Share your information and we will you to join our team")
+        let slide4 = SliderContent.init(image: #imageLiteral(resourceName: "slider4"), content: "Join Community", description: "Join the entertainment community")
         let slides = [slide1, slide2, slide3, slide4]
         return slides
     }

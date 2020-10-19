@@ -15,6 +15,8 @@ struct Movie: Decodable{
     let backdrop_path: String?
     let poster_path: String?
     let release_date: String?
+    let tagline: String?
+    let vote_count: Int?
 }
 
 struct Movies: Decodable {
