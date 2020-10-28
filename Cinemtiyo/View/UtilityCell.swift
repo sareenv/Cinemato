@@ -30,9 +30,9 @@ class UtilitesCell: UICollectionViewCell {
     let watchTrailerButton = {() -> UIButton in
         let btn = UIButton(type: .system)
         btn.setTitle("Watch Trailer", for: .normal)
-        btn.backgroundColor = .purple
+        btn.backgroundColor = UIColor(white: 0.95, alpha: 1)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        btn.tintColor = .white
+        btn.tintColor = .black
         btn.layer.cornerRadius = 5
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn

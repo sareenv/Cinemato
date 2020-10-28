@@ -73,11 +73,11 @@ class DetailsController: UIViewController, UICollectionViewDelegate, UICollectio
             
             if(sectionId == 0) {
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(240)), subitems: [item])
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.93), heightDimension: .absolute(210)), subitems: [item])
                 group.contentInsets.trailing = 10
                 let section = NSCollectionLayoutSection(group: group)
                 section.contentInsets.leading = 5
-                section.orthogonalScrollingBehavior = .paging
+                section.orthogonalScrollingBehavior = .groupPagingCentered
                 return section
             } else if(sectionId == 1) {
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))

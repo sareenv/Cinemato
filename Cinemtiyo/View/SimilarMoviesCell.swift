@@ -51,7 +51,7 @@ class SimilarMoviesCell: UICollectionViewCell {
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.clipsToBounds = true
         iv.contentMode = .scaleAspectFill
-        iv.layer.cornerRadius = 25
+        iv.layer.cornerRadius = 20
         return iv
     }()
     
@@ -97,8 +97,8 @@ class SimilarMoviesCell: UICollectionViewCell {
     }
     
     fileprivate func setupMoviesStackView() {
-        let estimatedHeight = CGFloat(50)
-        let estimatedWidth = CGFloat(50)
+        let estimatedHeight = CGFloat(40)
+        let estimatedWidth = CGFloat(40)
         movieStackView.layoutMargins = .init(top: 5, left: 5, bottom: 5, right: 5)
         movieImageView.heightAnchor.constraint(equalToConstant: estimatedHeight).isActive = true
         movieImageView.widthAnchor.constraint(equalToConstant: estimatedWidth).isActive = true
@@ -111,7 +111,7 @@ class SimilarMoviesCell: UICollectionViewCell {
   
     
     fileprivate func cellStyling() {
-        let backgroundColor = UIColor.white
+        let backgroundColor = UIColor(white: 0.95, alpha: 1)
         self.layer.cornerRadius = 7
         self.backgroundColor = backgroundColor
     }
