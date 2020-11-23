@@ -7,14 +7,14 @@
 //
 
 import UIKit
-
+import SDWebImage
 
 class CustomHeaderElementCell: UICollectionViewCell{
     
     let headerElementImageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.image = #imageLiteral(resourceName: "charity1") // this needs to be replaced with datasource option.
+        iv.sd_imageIndicator = SDWebImageActivityIndicator.gray
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.layer.cornerRadius = 7

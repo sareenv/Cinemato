@@ -144,7 +144,7 @@ class DetailsController: UIViewController, UICollectionViewDelegate, UICollectio
             else {
                 let fractionWidth: CGFloat = 0.8
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(fractionWidth), heightDimension: .absolute(120)), subitems: [item])
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(fractionWidth), heightDimension: .absolute(260)), subitems: [item])
                 group.contentInsets.trailing = 10
                 group.interItemSpacing = .fixed(5)
                 group.contentInsets.bottom = 10
@@ -167,7 +167,7 @@ class DetailsController: UIViewController, UICollectionViewDelegate, UICollectio
     
     fileprivate func setupLeadingNavigationItem() {
         var bookMarkimage = UIImage(systemName: "bookmark")
-        print(bookMarkMovies)
+    
         bookMarkMovies.forEach { (bookMarkMovie) in
             if(movie?.id ?? 0 == bookMarkMovie.movieId) {
                 bookMarkimage = UIImage(systemName: "bookmark.fill")

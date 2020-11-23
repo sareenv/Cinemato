@@ -87,6 +87,7 @@ class CinemaLocationController: UIViewController, MKMapViewDelegate {
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: location, span: span)
         self.mapView.setRegion(region, animated: true)
+        manager?.stopUpdatingLocation()
     }
     
     fileprivate func mapViewSettings() {

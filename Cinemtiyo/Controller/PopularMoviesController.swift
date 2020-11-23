@@ -45,6 +45,7 @@ class PopularMoviesController: UIViewController, UITableViewDelegate, UITableVie
         navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
         
         let searchController = UISearchController()
+        searchController.searchBar.placeholder = "Please enter search term"
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
         

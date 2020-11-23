@@ -22,7 +22,7 @@ class SimilarMoviesCell: UICollectionViewCell {
     
     let movieTitleLabel: UILabel = {
         let label = UILabel(font: UIFont.boldSystemFont(ofSize: 15), text: "Movie Title", alignment: .left)
-        label.textColor = .purple
+        label.textColor = .black
         label.layoutMargins = .init(top: 5, left: 0, bottom: 0, right: 0)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -51,27 +51,19 @@ class SimilarMoviesCell: UICollectionViewCell {
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.clipsToBounds = true
         iv.contentMode = .scaleAspectFill
-        iv.layer.cornerRadius = 20
+        iv.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        iv.layer.cornerRadius = 6
         return iv
     }()
     
-    let movieStackView: UIStackView = {
-        let sv = UIStackView()
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        sv.distribution = .fill
-        sv.axis = .horizontal
-        sv.isLayoutMarginsRelativeArrangement = true
-        sv.alignment = .top
-        sv.spacing = 6
-        return sv
-    }()
-    
-    
+
     let informationStackView = { () -> UIStackView in
         let sv = UIStackView()
         sv.axis = .vertical
         sv.translatesAutoresizingMaskIntoConstraints = false
         sv.distribution = .fill
+        sv.alignment = .leading
+        sv.spacing = 5
         return sv
     }()
     
@@ -91,22 +83,19 @@ class SimilarMoviesCell: UICollectionViewCell {
     
     
     fileprivate func setupInformationStackView() {
+        movieImageView.heightAnchor.constraint(equalToConstant: 140).isActive = true
+        informationStackView.isLayoutMarginsRelativeArrangement = true
+        informationStackView.layoutMargins = .init(top: 5, left: 10, bottom: 5, right: 10)
+        
+        informationStackView.addArrangedSubview(movieImageView)
         informationStackView.addArrangedSubview(movieTitleLabel)
         informationStackView.addArrangedSubview(tagLineLabel)
         informationStackView.addArrangedSubview(descriptionLabel)
+        
+        addSubview(informationStackView)
+        informationStackView.fillSuperView()
     }
-    
-    fileprivate func setupMoviesStackView() {
-        let estimatedHeight = CGFloat(40)
-        let estimatedWidth = CGFloat(40)
-        movieStackView.layoutMargins = .init(top: 5, left: 5, bottom: 5, right: 5)
-        movieImageView.heightAnchor.constraint(equalToConstant: estimatedHeight).isActive = true
-        movieImageView.widthAnchor.constraint(equalToConstant: estimatedWidth).isActive = true
-        self.addSubview(movieStackView)
-        movieStackView.fillSuperView()
-        movieStackView.addArrangedSubview(movieImageView)
-        movieStackView.addArrangedSubview(informationStackView)
-    }
+
     
   
     
@@ -120,7 +109,7 @@ class SimilarMoviesCell: UICollectionViewCell {
         super.init(frame: frame)
         cellStyling()
         setupInformationStackView()
-        setupMoviesStackView()
+        movieImageView.sd_imageIndicator = SDWebImageActivityIndicator()
     }
     
     required init?(coder: NSCoder) {

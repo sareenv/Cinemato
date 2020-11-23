@@ -12,6 +12,8 @@ import CoreData
 
 class WatchListController: UITableViewController {
     
+    let watchListMessageLabel: UILabel = UILabel(font: .systemFont(ofSize: 14), text: "No movies or shows are saved to watch list.", alignment: .center)
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var moviesWatchList: [WatchListMovie] = [WatchListMovie]() {

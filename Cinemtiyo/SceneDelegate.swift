@@ -16,6 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
         let hasOpenBefore = UserDefaults.standard.bool(forKey: "hasOpenBefore")
         
         window?.windowScene = windowScene
@@ -25,7 +26,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let tabController = CinematoTabBarController()
             window?.rootViewController = tabController
         }
-        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

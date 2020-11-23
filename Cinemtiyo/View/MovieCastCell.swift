@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MovieCastCell: UICollectionViewCell {
     
@@ -18,7 +19,8 @@ class MovieCastCell: UICollectionViewCell {
     }()
     
     lazy var castImageView: UIImageView = {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "charity1"))
+        let imageView = UIImageView()
+        imageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 10
@@ -49,7 +51,12 @@ class MovieCastCell: UICollectionViewCell {
             print("Error")
             return
         }
-        self.castImageView.sd_setImage(with: imagePosterUrl, placeholderImage: #imageLiteral(resourceName: "charity1"), completed: nil)
+        castImageView.sd_setImage(with: imagePosterUrl) { (image, _, _, _) in
+            if(image == nil) {
+                self.castImageView.image = #imageLiteral(resourceName: "default")
+            }
+            
+        }
     }
     
     fileprivate func setupStackView() {

@@ -107,7 +107,7 @@ class Api{
         let query = "&query=\(movieSearchTerm)"
         let searchMovieTermUrlString = baseUrl + relativePath + apiKey + query
         
-        print(searchMovieTermUrlString)
+      
         
         guard let searchMovieTermUrl = URL(string: searchMovieTermUrlString) else { return }
         

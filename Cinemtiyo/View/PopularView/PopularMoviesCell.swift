@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PopularMoviesCell: UITableViewCell {
     
     @IBOutlet weak var movieTitle: UILabel!
-    @IBOutlet weak var moviewPosterImageView: UIImageView!
+    @IBOutlet weak var moviewPosterImageView: UIImageView! {
+        didSet {
+            moviewPosterImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        }
+    }
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var movieReleaseDateLabel: UILabel!
-    @IBOutlet weak var movieCompanyImageView: UIImageView!
+    @IBOutlet weak var movieCompanyImageView: UIImageView! {
+        didSet {
+            movieCompanyImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        }
+    }
     
     var movieDetail: Movie?{
         didSet{

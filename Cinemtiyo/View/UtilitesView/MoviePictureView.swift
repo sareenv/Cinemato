@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 
 class MoviePictureView: UIView {
     
@@ -27,19 +27,25 @@ class MoviePictureView: UIView {
         super.init(frame: frame)
     }
     
-    lazy var imageView = UIImageView()
+    lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode  = .scaleAspectFill
+        return imageView
+    }()
     
     fileprivate func setupImageView(image: UIImage) {
         imageView.image = image
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode  = .scaleAspectFill
         self.addSubview(imageView)
         imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
         imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
         imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 230).isActive = true
         imageView.isUserInteractionEnabled = true
-        
+    }
+    
+    fileprivate func addTapGesture() {
         let tapGesture = UIPanGestureRecognizer(target: self, action: #selector(handleTap))
         imageView.addGestureRecognizer(tapGesture)
     }
