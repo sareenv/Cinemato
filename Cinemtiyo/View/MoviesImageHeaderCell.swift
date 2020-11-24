@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class MoviesImageHeaderCell: UICollectionViewCell {
   
     lazy var movieImageView: UIImageView = {

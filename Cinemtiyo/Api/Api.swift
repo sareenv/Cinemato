@@ -84,11 +84,10 @@ class Api{
         guard let moviesUrl = URL(string: moviesUrlString) else { return }
         session.dataTask(with: moviesUrl) { (data, response, error) in
             if (error != nil) {
-                           completionHandler(.networkError, nil)
-                           return
+               completionHandler(.networkError, nil)
+               return
             }
             guard let data = data else { return }
-            
             guard let movies = try? JSONDecoder().decode(Movies.self, from: data) else {
                 completionHandler(.jsonParseError, nil)
                 return
@@ -106,19 +105,13 @@ class Api{
         let apiKey = "?api_key=48011e814c676dd12ae5d6e76288b2ae"
         let query = "&query=\(movieSearchTerm)"
         let searchMovieTermUrlString = baseUrl + relativePath + apiKey + query
-        
-      
-        
         guard let searchMovieTermUrl = URL(string: searchMovieTermUrlString) else { return }
-        
         session.dataTask(with: searchMovieTermUrl) { (data, resp, error) in
             if (error != nil) {
                 completionHandler(.networkError, nil)
                 return
             }
-            
             guard let data = data else { return }
-            
             guard let movies = try? JSONDecoder().decode(Movies.self, from: data) else {
                 completionHandler(.jsonParseError, nil)
                 return
@@ -151,7 +144,6 @@ class Api{
         }.resume()
     }
     
-    
     func downloadTrailers(movieId: Int, completionHandler: @escaping (ApiErrors?, Trailers?)->()) {
         let urlString = "https://api.themoviedb.org/3/movie/\(movieId)/videos?api_key=48011e814c676dd12ae5d6e76288b2ae"
         guard let trailerUrl = URL(string: urlString) else { return }
@@ -170,6 +162,10 @@ class Api{
             }
             completionHandler(nil, trendingData)
         }.resume()
+    }
+    
+    func downloadTVShows() {
+        
     }
     
     func downloadTrendingMovies(completionHandler: @escaping (ApiErrors?, Movies?)->()){

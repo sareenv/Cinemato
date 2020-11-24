@@ -22,7 +22,7 @@ class TVController: UICollectionViewController, UICollectionViewDelegateFlowLayo
     
     
     fileprivate func setupLabel() {
-        collectionView.addSubview(searchMessageLabel)
+        self.collectionView.addSubview(searchMessageLabel)
         searchMessageLabel.translatesAutoresizingMaskIntoConstraints = false
         searchMessageLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         searchMessageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -84,9 +84,7 @@ class TVController: UICollectionViewController, UICollectionViewDelegateFlowLayo
 
 
 class TVCell: UICollectionViewCell {
-    
-   
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .red

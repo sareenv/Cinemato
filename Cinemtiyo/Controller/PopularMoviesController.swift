@@ -25,7 +25,7 @@ class PopularMoviesController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        openState()
+        
         tableViewSettings()
         fetchTrendingData()
     }
@@ -77,10 +77,7 @@ class PopularMoviesController: UIViewController, UITableViewDelegate, UITableVie
         moviesTableView.dataSource = self
         moviesTableView.estimatedRowHeight = 40
     }
-    
-    fileprivate func openState(){
-        isFirstTime.set(true, forKey: "hasOpenBefore")
-    }
+
 }
 
 extension PopularMoviesController{

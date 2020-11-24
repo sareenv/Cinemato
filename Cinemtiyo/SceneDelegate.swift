@@ -17,15 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        let hasOpenBefore = UserDefaults.standard.bool(forKey: "hasOpenBefore")
-        
         window?.windowScene = windowScene
-        if(hasOpenBefore == false){
-            window?.rootViewController = UINavigationController(rootViewController: SliderController())
-        }else{
-            let tabController = CinematoTabBarController()
-            window?.rootViewController = tabController
-        }
+        let tabController = CinematoTabBarController()
+        window?.rootViewController = tabController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

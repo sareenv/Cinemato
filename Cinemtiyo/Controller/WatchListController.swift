@@ -21,7 +21,15 @@ class WatchListController: UITableViewController {
             tableView.reloadData()
         }
     }
-
+    
+    
+    fileprivate func setupLabel() {
+        self.tableView.addSubview(watchListMessageLabel)
+        watchListMessageLabel.translatesAutoresizingMaskIntoConstraints = false
+        watchListMessageLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        watchListMessageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         fetchData()
         self.navigationController?.navigationBar.prefersLargeTitles = false
@@ -46,6 +54,7 @@ class WatchListController: UITableViewController {
         super.viewDidLoad()
         tableViewSettings()
         navigationSettings()
+        setupLabel()
     }
     
     fileprivate func navigationSettings() {
@@ -54,11 +63,12 @@ class WatchListController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.tableView.separatorStyle = (moviesWatchList.count == 0) ? .none : .singleLine
+        watchListMessageLabel.isHidden = (moviesWatchList.count == 0) ? false : true
         return moviesWatchList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMovieCell", for: indexPath) as! BookMarkCell
         let movie = moviesWatchList[indexPath.row]
         cell.textLabel?.text = movie.movieName ?? ""
@@ -79,7 +89,6 @@ class WatchListController: UITableViewController {
                let deletionTask = self.moviesWatchList[indexPath.row]
                context.delete(deletionTask)
                (UIApplication.shared.delegate as! AppDelegate).saveContext()
-               
                do {
                     self.moviesWatchList = try context.fetch(WatchListMovie.fetchRequest())
                } catch {
@@ -88,20 +97,8 @@ class WatchListController: UITableViewController {
             }
             tableView.reloadData()
     }
-    
-
-    
 }
 
-class BookMarkCell: UITableViewCell {
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
 
 
 class FriendsController: UIViewController {
