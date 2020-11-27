@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 struct Option {
     let optionImage: UIImage?
     let optionText: String
