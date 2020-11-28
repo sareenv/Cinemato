@@ -7,10 +7,9 @@
 //
 
 import UIKit
+import Lottie
 
 class OnBoardingController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    
-   
     
     fileprivate func collectionViewSettings() {
         collectionView.register(OnBoardingCell.self, forCellWithReuseIdentifier: "onBoardingCell")
@@ -29,14 +28,29 @@ class OnBoardingController: UICollectionViewController, UICollectionViewDelegate
         collectionViewSettings()
     }
     
+    var currentCell = 0
+    let animations = [
+        Page(animationName: "animation1"),
+        Page(animationName: "animation2"),
+        Page(animationName: "animation3")
+                      
+    ]
+    
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        currentCell = Int(scrollView.contentOffset.x / scrollView.frame.width)
+        currentCell = (currentCell > 0) ? currentCell : 0
+        print(currentCell)
+    }
+    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return animations.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "onBoardingCell", for: indexPath) as! OnBoardingCell
-        cell.backgroundColor = (indexPath.item % 2 == 0) ? .red : .yellow
+        cell.backgroundColor = .white
+        cell.configureCell(page: animations[currentCell])
         return cell
     }
     
@@ -58,42 +72,3 @@ class OnBoardingController: UICollectionViewController, UICollectionViewDelegate
 }
 
 
-// Changes.
-
-class OnBoardingCell: UICollectionViewCell {
-    
-    // lottie animations.
-    
-    lazy var button: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Press Me", for: .normal)
-        button.backgroundColor = .white
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        return button
-    }()
-    
-    @objc func handleTap() {
-        let dummyController = UIViewController()
-        dummyController.view.backgroundColor = .yellow
-        self.window?.rootViewController = dummyController
-    }
-    
-    
-    fileprivate func setupButton() {
-        addSubview(button)
-        button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5).isActive = true
-        button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupButton()
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("Error init the cell")
-    }
-}
