@@ -13,7 +13,7 @@ class OnBoardingController: UICollectionViewController, UICollectionViewDelegate
     
     fileprivate func collectionViewSettings() {
         collectionView.register(OnBoardingCell.self, forCellWithReuseIdentifier: "onBoardingCell")
-        
+        collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.isPagingEnabled = true
@@ -23,23 +23,42 @@ class OnBoardingController: UICollectionViewController, UICollectionViewDelegate
         return 0
     }
     
+    let pageControl = UIPageControl()
+    
+    fileprivate func setupPageControl() {
+        
+        
+        pageControl.currentPage = 0
+        pageControl.numberOfPages = animations.count
+        pageControl.currentPageIndicatorTintColor = .systemRed
+        pageControl.pageIndicatorTintColor = .systemGray
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        self.collectionView.addSubview(pageControl)
+        pageControl.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
+        pageControl.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
+        pageControl.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -16).isActive = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionViewSettings()
+        setupPageControl()
     }
     
-    var currentCell = 0
+    
     let animations = [
-        Page(animationName: "animation1"),
-        Page(animationName: "animation2"),
-        Page(animationName: "animation3")
-                      
+        Page(animationName: "animation1", title: "", description: ""),
+        Page(animationName: "animation3", title: "", description: ""),
+        Page(animationName: "animation2", title: "", description: ""),
+        Page(animationName: "animation1", title: "", description: "")
     ]
     
-    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        currentCell = Int(scrollView.contentOffset.x / scrollView.frame.width)
-        currentCell = (currentCell > 0) ? currentCell : 0
-        print(currentCell)
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offSet = scrollView.contentOffset.x
+        let width = scrollView.frame.width
+        let horizontalCenter = width / 2
+
+        pageControl.currentPage = Int(offSet + horizontalCenter) / Int(width)
     }
     
     
@@ -50,7 +69,7 @@ class OnBoardingController: UICollectionViewController, UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "onBoardingCell", for: indexPath) as! OnBoardingCell
         cell.backgroundColor = .white
-        cell.configureCell(page: animations[currentCell])
+        cell.configureCell(page: animations[indexPath.item])
         return cell
     }
     

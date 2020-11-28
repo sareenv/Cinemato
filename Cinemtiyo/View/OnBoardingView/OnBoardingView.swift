@@ -11,9 +11,9 @@ import Lottie
 
 struct Page {
     let animationName: String
+    let title: String
+    let description: String
 }
-
-// Changes.
 
 class OnBoardingCell: UICollectionViewCell {
     
@@ -64,7 +64,7 @@ class OnBoardingCell: UICollectionViewCell {
     
     
     fileprivate func setupViews() {
-        let estimatedHeight = (self.frame.width) * 70 / 100
+        let estimatedHeight = CGFloat(220)
         addSubview(animationView)
         animationView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         animationView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
