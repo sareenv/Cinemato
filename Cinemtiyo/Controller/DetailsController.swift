@@ -145,7 +145,6 @@ class DetailsController: UIViewController, UICollectionViewDelegate, UICollectio
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.collectionView.reloadData()
         navigationSettings()
         fetchBookMarkMovies()
     }

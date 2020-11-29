@@ -23,9 +23,14 @@ class PopularMoviesController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    
+    fileprivate func hasOpendBefore() {
+        UserDefaults.standard.setValue(true, forKey: "hasOpenBefore")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        hasOpendBefore()
         tableViewSettings()
         fetchTrendingData()
     }
