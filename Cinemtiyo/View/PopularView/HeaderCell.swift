@@ -24,6 +24,8 @@ class HeaderCell: UITableViewCell {
     fileprivate func collectionViewSettings() {
         // Initialization code
         self.translatesAutoresizingMaskIntoConstraints = false
+        headerSliderCollectionView.isPagingEnabled = true
+    
         headerSliderCollectionView.automaticallyAdjustsScrollIndicatorInsets = false
         headerSliderCollectionView.register(CustomHeaderElementCell.self, forCellWithReuseIdentifier: "cellId")
         headerSliderCollectionView.register(CustomHeaderElementCell.self, forCellWithReuseIdentifier: cellId)
