@@ -1,8 +1,9 @@
 # Cinemato - Platform for Movie Enthusiasts
 
-<p align="center">
-	<img src="app1.png" width="33.3%" height="33.3%"/>
-</p>
+## Screenshots
+<img src="*/Screenshots/slider1.png" width="30%" height="33.3%"/>|<img src="*/Screenshots/slider2.png" width="30%" height="33.3%"/> | <img src="*/Screenshots/slider3.png" width="30%" height="33.3%"/> 
+
+
 
 Cinemato project developed using swift programming language for Module 301CEM coursework. The application focuses on providing users to choose trending movies and tv shows and is using <a href="https://developers.themoviedb.org/"> TheMovieDB </a> api for fetching the details. The project was developed using the programmatic and UINib based visual approach to develop the complex layout.
 
@@ -19,4 +20,7 @@ Cinemato project developed using swift programming language for Module 301CEM co
 2. LBTATools.
 
 ## Credits:
-TheMovieDb provides the developer api to movies and tv shows detailed information.
+- TheMovieDb provides the developer api to movies and tv shows detailed information.
+- Lottie library developed by Airbnb.
+  
+
