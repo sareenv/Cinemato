@@ -15,7 +15,7 @@ Cinemato project developed using swift programming language for Module 301CEM co
 1. SDWebImage.
 2. LBTATools.
 
-## Credits:
+## Api And Framework Credits:
 - TheMovieDb provides the developer api to movies and tv shows detailed information.
 - Lottie library developed by Airbnb.
   
