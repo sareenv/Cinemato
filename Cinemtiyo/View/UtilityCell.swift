@@ -14,6 +14,7 @@ class UtilitesCell: UICollectionViewCell {
     var movie: Movie?
     
     fileprivate func playVideo(videoKey: String){
+        
         XCDYouTubeClient.default().getVideoWithIdentifier(videoKey) { (video, error) in
             if let streamURL = video?.streamURLs[XCDYouTubeVideoQuality.medium360.rawValue]{
                 let playerController = AVPlayerViewController()
@@ -30,9 +31,9 @@ class UtilitesCell: UICollectionViewCell {
     let watchTrailerButton = {() -> UIButton in
         let btn = UIButton(type: .system)
         btn.setTitle("Watch Trailer", for: .normal)
-        btn.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        btn.backgroundColor = UIColor.purple
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        btn.tintColor = .black
+        btn.tintColor = .white
         btn.layer.cornerRadius = 5
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn

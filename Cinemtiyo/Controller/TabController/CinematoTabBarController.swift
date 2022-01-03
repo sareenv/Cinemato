@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-// Needs to fix this.
 class CinematoTabBarController: UITabBarController {
     
     override func viewDidLoad() {
@@ -20,6 +18,7 @@ class CinematoTabBarController: UITabBarController {
         let tvController = generateCodeController(viewController: TVController(), barItemTitle: "TV Shows", barItemImage: #imageLiteral(resourceName: "tv"))
         let cinemaLocation = generateCodeController(viewController: CinemaLocationController(), barItemTitle: "Local Cinema", barItemImage: UIImage(systemName: "map") ?? #imageLiteral(resourceName: "search"))
         self.viewControllers = [PopularController, tvController, WatchListViewController, cinemaLocation]
+        self.tabBar.backgroundColor = .white
         self.tabBar.tintColor = #colorLiteral(red: 0.7795123458, green: 0.4400732517, blue: 0.7914783955, alpha: 1)
         self.tabBar.isTranslucent = false
     }

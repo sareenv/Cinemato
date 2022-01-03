@@ -95,14 +95,10 @@ class SimilarMoviesCell: UICollectionViewCell {
         addSubview(informationStackView)
         informationStackView.fillSuperView()
     }
-
-    
-  
     
     fileprivate func cellStyling() {
-        let backgroundColor = UIColor(white: 0.95, alpha: 1)
         self.layer.cornerRadius = 7
-        self.backgroundColor = backgroundColor
+        self.backgroundColor = .white
     }
     
     override init(frame: CGRect) {

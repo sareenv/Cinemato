@@ -10,12 +10,10 @@
 		42070249253ADB8D00FDB2F6 /* SimilarMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42070248253ADB8D00FDB2F6 /* SimilarMoviesCell.swift */; };
 		4207024C253B06E300FDB2F6 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4207024B253B06E200FDB2F6 /* Option.swift */; };
 		4207024F253B836F00FDB2F6 /* UtilityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4207024E253B836F00FDB2F6 /* UtilityCell.swift */; };
-		42070260253C582D00FDB2F6 /* XCDYouTubeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4207025F253C582D00FDB2F6 /* XCDYouTubeKit */; };
 		42070267253CF9CA00FDB2F6 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 42070266253CF9CA00FDB2F6 /* SDWebImage */; };
 		42070269253CF9CE00FDB2F6 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 42070268253CF9CE00FDB2F6 /* SDWebImageMapKit */; };
 		4212D3FC235DD5640088D876 /* PopularMoviesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4212D3FA235DD5640088D876 /* PopularMoviesCell.xib */; };
 		4212D401235DE6EC0088D876 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212D3FF235DE6EC0088D876 /* HeaderCell.swift */; };
-		4212D402235DE6EC0088D876 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4212D400235DE6EC0088D876 /* HeaderCell.xib */; };
 		4239E769239A85AC00B58E33 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4239E767239A85AC00B58E33 /* Model.xcdatamodeld */; };
 		425186DF2372C85F00D0FA2B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425186DE2372C85F00D0FA2B /* Api.swift */; };
 		4251F5302378EE4900677452 /* MovieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251F52F2378EE4900677452 /* MovieImage.swift */; };
@@ -23,7 +21,9 @@
 		425686272399C439008B1FD0 /* WatchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425686262399C439008B1FD0 /* WatchListController.swift */; };
 		425686292399C479008B1FD0 /* CinemaLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425686282399C479008B1FD0 /* CinemaLocationController.swift */; };
 		4256862B2399CC2C008B1FD0 /* Trailers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4256862A2399CC2C008B1FD0 /* Trailers.swift */; };
-		4256862D2399D92F008B1FD0 /* CustomHeaderSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4256862C2399D92F008B1FD0 /* CustomHeaderSlider.swift */; };
+		4256862D2399D92F008B1FD0 /* CustomHeaderElementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4256862C2399D92F008B1FD0 /* CustomHeaderElementCell.swift */; };
+		425E927F27827B15003AE280 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4256862E239A82B2008B1FD0 /* MapKit.framework */; };
+		425E928327828F7B003AE280 /* XCDYouTubeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 425E928227828F7B003AE280 /* XCDYouTubeKit */; };
 		42663E18257259D100A0AAD8 /* animation1.json in Resources */ = {isa = PBXBuildFile; fileRef = 42663E15257259D100A0AAD8 /* animation1.json */; };
 		42663E19257259D100A0AAD8 /* animation2.json in Resources */ = {isa = PBXBuildFile; fileRef = 42663E16257259D100A0AAD8 /* animation2.json */; };
 		42663E1A257259D100A0AAD8 /* animation3.json in Resources */ = {isa = PBXBuildFile; fileRef = 42663E17257259D100A0AAD8 /* animation3.json */; };
@@ -60,7 +60,6 @@
 		4207024E253B836F00FDB2F6 /* UtilityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityCell.swift; sourceTree = "<group>"; };
 		4212D3FA235DD5640088D876 /* PopularMoviesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularMoviesCell.xib; sourceTree = "<group>"; };
 		4212D3FF235DE6EC0088D876 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
-		4212D400235DE6EC0088D876 /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		4239E768239A85AC00B58E33 /* Movie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Movie.xcdatamodel; sourceTree = "<group>"; };
 		425186DE2372C85F00D0FA2B /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		4251F52F2378EE4900677452 /* MovieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImage.swift; sourceTree = "<group>"; };
@@ -68,7 +67,7 @@
 		425686262399C439008B1FD0 /* WatchListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListController.swift; sourceTree = "<group>"; };
 		425686282399C479008B1FD0 /* CinemaLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaLocationController.swift; sourceTree = "<group>"; };
 		4256862A2399CC2C008B1FD0 /* Trailers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trailers.swift; sourceTree = "<group>"; };
-		4256862C2399D92F008B1FD0 /* CustomHeaderSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderSlider.swift; sourceTree = "<group>"; };
+		4256862C2399D92F008B1FD0 /* CustomHeaderElementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderElementCell.swift; sourceTree = "<group>"; };
 		4256862E239A82B2008B1FD0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		42663E15257259D100A0AAD8 /* animation1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation1.json; sourceTree = "<group>"; };
 		42663E16257259D100A0AAD8 /* animation2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation2.json; sourceTree = "<group>"; };
@@ -108,7 +107,8 @@
 			files = (
 				42070267253CF9CA00FDB2F6 /* SDWebImage in Frameworks */,
 				42070269253CF9CE00FDB2F6 /* SDWebImageMapKit in Frameworks */,
-				42070260253C582D00FDB2F6 /* XCDYouTubeKit in Frameworks */,
+				425E927F27827B15003AE280 /* MapKit.framework in Frameworks */,
+				425E928327828F7B003AE280 /* XCDYouTubeKit in Frameworks */,
 				429EF1BC2572AA6500456D92 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,8 +146,7 @@
 				42D5F2E82378A6D90057E18B /* PopularMoviesCell.swift */,
 				4212D3FA235DD5640088D876 /* PopularMoviesCell.xib */,
 				4212D3FF235DE6EC0088D876 /* HeaderCell.swift */,
-				4212D400235DE6EC0088D876 /* HeaderCell.xib */,
-				4256862C2399D92F008B1FD0 /* CustomHeaderSlider.swift */,
+				4256862C2399D92F008B1FD0 /* CustomHeaderElementCell.swift */,
 			);
 			path = PopularView;
 			sourceTree = "<group>";
@@ -295,10 +294,10 @@
 			);
 			name = Cinemtiyo;
 			packageProductDependencies = (
-				4207025F253C582D00FDB2F6 /* XCDYouTubeKit */,
 				42070266253CF9CA00FDB2F6 /* SDWebImage */,
 				42070268253CF9CE00FDB2F6 /* SDWebImageMapKit */,
 				429EF1BB2572AA6500456D92 /* Lottie */,
+				425E928227828F7B003AE280 /* XCDYouTubeKit */,
 			);
 			productName = CharityProject;
 			productReference = 42EC961E2347530500E85554 /* Cinemtiyo.app */;
@@ -330,8 +329,8 @@
 			mainGroup = 42EC96152347530500E85554;
 			packageReferences = (
 				424AF06A2396A53C00E9A5AE /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				42568621239970A3008B1FD0 /* XCRemoteSwiftPackageReference "XCDYouTubeKit" */,
 				429EF1BA2572AA6500456D92 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				425E928127828F7B003AE280 /* XCRemoteSwiftPackageReference "XCDYouTubeKit" */,
 			);
 			productRefGroup = 42EC961F2347530500E85554 /* Products */;
 			projectDirPath = "";
@@ -352,7 +351,6 @@
 				4212D3FC235DD5640088D876 /* PopularMoviesCell.xib in Resources */,
 				42663E1A257259D100A0AAD8 /* animation3.json in Resources */,
 				42EC962E2347530700E85554 /* LaunchScreen.storyboard in Resources */,
-				4212D402235DE6EC0088D876 /* HeaderCell.xib in Resources */,
 				42663E18257259D100A0AAD8 /* animation1.json in Resources */,
 				42EC962B2347530700E85554 /* Assets.xcassets in Resources */,
 				42663E19257259D100A0AAD8 /* animation2.json in Resources */,
@@ -380,7 +378,7 @@
 				42EC96262347530500E85554 /* PopularMoviesController.swift in Sources */,
 				425686252399A0D4008B1FD0 /* CustomImageCell.swift in Sources */,
 				42EC96222347530500E85554 /* AppDelegate.swift in Sources */,
-				4256862D2399D92F008B1FD0 /* CustomHeaderSlider.swift in Sources */,
+				4256862D2399D92F008B1FD0 /* CustomHeaderElementCell.swift in Sources */,
 				428E4B4F2571ACA3008F7BFF /* CollectionViewCustomLayout.swift in Sources */,
 				425186DF2372C85F00D0FA2B /* Api.swift in Sources */,
 				4239E769239A85AC00B58E33 /* Model.xcdatamodeld in Sources */,
@@ -536,14 +534,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6YU2DE97Z;
+				DEVELOPMENT_TEAM = 99F8Z5B2S4;
 				INFOPLIST_FILE = Cinemtiyo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tech.Cinemtiyo;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.cinemato;
 				PRODUCT_NAME = Cinemtiyo;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -555,14 +553,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6YU2DE97Z;
+				DEVELOPMENT_TEAM = 99F8Z5B2S4;
 				INFOPLIST_FILE = Cinemtiyo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tech.Cinemtiyo;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.cinemato;
 				PRODUCT_NAME = Cinemtiyo;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -601,12 +599,12 @@
 				minimumVersion = 5.3.3;
 			};
 		};
-		42568621239970A3008B1FD0 /* XCRemoteSwiftPackageReference "XCDYouTubeKit" */ = {
+		425E928127828F7B003AE280 /* XCRemoteSwiftPackageReference "XCDYouTubeKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/0xced/XCDYouTubeKit.git";
+			repositoryURL = "https://github.com/0xced/XCDYouTubeKit";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.8.2;
+				minimumVersion = 2.0.0;
 			};
 		};
 		429EF1BA2572AA6500456D92 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
@@ -620,11 +618,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4207025F253C582D00FDB2F6 /* XCDYouTubeKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 42568621239970A3008B1FD0 /* XCRemoteSwiftPackageReference "XCDYouTubeKit" */;
-			productName = XCDYouTubeKit;
-		};
 		42070266253CF9CA00FDB2F6 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 424AF06A2396A53C00E9A5AE /* XCRemoteSwiftPackageReference "SDWebImage" */;
@@ -634,6 +627,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 424AF06A2396A53C00E9A5AE /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
+		};
+		425E928227828F7B003AE280 /* XCDYouTubeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 425E928127828F7B003AE280 /* XCRemoteSwiftPackageReference "XCDYouTubeKit" */;
+			productName = XCDYouTubeKit;
 		};
 		429EF1BB2572AA6500456D92 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -16,7 +16,11 @@ class CinemaLocationController: UIViewController, MKMapViewDelegate {
         return mapView
     }()
     
-    var manager: CLLocationManager?
+    var manager: CLLocationManager? {
+        didSet {
+            detectUserLocation()
+        }
+    }
     var userLocation: CLLocationCoordinate2D? {
         didSet {
             self.setMapRegion()
@@ -34,51 +38,61 @@ class CinemaLocationController: UIViewController, MKMapViewDelegate {
         mapView.fillSuperView()
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMapView()
-        manager = CLLocationManager()
+        self.manager = CLLocationManager()
         mapViewSettings()
         detectUserLocation()
         setMapRegion()
-        searchNearByCinemas()
+        
     }
     
     func detectUserLocation() {
-        manager?.delegate = self
-        manager?.desiredAccuracy = .greatestFiniteMagnitude
-        manager?.requestAlwaysAuthorization()
-        manager?.startUpdatingLocation()
+        guard let manager = manager else {
+            print("Manager is not initialised")
+            return
+        }
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        manager.requestAlwaysAuthorization()
+        manager.startUpdatingLocation()
     }
     
     fileprivate func searchNearByCinemas() {
-        guard let userLocation = userLocation else { return }
-           let request = MKLocalSearch.Request()
-           request.naturalLanguageQuery = "movie theater"
-           request.region = mapView.region
-           let locationSearch = MKLocalSearch(request: request)
-           locationSearch.start { (response, error) in
-               if let error = error{
-                   let alertController = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
-                   alertController.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
-                   self.present(alertController, animated: true, completion: nil)
-                   return
-               }
-               self.mapView.removeAnnotations(self.mapView.annotations)
+        if let userLocation = userLocation {
+            let request = MKLocalSearch.Request()
+            request.naturalLanguageQuery = "Movie Cinema"
+            request.region = mapView.region
+            let locationSearch = MKLocalSearch(request: request)
+            
+            locationSearch.start { (response, error) in
+                if let error = error{
+                    let alertController = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
+                    return
+                }
                
-               response?.mapItems.forEach({ (item) in
-                   let annotation = MKPointAnnotation()
-                   annotation.coordinate = item.placemark.coordinate
-                   annotation.title = item.name
-                   annotation.subtitle = item.placemark.title
-                   self.mapView.addAnnotation(annotation)
-               })
-               let currentPlaceAnnotation = MKPointAnnotation()
-               currentPlaceAnnotation.coordinate = userLocation
-               
-               self.mapView.addAnnotation(currentPlaceAnnotation)
-               self.mapView.showAnnotations(self.mapView.annotations, animated: true)
-           }
+                self.mapView.removeAnnotations(self.mapView.annotations)
+                
+                response?.mapItems.forEach({ (item) in
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = item.placemark.coordinate
+                    annotation.title = item.name
+                    annotation.subtitle = item.placemark.title
+                    self.mapView.addAnnotation(annotation)
+                })
+                let currentPlaceAnnotation = MKPointAnnotation()
+                currentPlaceAnnotation.coordinate = userLocation
+                
+                self.mapView.addAnnotation(currentPlaceAnnotation)
+                self.mapView.showAnnotations(self.mapView.annotations, animated: true)
+            }
+        } else {
+            print("User location is not detected !")
+        }
     }
     
     func setMapRegion() {
@@ -98,31 +112,36 @@ class CinemaLocationController: UIViewController, MKMapViewDelegate {
 extension CinemaLocationController: CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Error is \(error.localizedDescription)")
+        print("Error is \(error)")
     }
     
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if(status == .denied) {
             let alertController = UIAlertController(title: "Denied Access to the location", message: "App requires location to show nearby cinema", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alertController, animated: true, completion: nil)
+        } else if(status == .authorizedAlways) {
+            print("Authorised to update the location")
+        } else if(status == .authorizedWhenInUse) {
+            print("Only can be used when in the usage")
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let currentLatitude = locations.last?.coordinate
-        guard currentLatitude != nil else { return }
-        userLocation = currentLatitude
+            let currentLatitude = locations.last?.coordinate
+            guard currentLatitude != nil else { return }
+            userLocation = CLLocationCoordinate2D(latitude: 45.491614998694025, longitude: -73.58474995347673)
+            searchNearByCinemas()
        }
-    
+ 
 
     func openMapsAppWithDirections(to coordinate: CLLocationCoordinate2D, destinationName name: String) {
-      let options = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-      let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
-      let mapItem = MKMapItem(placemark: placemark)
-      mapItem.name = name // Provide the name of the destination in the To: field
-      mapItem.openInMaps(launchOptions: options)
+          let options = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+          let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
+          let mapItem = MKMapItem(placemark: placemark)
+          mapItem.name = name // Provide the name of the destination in the To: field
+          mapItem.openInMaps(launchOptions: options)
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {

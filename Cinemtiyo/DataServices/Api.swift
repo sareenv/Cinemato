@@ -176,11 +176,8 @@ class Api{
         let adult = "&include_adult=false"
         let trendingRelativeUrlPath = "trending/movie/week"
         let query = ""
-        
         let trendingUrlString = baseUrl + trendingRelativeUrlPath + apiKey + language + adult + query
-        
         guard let trendingUrl = URL(string: trendingUrlString) else { return }
-        
         session.dataTask(with: trendingUrl) { (data, response, error) in
             if (error != nil) {
                 completionHandler(.networkError, nil)

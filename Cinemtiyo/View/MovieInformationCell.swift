@@ -72,9 +72,6 @@ class MovieInformationCell: UICollectionViewCell {
     
     let movieTitleLabel = UILabel(font: UIFont.boldSystemFont(ofSize: 22), text: "Title", alignment: .left)
     let descriptionTitleLabel = UILabel(font: UIFont.systemFont(ofSize: 18), text: "Storyline", alignment: .left)
-
-    
-
     
     
     fileprivate func stackViewSettings() {

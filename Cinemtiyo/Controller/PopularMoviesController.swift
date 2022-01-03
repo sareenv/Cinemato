@@ -73,9 +73,9 @@ class PopularMoviesController: UIViewController, UITableViewDelegate, UITableVie
     
     fileprivate func tableViewSettings(){
         let popularMoviesNib = UINib(nibName: "PopularMoviesCell", bundle: nil)
-        let headerCellNib = UINib(nibName: "HeaderCell", bundle: nil)
+        moviesTableView.translatesAutoresizingMaskIntoConstraints = false
         moviesTableView.register(popularMoviesNib, forCellReuseIdentifier: "popularMoviesCell")
-        moviesTableView.register(headerCellNib, forCellReuseIdentifier: "HeaderCell")
+        moviesTableView.register(HeaderCell.self, forCellReuseIdentifier: "HeaderCell")
         moviesTableView.showsVerticalScrollIndicator = false
         moviesTableView.separatorStyle = .none
         moviesTableView.delegate = self
@@ -88,8 +88,8 @@ class PopularMoviesController: UIViewController, UITableViewDelegate, UITableVie
 extension PopularMoviesController{
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = moviesTableView.dequeueReusableCell(withIdentifier: "HeaderCell")
-        return view
+        let headerView = tableView.dequeueReusableCell(withIdentifier: "HeaderCell") as? HeaderCell
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

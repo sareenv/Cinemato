@@ -9,9 +9,18 @@
 import UIKit
 import AVKit
 import XCDYouTubeKit
+import MapKit
 
-class HeaderCell: UITableViewCell {
-    @IBOutlet weak var headerSliderCollectionView: UICollectionView!
+class HeaderCell: UITableViewCell{
+    
+    let headerSliderCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.showsVerticalScrollIndicator = false
+        return collectionView
+    }()
     
     let cellId = "HeaderCell"
     
@@ -24,10 +33,11 @@ class HeaderCell: UITableViewCell {
     fileprivate func collectionViewSettings() {
         // Initialization code
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.headerSliderCollectionView.backgroundColor = .white
+        self.contentView.addSubview(headerSliderCollectionView)
+        headerSliderCollectionView.fillSuperView()
         headerSliderCollectionView.isPagingEnabled = true
-    
         headerSliderCollectionView.automaticallyAdjustsScrollIndicatorInsets = false
-        headerSliderCollectionView.register(CustomHeaderElementCell.self, forCellWithReuseIdentifier: "cellId")
         headerSliderCollectionView.register(CustomHeaderElementCell.self, forCellWithReuseIdentifier: cellId)
         headerSliderCollectionView.isPagingEnabled = false
         headerSliderCollectionView.delegate = self
@@ -35,22 +45,25 @@ class HeaderCell: UITableViewCell {
         headerSliderCollectionView.showsHorizontalScrollIndicator = false
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         collectionViewSettings()
         fetchTrendingData()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     
     fileprivate func fetchTrendingData(){
         let api = Api.instance
         api.downloadTrendingMovies { (error, data)  in
-            if(error != nil){
-                return
-            }
+            if(error != nil){ fatalError() }
             // Update the cell
             DispatchQueue.main.async {
-                // update the cells.
                 guard let data = data else { return }
                 self.headerData = data.results
             }
@@ -64,7 +77,7 @@ extension HeaderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! CustomHeaderElementCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CustomHeaderElementCell
         cell.headerElementImageView.downloadUrlImage(imageUrlPath: headerData[indexPath.item].backdrop_path ?? "")
         return cell
     }
