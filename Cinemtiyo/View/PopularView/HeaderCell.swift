@@ -8,7 +8,7 @@
 
 import UIKit
 import AVKit
-import XCDYouTubeKit
+
 import MapKit
 
 class HeaderCell: UITableViewCell{
@@ -94,16 +94,17 @@ extension HeaderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     
     
     fileprivate func playTrailer(videoKey: String){
-            let avPlayerController = AVPlayerViewController()
-            XCDYouTubeClient.default().getVideoWithIdentifier(videoKey) { (video, error) in
-            if let streamURL = video?.streamURLs[XCDYouTubeVideoQuality.medium360.rawValue]{
-                avPlayerController.player = AVPlayer(url: streamURL)
-                let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
-                keyWindow?.rootViewController?.present(avPlayerController, animated: true, completion: {
-                    avPlayerController.player?.play()
-                })
-            }
-        }
+        print(videoKey)
+//            let avPlayerController = AVPlayerViewController()
+//            XCDYouTubeClient.default().getVideoWithIdentifier(videoKey) { (video, error) in
+//            if let streamURL = video?.streamURLs[XCDYouTubeVideoQuality.medium360.rawValue]{
+//                avPlayerController.player = AVPlayer(url: streamURL)
+//                let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
+//                keyWindow?.rootViewController?.present(avPlayerController, animated: true, completion: {
+//                    avPlayerController.player?.play()
+//                })
+//            }
+//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

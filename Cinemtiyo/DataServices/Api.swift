@@ -82,6 +82,8 @@ class Api{
         
         
         guard let moviesUrl = URL(string: moviesUrlString) else { return }
+        
+//        print(moviesUrl)
         session.dataTask(with: moviesUrl) { (data, response, error) in
             if (error != nil) {
                completionHandler(.networkError, nil)

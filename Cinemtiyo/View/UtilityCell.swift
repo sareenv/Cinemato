@@ -8,32 +8,37 @@
 
 import UIKit
 import AVKit
-import XCDYouTubeKit
+import YouTubeiOSPlayerHelper
+
 
 class UtilitesCell: UICollectionViewCell {
     var movie: Movie?
+   
     
     fileprivate func playVideo(videoKey: String){
+        print("Playing content")
+        let keyWindow = UIApplication.shared.windows.first {$0.isKeyWindow}
+        let view: YTPlayerView = {
+            let view = YTPlayerView(frame: .zero)
+            view.backgroundColor = .red
+            view.translatesAutoresizingMaskIntoConstraints = false
+            return view
+        }()
         
-        XCDYouTubeClient.default().getVideoWithIdentifier(videoKey) { (video, error) in
-            if let streamURL = video?.streamURLs[XCDYouTubeVideoQuality.medium360.rawValue]{
-                let playerController = AVPlayerViewController()
-                playerController.player = AVPlayer(url: streamURL)
-                let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
-                keyWindow?.rootViewController?.present(playerController, animated: true) {
-                    playerController.player?.play()
-                }
-            }
-        }
+        keyWindow?.rootViewController?.view.addSubview(view)
+        view.load(withVideoId: videoKey)
+        view.playVideo()
+        
+        view.fillSuperView()
     }
     
     
     let watchTrailerButton = {() -> UIButton in
         let btn = UIButton(type: .system)
         btn.setTitle("Watch Trailer", for: .normal)
-        btn.backgroundColor = UIColor.purple
+        btn.backgroundColor = UIColor(white: 0.95, alpha: 1)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        btn.tintColor = .white
+        btn.tintColor = .black
         btn.layer.cornerRadius = 5
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
