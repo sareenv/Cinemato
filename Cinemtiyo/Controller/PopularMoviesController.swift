@@ -7,11 +7,13 @@
 //
 
 import UIKit
-
+import JGProgressHUD
 
 class PopularMoviesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
     @IBOutlet weak var moviesTableView: UITableView!
+    
+    private let group: DispatchGroup = DispatchGroup()
     
     let isFirstTime = UserDefaults.standard
     var selectedIndex = 0
@@ -28,11 +30,20 @@ class PopularMoviesController: UIViewController, UITableViewDelegate, UITableVie
         UserDefaults.standard.setValue(true, forKey: "hasOpenBefore")
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.hasOpendBefore()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        hasOpendBefore()
-        tableViewSettings()
-        fetchTrendingData()
+        let progressHud = JGProgressHUD()
+        progressHud.textLabel.text = "Loading"
+        progressHud.show(in: self.view)
+        self.fetchTrendingData()
+        group.notify(queue: DispatchQueue.main) {
+            self.tableViewSettings()
+            progressHud.dismiss(animated: true)
+        }
     }
     
     
@@ -61,12 +72,14 @@ class PopularMoviesController: UIViewController, UITableViewDelegate, UITableVie
     
     fileprivate func fetchTrendingData(){
         let api = Api.instance
+        group.enter()
         api.downloadMovies(pageNumber: 1) { (error, movie) in
             if (error != nil) { return }
          
             DispatchQueue.main.async {
                 guard let movie = movie else { return }
                 self.movies = movie.results
+                self.group.leave()
             }
         }
     }

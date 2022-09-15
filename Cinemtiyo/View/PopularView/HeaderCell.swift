@@ -11,13 +11,16 @@ import AVKit
 
 import MapKit
 
-class HeaderCell: UITableViewCell{
+class HeaderCell: UITableViewCell, UIScrollViewDelegate{
+    
+    
     
     let headerSliderCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.isPagingEnabled = true
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
@@ -59,17 +62,34 @@ class HeaderCell: UITableViewCell{
     
     
     fileprivate func fetchTrendingData(){
+        
         let api = Api.instance
+    
         api.downloadTrendingMovies { (error, data)  in
             if(error != nil){ fatalError() }
             // Update the cell
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
                 guard let data = data else { return }
-                self.headerData = data.results
+                self?.headerData = data.results
             }
         }
     }
 }
+
+// snapping behaviour on the scrolling
+
+extension HeaderCell {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.headerSliderCollectionView.scrollToNearestVisibleCollectionViewCell()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+                self.headerSliderCollectionView.scrollToNearestVisibleCollectionViewCell()
+        }
+    }
+}
+
 
 extension HeaderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -112,6 +132,7 @@ extension HeaderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         fetchMovieDetailsApi.downloadTrailers(movieId: headerData[indexPath.item].id ?? 1 ) { [unowned self] (error, trailer) in
             if(trailer?.results.count ?? 0 <= 0) { return }
             DispatchQueue.main.async {
+                // need to fix this issue.
                 self.playTrailer(videoKey: trailer!.results[0].key)
             }
         }

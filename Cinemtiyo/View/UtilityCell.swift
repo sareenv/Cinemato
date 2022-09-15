@@ -11,27 +11,48 @@ import AVKit
 import YouTubeiOSPlayerHelper
 
 
-class UtilitesCell: UICollectionViewCell {
+class UtilitesCell: UICollectionViewCell, YTPlayerViewDelegate {
     var movie: Movie?
    
+    lazy var view: YTPlayerView = {
+        let view = YTPlayerView(frame: .zero)
+        view.delegate = self
+        view.backgroundColor = .red
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    // this view will help to remove the item when the closed btn is pressed.
+    
+    let playerView: UIView =  {
+        let view = UIView(frame: .zero);
+        view.translatesAutoresizingMaskIntoConstraints = false;
+        view.backgroundColor = .black
+        return view;
+    }()
+    
     
     fileprivate func playVideo(videoKey: String){
         print("Playing content")
         let keyWindow = UIApplication.shared.windows.first {$0.isKeyWindow}
-        let view: YTPlayerView = {
-            let view = YTPlayerView(frame: .zero)
-            view.backgroundColor = .red
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }()
+        keyWindow?.rootViewController?.view.addSubview(playerView)
+        playerView.fillSuperView()
         
-        keyWindow?.rootViewController?.view.addSubview(view)
-        view.load(withVideoId: videoKey)
-        view.playVideo()
+        UIView.animate(withDuration: 0.40, delay: 0.24, options: .curveEaseOut) {
+            self.playerView.alpha = 1.0
+            self.playerView.addSubview(self.view)
+            self.view.fillSuperView()
+            self.view.load(withVideoId: videoKey)
+        }
         
-        view.fillSuperView()
+//        view.load(withVideoId: videoKey)
+//        view.fillSuperView()
+ 
     }
     
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
+        playerView.playVideo()
+    }
     
     let watchTrailerButton = {() -> UIButton in
         let btn = UIButton(type: .system)

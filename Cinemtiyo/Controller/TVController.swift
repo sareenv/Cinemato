@@ -1,5 +1,6 @@
 
 import UIKit
+import Combine
 
 
 class TVController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -11,14 +12,16 @@ class TVController: UICollectionViewController, UICollectionViewDelegateFlowLayo
         setupSearchBar()
     }
     
+    let tvSearchController = UISearchController()
+    
     fileprivate func setupSearchBar() {
-        let tvSearchController = UISearchController()
         tvSearchController.searchBar.placeholder = "Enter the TV Show"
         tvSearchController.hidesNavigationBarDuringPresentation = false
         tvSearchController.obscuresBackgroundDuringPresentation = false
         self.navigationItem.searchController = tvSearchController
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
+    
     
     
     fileprivate func setupLabel() {
@@ -36,7 +39,13 @@ class TVController: UICollectionViewController, UICollectionViewDelegateFlowLayo
     }
     
     // this needs to be changed as per the schema of TVShows
-    let data = [String]()
+    var data = [TVShow]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         searchMessageLabel.isHidden = (data.count == 0) ? false : true
@@ -45,6 +54,7 @@ class TVController: UICollectionViewController, UICollectionViewDelegateFlowLayo
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tvCell", for: indexPath) as! TVCell
+        cell.data = data[indexPath.item]
         return cell
     }
     
@@ -54,8 +64,12 @@ class TVController: UICollectionViewController, UICollectionViewDelegateFlowLayo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let estimatedWidth = view.frame.width / 3 - 10
-        let size = CGSize(width: estimatedWidth, height: 150)
+        let size = CGSize(width: estimatedWidth, height: 180)
         return size
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -66,29 +80,46 @@ class TVController: UICollectionViewController, UICollectionViewDelegateFlowLayo
         return 0
     }
     
+    private var cancellables = Set<AnyCancellable>()
+    
+    fileprivate func setupSearchBarListener() {
+        let textField: UISearchTextField = tvSearchController.searchBar.searchTextField
+        
+        let publisher = NotificationCenter.default.publisher(for: UISearchTextField.textDidChangeNotification, object: textField)
+        
+        publisher
+            .debounce(for: .milliseconds(500), scheduler: RunLoop.main) .sink { notification in
+            print("downloading the related episodes .... ")
+                guard let title = textField.text else { return }
+                DispatchQueue.main.async {
+                    Api.instance.searchTVShows(tvShowName: title) { error, shows in
+                        self.data = []
+                        self.data = shows?.results ?? []
+                    }
+                }
+                
+        }.store(in: &cancellables)
+    }
+    
+    fileprivate func fetchTrendingShows() {
+        Api.instance.downloadTrendingShows { errors, shows in
+            guard let showData = shows?.results else { return }
+            self.data = showData
+        }
+    }
+    
+    
     override func viewDidLoad() {
         collectionViewSettings()
+        setupSearchBarListener()
+        fetchTrendingShows()
     }
+    
+    
     
     init() {
         let flowLayout = UICollectionViewFlowLayout()
         super.init(collectionViewLayout: flowLayout)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-
-
-
-class TVCell: UICollectionViewCell {
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.backgroundColor = .red
-        
     }
     
     required init?(coder: NSCoder) {

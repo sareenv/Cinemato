@@ -22,9 +22,9 @@ class MovieCastCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 5
         return imageView
     }()
     
@@ -40,17 +40,18 @@ class MovieCastCell: UICollectionViewCell {
     var cast: MovieCast? {
         didSet {
             if let cast = cast {
-                castTileLabel.text = cast.name
+                castTileLabel.text = cast.name ?? "Unknown"
                 updateCastImage(relativePath: cast.profile_path ?? "")
             }
         }
     }
     
     fileprivate func updateCastImage(relativePath: String) {
-        guard let imagePosterUrl = URL(string: "http://image.tmdb.org/t/p/w300" + relativePath) else {
+        guard let imagePosterUrl = URL(string: "http://image.tmdb.org/t/p/w200" + relativePath) else {
             print("Error")
             return
         }
+        print(imagePosterUrl)
         castImageView.sd_setImage(with: imagePosterUrl) { (image, _, _, _) in
             if(image == nil) {
                 self.castImageView.image = #imageLiteral(resourceName: "default")
@@ -62,7 +63,7 @@ class MovieCastCell: UICollectionViewCell {
     fileprivate func setupStackView() {
         self.backgroundColor = .white
         self.addSubview(stackView)
-        let heightAnchor = CGFloat(150.0)
+        let heightAnchor = CGFloat(130.0)
         castImageView.heightAnchor.constraint(equalToConstant: heightAnchor).isActive = true
         stackView.addArrangedSubview(castImageView)
         stackView.addArrangedSubview(castTileLabel)
@@ -72,6 +73,7 @@ class MovieCastCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupStackView()
+        self.layer.shadowColor = .init(red: 256, green: 0, blue: 0, alpha: 1)
     }
    
     

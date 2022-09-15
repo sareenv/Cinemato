@@ -69,6 +69,61 @@ class Api{
         }.resume()
     }
     
+    
+    func searchTVShows(tvShowName: String, completionHandler: @escaping (ApiErrors?, TVShows?) -> () ) {
+        let baseUrl = "https://api.themoviedb.org/3"
+        let apiKey = "?api_key=48011e814c676dd12ae5d6e76288b2ae"
+        let language = "&language=en-US"
+        let relativePath = "/search/tv"
+        let query = "&query=\(tvShowName)"
+        let url = baseUrl + relativePath
+            + apiKey + language + query
+        guard let tvShowsUrl = URL(string: url) else { return }
+        let session = URLSession.shared
+        
+        session.dataTask(with: tvShowsUrl) { (data, response, error) in
+            if (error != nil) {
+               completionHandler(.networkError, nil)
+               return
+            }
+            guard let data = data else { return }
+            guard let movies = try? JSONDecoder().decode(TVShows.self, from: data) else {
+                completionHandler(.jsonParseError, nil)
+                return
+            }
+            completionHandler(nil, movies)
+            
+        }.resume()
+    }
+    
+    func downloadTrendingShows(completionHandler: @escaping (ApiErrors?, TVShows?) -> () ) {
+        let baseUrl = "https://api.themoviedb.org/3"
+        let apiKey = "?api_key=48011e814c676dd12ae5d6e76288b2ae"
+        let language = "&language=en-US"
+        let relativePath = "/trending/tv/week"
+       
+        let url = baseUrl + relativePath
+            + apiKey + language
+        print(url)
+        guard let tvShowsUrl = URL(string: url) else { return }
+        let session = URLSession.shared
+        
+        session.dataTask(with: tvShowsUrl) { (data, response, error) in
+            if (error != nil) {
+               completionHandler(.networkError, nil)
+               return
+            }
+            guard let data = data else { return }
+            guard let movies = try? JSONDecoder().decode(TVShows.self, from: data) else {
+                completionHandler(.jsonParseError, nil)
+                return
+            }
+            completionHandler(nil, movies)
+            
+        }.resume()
+    }
+    
+    
     func downloadMovies(pageNumber: Int, completionHandler: @escaping (ApiErrors?, Movies?) -> ()){
         let session = URLSession.shared
         let baseUrl = "https://api.themoviedb.org/3/"
@@ -83,7 +138,6 @@ class Api{
         
         guard let moviesUrl = URL(string: moviesUrlString) else { return }
         
-//        print(moviesUrl)
         session.dataTask(with: moviesUrl) { (data, response, error) in
             if (error != nil) {
                completionHandler(.networkError, nil)

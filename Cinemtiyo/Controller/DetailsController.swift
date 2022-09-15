@@ -13,6 +13,8 @@ class DetailsController: UIViewController, UICollectionViewDelegate, UICollectio
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+
+    
     var movie: Movie? {
         didSet {
             if let movie = movie {
@@ -39,6 +41,21 @@ class DetailsController: UIViewController, UICollectionViewDelegate, UICollectio
         didSet {
             self.data[6] = similarMovies
             self.collectionView.reloadData()
+        }
+    }
+    
+    fileprivate func updateTVShow(tvShow: TVShow?) {
+        guard let show = tvShow else { return }
+        self.navigationItem.title = "TVShow Details"
+        
+        let api = Api.instance
+        guard let showID = show.id else { return }
+        api.downloadWallImages(id: showID) { [unowned self] (error, movieImages) in
+            if (error != nil) { return }
+            guard let images = movieImages?.backdrops else { return }
+            DispatchQueue.main.async {
+                self.movieImages = images
+            }
         }
     }
     
@@ -118,7 +135,6 @@ class DetailsController: UIViewController, UICollectionViewDelegate, UICollectio
         collectionView.contentInset.top = 10
         collectionView.automaticallyAdjustsScrollIndicatorInsets = false
         collectionView.showsVerticalScrollIndicator = false
-    
         collectionView.register(MoviesImageHeaderCell.self, forCellWithReuseIdentifier: "cellId1")
         collectionView.register(MovieInformationCell.self, forCellWithReuseIdentifier: "informationCell")
         collectionView.register(TitleOverViewCell.self, forCellWithReuseIdentifier: "titleOverviewCell")
@@ -180,10 +196,10 @@ extension DetailsController {
             pictureView.selectedImage = moviePosterImage
             let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
             UIView.animate(withDuration: 0.3) {
+               
+            } completion: { (nil) in
                 keyWindow?.rootViewController?.view.addSubview(pictureView)
                 pictureView.fillSuperView()
-            } completion: { (nil) in
-                
             }
         }
         

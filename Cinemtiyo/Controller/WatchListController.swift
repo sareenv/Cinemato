@@ -32,7 +32,7 @@ class WatchListController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         fetchData()
-        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.tableView.reloadData()
     }
     

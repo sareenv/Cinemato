@@ -54,7 +54,6 @@ class OnBoardingController: UICollectionViewController, UICollectionViewDelegate
     
     @objc func handleGetStarted() {
         let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
-        
         keyWindow?.rootViewController = CinematoTabBarController()
     }
     
