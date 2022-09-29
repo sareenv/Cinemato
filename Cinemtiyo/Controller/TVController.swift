@@ -89,7 +89,6 @@ class TVController: UICollectionViewController, UICollectionViewDelegateFlowLayo
         
         publisher
             .debounce(for: .milliseconds(500), scheduler: RunLoop.main) .sink { notification in
-            print("downloading the related episodes .... ")
                 guard let title = textField.text else { return }
                 DispatchQueue.main.async {
                     Api.instance.searchTVShows(tvShowName: title) { error, shows in
@@ -114,7 +113,6 @@ class TVController: UICollectionViewController, UICollectionViewDelegateFlowLayo
         setupSearchBarListener()
         fetchTrendingShows()
     }
-    
     
     
     init() {

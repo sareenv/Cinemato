@@ -104,7 +104,6 @@ class Api{
        
         let url = baseUrl + relativePath
             + apiKey + language
-        print(url)
         guard let tvShowsUrl = URL(string: url) else { return }
         let session = URLSession.shared
         

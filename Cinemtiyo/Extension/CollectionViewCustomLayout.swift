@@ -6,7 +6,7 @@ extension UICollectionView {
             
             if(sectionId == 0) {
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.93), heightDimension: .absolute(210)), subitems: [item])
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.93), heightDimension: .fractionalHeight(0.27)), subitems: [item])
                 group.contentInsets.trailing = 6
                 group.contentInsets.leading = 6
                 
@@ -16,12 +16,11 @@ extension UICollectionView {
                 return section
             } else if(sectionId == 1) {
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(140)), subitems: [item])
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(160)), subitems: [item])
                 group.contentInsets.trailing = 10
                 let section = NSCollectionLayoutSection(group: group)
                 section.contentInsets.top = 5
                 section.contentInsets.leading = 5
-
                 return section
             }
             

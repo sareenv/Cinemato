@@ -63,7 +63,7 @@ class CinemaLocationController: UIViewController, MKMapViewDelegate {
     fileprivate func searchNearByCinemas() {
         if let userLocation = userLocation {
             let request = MKLocalSearch.Request()
-            request.naturalLanguageQuery = "Movie Cinema"
+            request.naturalLanguageQuery = "Movie"
             request.region = mapView.region
             let locationSearch = MKLocalSearch(request: request)
             

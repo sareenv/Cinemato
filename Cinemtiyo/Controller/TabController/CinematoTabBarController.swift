@@ -19,7 +19,7 @@ class CinematoTabBarController: UITabBarController {
         let cinemaLocation = generateCodeController(viewController: CinemaLocationController(), barItemTitle: "Local Cinema", barItemImage: UIImage(systemName: "map") ?? #imageLiteral(resourceName: "search"))
         self.viewControllers = [PopularController, tvController, WatchListViewController, cinemaLocation]
         self.tabBar.backgroundColor = .white
-        self.tabBar.tintColor = #colorLiteral(red: 0.7795123458, green: 0.4400732517, blue: 0.7914783955, alpha: 1)
+        self.tabBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.tabBar.isTranslucent = false
     }
     

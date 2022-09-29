@@ -37,12 +37,13 @@ class PopularMoviesController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         let progressHud = JGProgressHUD()
+        
         progressHud.textLabel.text = "Loading"
         progressHud.show(in: self.view)
         self.fetchTrendingData()
         group.notify(queue: DispatchQueue.main) {
             self.tableViewSettings()
-            progressHud.dismiss(animated: true)
+            progressHud.dismiss(afterDelay: 0.3)
         }
     }
     

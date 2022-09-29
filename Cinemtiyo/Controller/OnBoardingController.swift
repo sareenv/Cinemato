@@ -47,7 +47,7 @@ class OnBoardingController: UICollectionViewController, UICollectionViewDelegate
         button.backgroundColor = .systemRed
         button.isHidden = true // turn this to true.
         button.layer.cornerRadius = 5
-        button.addTarget(self, action: #selector(handleGetStarted), for: .touchUpInside)
+        button.addTarget(OnBoardingController.self, action: #selector(handleGetStarted), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()

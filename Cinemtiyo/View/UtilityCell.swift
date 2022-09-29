@@ -45,8 +45,8 @@ class UtilitesCell: UICollectionViewCell, YTPlayerViewDelegate {
             self.view.load(withVideoId: videoKey)
         }
         
-//        view.load(withVideoId: videoKey)
-//        view.fillSuperView()
+    
+        
  
     }
     

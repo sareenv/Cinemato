@@ -18,7 +18,24 @@ class HeaderCell: UITableViewCell, UIScrollViewDelegate{
     let headerSliderCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        let compositionalLayout = UICollectionViewCompositionalLayout(sectionProvider: { sectionNumber, env in
+            
+            let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+            
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.9), heightDimension: .fractionalHeight(1)), subitems: [item])
+        
+            group.contentInsets.leading = 0
+            group.contentInsets.trailing = 12
+            
+            let section = NSCollectionLayoutSection(group: group)
+            section.orthogonalScrollingBehavior = .groupPagingCentered
+            
+            return section
+        })
+        
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: compositionalLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.isPagingEnabled = true
         collectionView.showsVerticalScrollIndicator = false
@@ -34,7 +51,6 @@ class HeaderCell: UITableViewCell, UIScrollViewDelegate{
     }
     
     fileprivate func collectionViewSettings() {
-        // Initialization code
         self.translatesAutoresizingMaskIntoConstraints = false
         self.headerSliderCollectionView.backgroundColor = .white
         self.contentView.addSubview(headerSliderCollectionView)
@@ -76,22 +92,14 @@ class HeaderCell: UITableViewCell, UIScrollViewDelegate{
     }
 }
 
-// snapping behaviour on the scrolling
-
-extension HeaderCell {
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        self.headerSliderCollectionView.scrollToNearestVisibleCollectionViewCell()
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if !decelerate {
-                self.headerSliderCollectionView.scrollToNearestVisibleCollectionViewCell()
-        }
-    }
-}
 
 
 extension HeaderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return headerData.count
     }
@@ -115,16 +123,6 @@ extension HeaderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     
     fileprivate func playTrailer(videoKey: String){
         print(videoKey)
-//            let avPlayerController = AVPlayerViewController()
-//            XCDYouTubeClient.default().getVideoWithIdentifier(videoKey) { (video, error) in
-//            if let streamURL = video?.streamURLs[XCDYouTubeVideoQuality.medium360.rawValue]{
-//                avPlayerController.player = AVPlayer(url: streamURL)
-//                let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
-//                keyWindow?.rootViewController?.present(avPlayerController, animated: true, completion: {
-//                    avPlayerController.player?.play()
-//                })
-//            }
-//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -132,7 +130,6 @@ extension HeaderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         fetchMovieDetailsApi.downloadTrailers(movieId: headerData[indexPath.item].id ?? 1 ) { [unowned self] (error, trailer) in
             if(trailer?.results.count ?? 0 <= 0) { return }
             DispatchQueue.main.async {
-                // need to fix this issue.
                 self.playTrailer(videoKey: trailer!.results[0].key)
             }
         }
