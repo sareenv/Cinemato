@@ -30,9 +30,9 @@ class PopularMoviesCell: UITableViewCell {
             self.movieTitle.text = movieDetail?.title
             self.movieReleaseDateLabel.text = movieDetail?.release_date
             self.descriptionLabel.text = movieDetail?.overview
-            let imagePosterUrl = "http://image.tmdb.org/t/p/original" + (movieDetail?.backdrop_path ?? "") 
-            self.moviewPosterImageView.sd_setImage(with: URL(string: imagePosterUrl), completed: nil)
-            self.movieCompanyImageView.sd_setImage(with: URL(string: imagePosterUrl), completed: nil)
+            let imagePosterUrl = "http://image.tmdb.org/t/p/original" + (movieDetail?.backdrop_path ?? "")
+            moviewPosterImageView.sd_setImage(with: URL(string: imagePosterUrl), placeholderImage: UIImage(named: "placeholder"))
+            movieCompanyImageView.sd_setImage(with: URL(string: imagePosterUrl), placeholderImage: UIImage(named: "placeholder"))
         }
     }
     

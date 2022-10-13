@@ -11,11 +11,18 @@ import SDWebImage
 
 class CustomHeaderElementCell: UICollectionViewCell{
     
+    var imageUrl: URL? {
+        didSet {
+            headerElementImageView.sd_setImage(with: imageUrl)
+        }
+    }
+    
     let headerElementImageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.sd_imageIndicator = SDWebImageActivityIndicator.gray
         iv.contentMode = .scaleAspectFill
+        iv.image = UIImage(named: "placeholder")
         iv.clipsToBounds = true
         iv.layer.cornerRadius = 7
         return iv

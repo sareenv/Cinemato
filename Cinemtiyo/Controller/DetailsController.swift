@@ -177,6 +177,9 @@ class DetailsController: UIViewController, UICollectionViewDelegate, UICollectio
     
 }
 
+
+
+
 extension DetailsController {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -189,17 +192,13 @@ extension DetailsController {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if(indexPath.section == 3) {
+        if(indexPath.section == 4) {
             let cell = collectionView.cellForItem(at: indexPath) as! MovieCastCell
             guard let moviePosterImage = cell.castImageView.image else { return }
-            let pictureView = MoviePictureView(frame: .zero, color: .black)
-            pictureView.selectedImage = moviePosterImage
-            let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
             UIView.animate(withDuration: 0.3) {
-               
-            } completion: { (nil) in
-                keyWindow?.rootViewController?.view.addSubview(pictureView)
-                pictureView.fillSuperView()
+                let actorController = ActorViewController(collectionViewLayout: UICollectionViewFlowLayout())
+                actorController.data = self.movieCast
+                self.present(actorController, animated: true)
             }
         }
         

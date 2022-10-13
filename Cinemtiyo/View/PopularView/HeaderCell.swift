@@ -12,9 +12,7 @@ import AVKit
 import MapKit
 
 class HeaderCell: UITableViewCell, UIScrollViewDelegate{
-    
-    
-    
+
     let headerSliderCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -25,11 +23,11 @@ class HeaderCell: UITableViewCell, UIScrollViewDelegate{
             
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.9), heightDimension: .fractionalHeight(1)), subitems: [item])
         
-            group.contentInsets.leading = 0
-            group.contentInsets.trailing = 12
+            group.contentInsets.leading = 6
+            group.contentInsets.trailing = 6
             
             let section = NSCollectionLayoutSection(group: group)
-            section.orthogonalScrollingBehavior = .groupPagingCentered
+            section.orthogonalScrollingBehavior = .groupPaging
             
             return section
         })
@@ -78,9 +76,7 @@ class HeaderCell: UITableViewCell, UIScrollViewDelegate{
     
     
     fileprivate func fetchTrendingData(){
-        
         let api = Api.instance
-    
         api.downloadTrendingMovies { (error, data)  in
             if(error != nil){ fatalError() }
             // Update the cell
@@ -106,7 +102,12 @@ extension HeaderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CustomHeaderElementCell
-        cell.headerElementImageView.downloadUrlImage(imageUrlPath: headerData[indexPath.item].backdrop_path ?? "")
+        let basePath = "https://image.tmdb.org/t/p/w500"
+        guard let relativePath = headerData[indexPath.item].backdrop_path else { return cell}
+        
+        let url = basePath + relativePath
+        guard let url = URL(string: url) else { return cell }
+        cell.imageUrl = url
         return cell
     }
     

@@ -24,7 +24,7 @@ class MovieCastCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 5
+        imageView.layer.cornerRadius = 3
         return imageView
     }()
     
@@ -47,11 +47,11 @@ class MovieCastCell: UICollectionViewCell {
     }
     
     fileprivate func updateCastImage(relativePath: String) {
-        guard let imagePosterUrl = URL(string: "http://image.tmdb.org/t/p/w200" + relativePath) else {
+        guard let imagePosterUrl = URL(string: "http://image.tmdb.org/t/p/w400" + relativePath) else {
             print("Error")
             return
         }
-        print(imagePosterUrl)
+       
         castImageView.sd_setImage(with: imagePosterUrl) { (image, _, _, _) in
             if(image == nil) {
                 self.castImageView.image = #imageLiteral(resourceName: "default")

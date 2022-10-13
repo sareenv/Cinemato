@@ -47,7 +47,7 @@ class OnBoardingController: UICollectionViewController, UICollectionViewDelegate
         button.backgroundColor = .systemRed
         button.isHidden = true // turn this to true.
         button.layer.cornerRadius = 5
-        button.addTarget(OnBoardingController.self, action: #selector(handleGetStarted), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleGetStarted), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -73,10 +73,9 @@ class OnBoardingController: UICollectionViewController, UICollectionViewDelegate
     }
     
     
-    let animations = [
+    private let animations = [
         Page(animationName: "animation1", title: "Review Popular Movies", description: "We provide extensive list of movies to choose from with trailers and short storyline"),
         Page(animationName: "animation3", title: "Locate to nearby cinema", description: "We use your location and display all the available cinema in your area"),
-        Page(animationName: "animation2", title: "Build Your watch list", description: "Now keep track of all the movies and tv shows you want to enjoy on weekends"),
         Page(animationName: "animation4", title: "Share movie information", description: "We allow you to plan and share movie information with your friends and family")
     ]
 
@@ -104,7 +103,7 @@ extension OnBoardingController {
         let width = scrollView.frame.width
         let horizontalCenter = width / 2
         let currentPage = Int(offSet + horizontalCenter) / Int(width)
-        getStartedButton.isHidden = (currentPage == 3) ? false : true
+        getStartedButton.isHidden = (currentPage == 2) ? false : true
         pageControl.currentPage = currentPage
     }
     
