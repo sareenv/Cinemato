@@ -11,12 +11,20 @@ import SDWebImage
 
 class MovieCastCell: UICollectionViewCell {
     
-     let castTileLabel: UILabel = {
-        let label = UILabel(font: UIFont.systemFont(ofSize: 15), text: "Actor", alignment: .center)
-        label.numberOfLines = 0
+     let castTitleLabel: UILabel = {
+        let label = UILabel(font: UIFont.boldSystemFont(ofSize: 15), text: "Actor", alignment: .center)
+        label.textColor = .darkGray
+        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    let positionTitleLabel: UILabel = {
+       let label = UILabel(font: UIFont.systemFont(ofSize: 13), text: "Actor", alignment: .center)
+       label.numberOfLines = 0
+       label.translatesAutoresizingMaskIntoConstraints = false
+       return label
+   }()
     
     lazy var castImageView: UIImageView = {
         let imageView = UIImageView()
@@ -33,6 +41,7 @@ class MovieCastCell: UICollectionViewCell {
         sv.translatesAutoresizingMaskIntoConstraints = false
         sv.isBaselineRelativeArrangement = false
         sv.distribution = .fill
+        sv.spacing = 1
         sv.axis = .vertical
         return sv
     }()
@@ -40,7 +49,7 @@ class MovieCastCell: UICollectionViewCell {
     var cast: MovieCast? {
         didSet {
             if let cast = cast {
-                castTileLabel.text = cast.name ?? "Unknown"
+                castTitleLabel.text = cast.name ?? "Unknown"
                 updateCastImage(relativePath: cast.profile_path ?? "")
             }
         }
@@ -53,20 +62,18 @@ class MovieCastCell: UICollectionViewCell {
         }
        
         castImageView.sd_setImage(with: imagePosterUrl) { (image, _, _, _) in
-            if(image == nil) {
-                self.castImageView.image = #imageLiteral(resourceName: "default")
-            }
-            
+            if(image == nil) { self.castImageView.image = #imageLiteral(resourceName: "default") }
         }
     }
     
     fileprivate func setupStackView() {
         self.backgroundColor = .white
         self.addSubview(stackView)
-        let heightAnchor = CGFloat(130.0)
+        let heightAnchor = CGFloat(140.0)
         castImageView.heightAnchor.constraint(equalToConstant: heightAnchor).isActive = true
         stackView.addArrangedSubview(castImageView)
-        stackView.addArrangedSubview(castTileLabel)
+        stackView.addArrangedSubview(castTitleLabel)
+        stackView.addArrangedSubview(positionTitleLabel)
         stackView.fillSuperView()
     }
     
@@ -74,6 +81,7 @@ class MovieCastCell: UICollectionViewCell {
         super.init(frame: frame)
         setupStackView()
         self.layer.shadowColor = .init(red: 256, green: 0, blue: 0, alpha: 1)
+        backgroundColor = .white
     }
    
     

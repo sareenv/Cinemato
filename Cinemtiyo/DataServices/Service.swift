@@ -219,9 +219,6 @@ class Api{
         }.resume()
     }
     
-    func downloadTVShows() {
-        
-    }
     
     func downloadTrendingMovies(completionHandler: @escaping (ApiErrors?, Movies?)->()){
         let session = URLSession.shared

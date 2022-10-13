@@ -59,10 +59,9 @@ class DetailsController: UIViewController, UICollectionViewDelegate, UICollectio
         }
     }
     
+    
     fileprivate func updateMoviesDetails(movie: Movie) {
-        
-        self.navigationItem.title = "Movie Details"
-        
+        navigationSettings()
         let api = Api.instance
         guard let movieId = movie.id else { return }
         api.downloadWallImages(id: movieId) { [unowned self] (error, movieImages) in
@@ -119,6 +118,10 @@ class DetailsController: UIViewController, UICollectionViewDelegate, UICollectio
     fileprivate func navigationSettings() {
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationItem.title = "Movie Details"
+        let backItem = UIBarButtonItem()
+        backItem.title = "back"
+        self.navigationItem.backBarButtonItem = backItem
     }
     
     @objc func handleBookMark() {

@@ -13,11 +13,12 @@ class CinematoTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let PopularController = generateControllers(storyBoardName: "Custom", identifier: "HomeStoryBoard", barItemTitle: "Popular", barItemImage: #imageLiteral(resourceName: "fire"))
-        let WatchListViewController = generateCodeController(viewController: WatchListController(), barItemTitle: "Watch List", barItemImage: UIImage(systemName: "eyeglasses") ?? #imageLiteral(resourceName: "search"))
+      
+        let popularController = generateControllers(storyBoardName: "Custom", identifier: "HomeStoryBoard", barItemTitle: "Popular", barItemImage: #imageLiteral(resourceName: "fire"))
+        let watchListViewController = generateCodeController(viewController: WatchListController(), barItemTitle: "Watch List", barItemImage: UIImage(systemName: "eyeglasses") ?? #imageLiteral(resourceName: "search"))
         let tvController = generateCodeController(viewController: TVController(), barItemTitle: "TV Shows", barItemImage: #imageLiteral(resourceName: "tv"))
         let cinemaLocation = generateCodeController(viewController: CinemaLocationController(), barItemTitle: "Local Cinema", barItemImage: UIImage(systemName: "map") ?? #imageLiteral(resourceName: "search"))
-        self.viewControllers = [PopularController, tvController, WatchListViewController, cinemaLocation]
+        self.viewControllers = [popularController, tvController, watchListViewController, cinemaLocation]
         self.tabBar.backgroundColor = .white
         self.tabBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.tabBar.isTranslucent = false
