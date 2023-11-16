@@ -13,6 +13,10 @@ Welcome to the **Cinemato** project, a cutting-edge iOS application crafted with
 - **Rich Media Playback**: AVKit for an immersive media experience.
 - **Interactive Lists**: Smooth navigation with UITableViewController.
 
+## 🎥 Explore Cinemato in Action
+
+Watch a detailed overview of Cinemato and its functionalities in this [video on Vimeo](https://vimeo.com/753479093). Dive into the world of Cinemato and see how it enhances your movie exploration experience!
+
 ## 🛠️ Libraries and Frameworks
 
 1. **SDWebImage**: For efficient image loading and caching.
