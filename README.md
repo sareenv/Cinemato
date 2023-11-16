@@ -25,7 +25,7 @@ Welcome to the **Cinemato** project, a cutting-edge iOS application crafted with
 
 ## 🚀 Getting Started
 
-1. **Clone the Repository**: `git clone https://github.com/your-repo.git`
+1. **Clone the Repository**: `git clone https://github.com/sareenv/Cinemato`
 2. **Explore the Code**: Dive deep into Swift and discover the intricacies of iOS development.
 3. **Run the Application**: Witness the magic of Cinemato on your device.
 
