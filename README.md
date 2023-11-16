@@ -2,7 +2,7 @@
 
 ![Cinemato Banner](banner.png)
 
-Welcome to the **Cinemato** project, a cutting-edge iOS application crafted with Swift for the Module 301CEM coursework. Cinemato offers a thrilling journey into the world of movies and TV shows. Leveraging the robust [TheMovieDB API](https://developers.themoviedb.org/), it provides users with the latest trends in entertainment. Our development approach combines programmatic techniques and UINib to create complex and visually appealing layouts.
+Welcome to the **Cinemato** project, a cutting-edge iOS application crafted with Swift. Cinemato offers a thrilling journey into the world of movies and TV shows. Leveraging the robust [TheMovieDB API](https://developers.themoviedb.org/), it provides users with the latest trends in entertainment. Our development approach combines programmatic techniques and UINib to create complex and visually appealing layouts.
 
 ## 🌟 Key Features
 
